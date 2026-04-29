@@ -1,0 +1,1342 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sourav Ghosh: AI-first Senior Product Marketer</title>
+    <meta
+      name="description"
+      content="AI-first product marketer. 10+ years driving GTM, positioning, and revenue across B2B SaaS, proptech, and IT consulting."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0f0e0c;
+        --paper: #f4efe6;
+        --paper-2: #ece4d5;
+        --accent: #e94f1d;
+        --accent-2: #1b4332;
+        --muted: #6b6357;
+        --rule: #1f1b16;
+        --highlight: #ffe066;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Inter Tight", sans-serif;
+        font-size: 17px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        background-image: radial-gradient(
+          circle at 1px 1px,
+          rgba(15, 14, 12, 0.06) 1px,
+          transparent 0
+        );
+        background-size: 22px 22px;
+      }
+
+      .serif {
+        font-family: "Fraunces", serif;
+      }
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ====== TOP RIBBON ====== */
+      .ribbon {
+        border-bottom: 1px solid var(--rule);
+        background: var(--ink);
+        color: var(--paper);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .ribbon-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 32px;
+        max-width: 1280px;
+        margin: 0 auto;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .ribbon-inner span:nth-child(2) {
+        color: var(--highlight);
+      }
+      .ribbon-nav {
+        display: flex;
+        gap: 24px;
+      }
+      .ribbon-nav a {
+        transition: color 0.2s;
+      }
+      .ribbon-nav a:hover {
+        color: var(--highlight);
+      }
+
+      /* ====== HERO ====== */
+      .hero {
+        padding: 100px 0 80px;
+        border-bottom: 2px solid var(--rule);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-meta {
+        display: flex;
+        gap: 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+      }
+      .hero-meta .dot {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background: var(--accent);
+        border-radius: 50%;
+        margin-right: 8px;
+        vertical-align: middle;
+        animation: pulse 2s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+
+      .hero h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: clamp(48px, 8vw, 120px);
+        line-height: 0.92;
+        letter-spacing: -0.035em;
+        margin-bottom: 32px;
+        max-width: 1200px;
+      }
+      .hero h1 .accent {
+        color: var(--accent);
+        font-style: italic;
+        font-weight: 400;
+      }
+      .hero h1 .green {
+        color: var(--accent-2);
+        font-style: italic;
+        font-weight: 400;
+      }
+      .hero h1 .underline {
+        position: relative;
+        display: inline-block;
+      }
+      .hero h1 .underline::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -4px;
+        height: 8px;
+        background: var(--highlight);
+        z-index: -1;
+      }
+
+      .hero-sub {
+        font-size: 21px;
+        max-width: 780px;
+        color: var(--ink);
+        margin-bottom: 56px;
+        line-height: 1.5;
+      }
+      .hero-sub strong {
+        background: var(--highlight);
+        padding: 0 4px;
+        font-weight: 500;
+      }
+
+      .hero-modes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        border-top: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+      }
+      .hero-mode {
+        padding: 28px 24px;
+        border-right: 1px solid var(--rule);
+        position: relative;
+        transition: background 0.2s;
+      }
+      .hero-mode:last-child {
+        border-right: none;
+      }
+      .hero-mode:hover {
+        background: var(--paper-2);
+      }
+      .hero-mode .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 12px;
+      }
+      .hero-mode .what {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 6px;
+      }
+      .hero-mode .for {
+        font-size: 13px;
+        color: var(--muted);
+        font-family: "JetBrains Mono", monospace;
+        letter-spacing: 0.05em;
+      }
+
+      /* ====== SECTION HEADER ====== */
+      .section {
+        padding: 100px 0;
+        border-bottom: 1px solid var(--rule);
+      }
+      .section-head {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 32px;
+        margin-bottom: 56px;
+        align-items: start;
+      }
+      .section-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        border-top: 2px solid var(--accent);
+        padding-top: 10px;
+      }
+      .section-title {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: clamp(32px, 4.8vw, 64px);
+        line-height: 1.02;
+        letter-spacing: -0.025em;
+        max-width: 1000px;
+      }
+      .section-title em {
+        font-style: italic;
+        color: var(--accent);
+        font-weight: 400;
+      }
+      .section-title .green {
+        font-style: italic;
+        color: var(--accent-2);
+        font-weight: 400;
+      }
+
+      /* ====== POSITIONING / THESIS ====== */
+      .thesis {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 64px 56px;
+        border-radius: 4px;
+        position: relative;
+        overflow: hidden;
+      }
+      .thesis::before {
+        content: "// THE ARGUMENT";
+        position: absolute;
+        top: 24px;
+        right: 32px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--highlight);
+      }
+      .thesis-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: start;
+      }
+      .thesis-claim {
+        font-family: "Fraunces", serif;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 1.25;
+        letter-spacing: -0.015em;
+      }
+      .thesis-claim strong {
+        color: var(--highlight);
+        font-weight: 600;
+      }
+      .thesis-evidence {
+        font-size: 16px;
+        line-height: 1.6;
+        color: rgba(244, 239, 230, 0.8);
+      }
+      .thesis-evidence p {
+        margin-bottom: 16px;
+      }
+      .thesis-evidence p:last-child {
+        margin-bottom: 0;
+      }
+      .thesis-evidence strong {
+        color: var(--paper);
+        font-weight: 600;
+      }
+
+      /* ====== WORK / CASE STUDIES ====== */
+      .work-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+      .case {
+        background: var(--paper);
+        border: 1px solid var(--rule);
+        padding: 40px;
+        position: relative;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        min-height: 480px;
+      }
+      .case:hover {
+        transform: translate(-3px, -3px);
+        box-shadow: 6px 6px 0 var(--ink);
+      }
+      .case-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        color: var(--accent);
+        margin-bottom: 16px;
+      }
+      .case-title {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 20px;
+      }
+      .case-title em {
+        font-style: italic;
+        color: var(--accent);
+        font-weight: 400;
+      }
+      .case-meta {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 24px;
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .case-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        border-top: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+        margin-bottom: 24px;
+      }
+      .case-stat {
+        padding: 16px 12px;
+        border-right: 1px solid var(--rule);
+      }
+      .case-stat:last-child {
+        border-right: none;
+      }
+      .case-stat .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 9px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 4px;
+      }
+      .case-stat .num {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+      .case-stat .num.green {
+        color: var(--accent-2);
+      }
+      .case-stat .num.red {
+        color: var(--accent);
+      }
+      .case-summary {
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--ink);
+        margin-bottom: 24px;
+        flex: 1;
+      }
+      .case-cta {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        border-top: 1px solid var(--rule);
+        padding-top: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .case-cta .arrow {
+        font-size: 18px;
+        transition: transform 0.2s;
+      }
+      .case:hover .case-cta .arrow {
+        transform: translateX(4px);
+      }
+
+      /* ====== CAREER TIMELINE ====== */
+      .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .tl-item {
+        display: grid;
+        grid-template-columns: 200px 1fr 280px;
+        gap: 32px;
+        padding: 40px 0;
+        border-top: 1px solid var(--rule);
+        align-items: start;
+      }
+      .tl-item:last-child {
+        border-bottom: 1px solid var(--rule);
+      }
+      .tl-period {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .tl-period .duration {
+        display: block;
+        color: var(--accent);
+        margin-top: 4px;
+        font-size: 11px;
+      }
+      .tl-main h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin-bottom: 4px;
+      }
+      .tl-main .role {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 12px;
+      }
+      .tl-main p {
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--ink);
+      }
+      .tl-highlights {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .tl-highlight {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--ink);
+        padding: 8px 12px;
+        background: var(--paper-2);
+        border-left: 3px solid var(--accent);
+      }
+      .tl-highlight strong {
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+        text-transform: none;
+        color: var(--accent);
+        margin-right: 6px;
+      }
+
+      /* ====== CAPABILITIES ====== */
+      .cap-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        border: 1px solid var(--rule);
+      }
+      .cap-block {
+        padding: 32px;
+        border-right: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+      }
+      .cap-block:nth-child(2n) {
+        border-right: none;
+      }
+      .cap-block:nth-last-child(-n + 2) {
+        border-bottom: none;
+      }
+      .cap-block h4 {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .cap-block h4::before {
+        content: "◆";
+        color: var(--accent);
+      }
+      .cap-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .cap-tag {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 6px 12px;
+        background: var(--paper-2);
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+        letter-spacing: -0.01em;
+      }
+      .cap-tag.featured {
+        background: var(--ink);
+        color: var(--paper);
+        border-color: var(--ink);
+      }
+
+      /* ====== SIDE PROJECTS ====== */
+      .projects {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .project {
+        border: 1px solid var(--rule);
+        padding: 32px;
+        position: relative;
+        background: var(--paper);
+        transition: background 0.2s;
+      }
+      .project:hover {
+        background: var(--paper-2);
+      }
+      .project-status {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        background: var(--accent);
+        color: var(--paper);
+        border-radius: 2px;
+      }
+      .project-status.live {
+        background: var(--accent-2);
+      }
+      .project-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+      .project h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin-bottom: 14px;
+      }
+      .project h3 em {
+        font-style: italic;
+        color: var(--accent);
+        font-weight: 400;
+      }
+      .project p {
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--ink);
+        margin-bottom: 20px;
+      }
+      .project-link {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        border-bottom: 1px solid var(--accent);
+        padding-bottom: 2px;
+        display: inline-block;
+      }
+
+      /* ====== STATEMENT BLOCK ====== */
+      .statement {
+        padding: 64px 0;
+        border-top: 2px solid var(--rule);
+        border-bottom: 2px solid var(--rule);
+      }
+      .statement-text {
+        font-family: "Fraunces", serif;
+        font-weight: 400;
+        font-size: clamp(28px, 3.6vw, 48px);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        max-width: 1100px;
+      }
+      .statement-text em {
+        font-style: italic;
+        color: var(--accent);
+      }
+      .statement-text strong {
+        font-weight: 600;
+        position: relative;
+        display: inline-block;
+      }
+      .statement-text strong::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 6px;
+        background: var(--highlight);
+        z-index: -1;
+      }
+
+      /* ====== CONTACT ====== */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: start;
+      }
+      .contact-prose {
+        font-family: "Fraunces", serif;
+        font-size: 24px;
+        line-height: 1.4;
+        font-weight: 400;
+        color: var(--ink);
+      }
+      .contact-prose em {
+        font-style: italic;
+        color: var(--accent);
+      }
+      .contact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        border-top: 1px solid var(--rule);
+      }
+      .contact-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--rule);
+        transition: padding 0.2s;
+      }
+      .contact-item:hover {
+        padding-left: 12px;
+      }
+      .contact-item .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .contact-item .value {
+        font-family: "Fraunces", serif;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+      }
+      .contact-item .value .arrow {
+        display: inline-block;
+        margin-left: 8px;
+        color: var(--accent);
+        transition: transform 0.2s;
+      }
+      .contact-item:hover .value .arrow {
+        transform: translateX(4px);
+      }
+
+      /* ====== FOOTER ====== */
+      .footer {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 32px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .footer-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .footer span:nth-child(2) {
+        color: var(--highlight);
+      }
+
+      /* ====== RESPONSIVE ====== */
+      @media (max-width: 900px) {
+        .container {
+          padding: 0 20px;
+        }
+        .ribbon-inner {
+          padding: 10px 20px;
+        }
+        .hero {
+          padding: 64px 0 48px;
+        }
+        .section {
+          padding: 64px 0;
+        }
+        .section-head {
+          grid-template-columns: 1fr;
+          gap: 16px;
+          margin-bottom: 32px;
+        }
+        .hero-modes {
+          grid-template-columns: 1fr;
+        }
+        .hero-mode {
+          border-right: none;
+          border-bottom: 1px solid var(--rule);
+        }
+        .hero-mode:last-child {
+          border-bottom: none;
+        }
+        .thesis {
+          padding: 40px 28px;
+        }
+        .thesis-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .thesis-claim {
+          font-size: 24px;
+        }
+        .work-grid {
+          grid-template-columns: 1fr;
+        }
+        .case {
+          min-height: auto;
+          padding: 28px;
+        }
+        .case-stats {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .tl-item {
+          grid-template-columns: 1fr;
+          gap: 16px;
+          padding: 28px 0;
+        }
+        .tl-highlights {
+          gap: 8px;
+        }
+        .cap-grid {
+          grid-template-columns: 1fr;
+        }
+        .cap-block {
+          border-right: none;
+        }
+        .projects {
+          grid-template-columns: 1fr;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .ribbon-nav {
+          gap: 16px;
+          font-size: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== TOP RIBBON ===== -->
+    <div class="ribbon">
+      <div class="ribbon-inner">
+        <span>SOURAV GHOSH · PRODUCT MARKETING · B2B SaaS</span>
+        <span>● AVAILABLE FOR FULL-TIME SENIOR PMM ROLES</span>
+        <div class="ribbon-nav">
+          <a href="#work">Work</a>
+          <a href="#career">Career</a>
+          <a href="#building">Building</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-meta">
+          <span
+            ><span class="dot"></span>EST. 2016 · BENGALURU → MUMBAI →
+            PUNE</span
+          >
+          <span>10+ YEARS · B2B SAAS · PROPTECH · IT SVCS</span>
+          <span>WRITES CODE WHEN HE HAS TO</span>
+        </div>
+
+        <h1>
+          I build <span class="accent">GTM systems</span> that turn engineering
+          output into <span class="underline">pipeline</span>.
+        </h1>
+
+        <p class="hero-sub">
+          Most product marketers use AI to write faster. I use it to
+          <strong>build infrastructure</strong>: n8n workflows that route assets
+          into Outreach cadences, NotebookLM briefs that synthesise quarters of
+          buyer signal, and custom Claude skill systems that operate as
+          colleagues. The work lives at the intersection of Product, Sales, and
+          Marketing, and it stays running after I move on.
+        </p>
+
+        <div class="hero-modes">
+          <div class="hero-mode">
+            <div class="label">// MODE 01</div>
+            <div class="what">Senior PMM at SaaS companies.</div>
+            <div class="for">
+              Full-time. Remote-first. AI-infra, dev-tool, vertical SaaS.
+            </div>
+          </div>
+          <div class="hero-mode">
+            <div class="label">// MODE 02</div>
+            <div class="what">Building products of my own.</div>
+            <div class="for">Detour Club (travel) · Circling Back (comic).</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== THE THESIS ===== -->
+    <section class="section" id="thesis">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 01 / Position</div>
+          <h2 class="section-title">
+            The argument I'm <em>actually</em> making.
+          </h2>
+        </div>
+
+        <div class="thesis">
+          <div class="thesis-grid">
+            <div class="thesis-claim">
+              PMM in 2026 isn't about producing assets. It's about
+              <strong>wiring assets into the revenue motion</strong> so the
+              right thing shows up in the right place at the right moment,
+              automatically.
+            </div>
+            <div class="thesis-evidence">
+              <p>
+                I've been building marketing automation since 2016. I managed
+                Salesforce Marketing Cloud, ran Oracle Eloqua, and built lead
+                management systems from scratch at Infosys. The shift to
+                AI-first is the exact same muscle applied to newer tools.
+              </p>
+              <p>
+                What makes the work different is that
+                <strong>I don't stop at the deck.</strong> I build the workflow
+                that delivers the deck into the SDR cadence. I write the
+                positioning AND the n8n logic that routes it. I run win/loss
+                interviews AND wire Gong into NotebookLM to synthesise the data.
+              </p>
+              <p>
+                Strategy and execution, in the same week, by the same person.
+                That's the bet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SELECTED WORK ===== -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 02 / Selected Work</div>
+          <h2 class="section-title">
+            Two case studies. <em>Same playbook.</em> Two segments.
+          </h2>
+        </div>
+
+        <div class="work-grid">
+          <a href="planet-sim-case-study.html" class="case">
+            <div class="case-num">CASE 01 / SMB MOTION</div>
+            <h3 class="case-title">
+              How we 4x'd lead-to-customer conversion by rebuilding GTM around
+              <em>experiential trials</em> and per-unit pricing.
+            </h3>
+            <div class="case-meta">
+              <span>Planet Smart City</span>
+              <span>Planet SIM</span>
+              <span>9 months</span>
+            </div>
+            <div class="case-stats">
+              <div class="case-stat">
+                <div class="label">Conversion</div>
+                <div class="num green">+400%</div>
+              </div>
+              <div class="case-stat">
+                <div class="label">CAC</div>
+                <div class="num red">-80%</div>
+              </div>
+              <div class="case-stat">
+                <div class="label">Cycle</div>
+                <div class="num green">-37%</div>
+              </div>
+            </div>
+            <p class="case-summary">
+              The first 6 months of conventional B2B SaaS GTM produced 10%
+              lead-to-customer and CAC that didn't pencil. Two pivots fixed it:
+              a 15-day on-site experiential trial, and a per-flat SaaS pricing
+              rebuild. Nine months later: 50% lead-to-customer, 0% paid churn,
+              and a blueprint exported into 4 metro cities.
+            </p>
+            <div class="case-cta">
+              Read the case study <span class="arrow">→</span>
+            </div>
+          </a>
+
+          <a href="planet-sim-enterprise-case-study.html" class="case">
+            <div class="case-num">CASE 02 / ENTERPRISE MOTION</div>
+            <h3 class="case-title">
+              How we cut enterprise sales cycles by <em>~40%</em> by scaling the
+              SMB playbook with AI-first sales enablement.
+            </h3>
+            <div class="case-meta">
+              <span>Planet Smart City</span>
+              <span>Planet SIM + App</span>
+              <span>~12 months</span>
+            </div>
+            <div class="case-stats">
+              <div class="case-stat">
+                <div class="label">Cycle</div>
+                <div class="num green">~75d → ~45d</div>
+              </div>
+              <div class="case-stat">
+                <div class="label">ACV</div>
+                <div class="num">₹15-20L</div>
+              </div>
+              <div class="case-stat">
+                <div class="label">Stack</div>
+                <div class="num red">n8n+</div>
+              </div>
+            </div>
+            <p class="case-summary">
+              Builders and large committees were stuck in 60-90 day cycles. We
+              faced two bottlenecks: post-demo committee silence, and pricing
+              negotiations. The fix: port the SMB playbook into enterprise and
+              wire it through n8n, Outreach, Storylane, Synthesia, Gong, and
+              NotebookLM so the right asset hit the right rep at the right
+              cadence step.
+            </p>
+            <div class="case-cta">
+              Read the case study <span class="arrow">→</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATEMENT ===== -->
+    <section class="statement">
+      <div class="container">
+        <p class="statement-text">
+          The through-line from <em>Infosys 2016</em> to <em>today</em> is the
+          same: <strong>build the system, not just the output.</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== CAREER TIMELINE ===== -->
+    <section class="section" id="career">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 03 / Career</div>
+          <h2 class="section-title">
+            Ten years of building <em>marketing systems</em> that compound.
+          </h2>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-period">
+              Apr 2021 to Dec 2025
+              <span class="duration">4 years 9 months</span>
+            </div>
+            <div class="tl-main">
+              <h3>Planet Smart City</h3>
+              <div class="role">Product Marketing Manager · Pune</div>
+              <p>
+                Global proptech B2B SaaS. Owned the full PMM function across two
+                motions for SMB and Enterprise. This is where the AI-first
+                approach fully crystallised. I built custom Claude skills for
+                competitive intel and wired Gong data into NotebookLM to
+                automate win/loss synthesis. I didn't just write positioning. I
+                built the n8n workflows that distributed those assets directly
+                into SDR sequences.
+              </p>
+            </div>
+            <div class="tl-highlights">
+              <div class="tl-highlight">
+                <strong>400+</strong>enterprise trials
+              </div>
+              <div class="tl-highlight">
+                <strong>50%</strong>cross-channel conv. lift
+              </div>
+              <div class="tl-highlight">
+                <strong>20%</strong>of inbound from SEO
+              </div>
+              <div class="tl-highlight">
+                <strong>~100%</strong>net retention, 2 yrs
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-period">
+              Aug 2020 to Mar 2021
+              <span class="duration">8 months</span>
+            </div>
+            <div class="tl-main">
+              <h3>Freelance Paid Media Consultant</h3>
+              <div class="role">Independent · Mumbai</div>
+              <p>
+                Applied enterprise automation logic to SMB constraints. I built
+                automated lead qualification workflows using Zapier to route
+                WordPress form submissions directly into client CRMs based on
+                dynamic scoring logic. I managed media planning and creative
+                strategy while ensuring the underlying data pipelines were
+                airtight.
+              </p>
+            </div>
+            <div class="tl-highlights">
+              <div class="tl-highlight">3 geos · 7+ clients</div>
+              <div class="tl-highlight">ROAS · AOV · email subs</div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-period">
+              Dec 2019 to Jul 2020
+              <span class="duration">8 months</span>
+            </div>
+            <div class="tl-main">
+              <h3>ZEE Entertainment (ZEE5)</h3>
+              <div class="role">Marketing Manager · Mumbai</div>
+              <p>
+                Transitioned my B2B systems-thinking into high-volume consumer
+                marketing. Instead of manually tracking social campaigns across
+                three languages, I built automated reporting pipelines that
+                pulled engagement metrics directly into unified dashboards. This
+                infrastructure allowed the team to scale our influencer programs
+                and show launches without breaking operations.
+              </p>
+            </div>
+            <div class="tl-highlights">
+              <div class="tl-highlight">3 languages</div>
+              <div class="tl-highlight">Influencer programs</div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-period">
+              Jul 2016 to Aug 2019
+              <span class="duration">3 years 1 month</span>
+            </div>
+            <div class="tl-main">
+              <h3>Infosys Limited</h3>
+              <div class="role">Marketing Executive · Bengaluru</div>
+              <p>
+                Where the automation foundation was laid. I ran paid and email
+                campaigns for enterprise service lines, managed Salesforce
+                Marketing Cloud, and handled Oracle Eloqua. I built lead
+                management workflows from scratch. This was my introduction to
+                thinking in systems, learning early on how to connect disjointed
+                tools so marketing could scale without adding headcount.
+              </p>
+            </div>
+            <div class="tl-highlights">
+              <div class="tl-highlight">
+                <strong>+15%</strong>email engagement
+              </div>
+              <div class="tl-highlight">Stack for 10+ marketers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CAPABILITIES ===== -->
+    <section class="section" id="capabilities">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 04 / Capability</div>
+          <h2 class="section-title">
+            What I bring to the <em>first 90 days.</em>
+          </h2>
+        </div>
+
+        <div class="cap-grid">
+          <div class="cap-block">
+            <h4>Strategy &amp; Positioning</h4>
+            <div class="cap-tags">
+              <span class="cap-tag featured">Go-to-Market Strategy</span>
+              <span class="cap-tag featured">Positioning &amp; Messaging</span>
+              <span class="cap-tag">Pricing &amp; Packaging</span>
+              <span class="cap-tag">Customer Segmentation</span>
+              <span class="cap-tag">Product Launch</span>
+              <span class="cap-tag">Competitive Intel</span>
+            </div>
+          </div>
+          <div class="cap-block">
+            <h4>Sales Enablement</h4>
+            <div class="cap-tags">
+              <span class="cap-tag featured"
+                >Battlecards &amp; Objection Guides</span
+              >
+              <span class="cap-tag">Pitch Decks</span>
+              <span class="cap-tag">Win/Loss Programs</span>
+              <span class="cap-tag">Value-based Messaging</span>
+              <span class="cap-tag">SDR Cadence Design</span>
+              <span class="cap-tag">ROI Calculators</span>
+            </div>
+          </div>
+          <div class="cap-block">
+            <h4>AI &amp; Automation</h4>
+            <div class="cap-tags">
+              <span class="cap-tag featured">Claude (custom skills)</span>
+              <span class="cap-tag featured">n8n</span>
+              <span class="cap-tag">NotebookLM</span>
+              <span class="cap-tag">Frase AI</span>
+              <span class="cap-tag">Synthesia</span>
+              <span class="cap-tag">Storylane</span>
+              <span class="cap-tag">Zapier · Pabbly</span>
+              <span class="cap-tag">Gemini</span>
+            </div>
+          </div>
+          <div class="cap-block">
+            <h4>Revenue Stack</h4>
+            <div class="cap-tags">
+              <span class="cap-tag featured">HubSpot</span>
+              <span class="cap-tag featured">Outreach</span>
+              <span class="cap-tag featured">Gong</span>
+              <span class="cap-tag">Salesforce MC · Eloqua</span>
+              <span class="cap-tag">ActiveCampaign · Pardot</span>
+              <span class="cap-tag">Apollo · Instantly</span>
+              <span class="cap-tag">Intercom · Zoho CRM</span>
+              <span class="cap-tag">Nooks · Synapsa</span>
+            </div>
+          </div>
+          <div class="cap-block">
+            <h4>Demand &amp; Lifecycle</h4>
+            <div class="cap-tags">
+              <span class="cap-tag featured">Demand Generation</span>
+              <span class="cap-tag featured">Lifecycle Marketing</span>
+              <span class="cap-tag">SEO (Ahrefs, SEMrush, Moz)</span>
+              <span class="cap-tag">Website / CRO</span>
+              <span class="cap-tag">Behavioural Segmentation</span>
+              <span class="cap-tag">Retention Programs</span>
+            </div>
+          </div>
+          <div class="cap-block">
+            <h4>Analytics &amp; Ops</h4>
+            <div class="cap-tags">
+              <span class="cap-tag featured">GA · GTM · Tableau</span>
+              <span class="cap-tag">Data Studio</span>
+              <span class="cap-tag">Performance Tracking</span>
+              <span class="cap-tag">Cross-functional collab</span>
+              <span class="cap-tag">Notion · Jira · Miro</span>
+              <span class="cap-tag">Marketing Analytics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SIDE PROJECTS ===== -->
+    <section class="section" id="building">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 05 / Building</div>
+          <h2 class="section-title">
+            Two side bets I'm <em>shipping</em> on the side.
+          </h2>
+        </div>
+
+        <div class="projects">
+          <div class="project">
+            <div class="project-status">Pre-launch</div>
+            <div class="project-tag">// Travel · Consumer</div>
+            <h3>Detour <em>Club.</em></h3>
+            <p>
+              A travel discovery app for people who plan trips by collecting
+              links from blogs, Reddit threads, and YouTube videos and never
+              look at them again. Currently building the curation engine, the
+              database, and the backend.
+            </p>
+            <a
+              href="https://trydetourclub.com"
+              target="_blank"
+              class="project-link"
+              >trydetourclub.com →</a
+            >
+          </div>
+          <div class="project">
+            <div class="project-status live">Live · Weekly</div>
+            <div class="project-tag">// Comic · LinkedIn</div>
+            <h3>Circling <em>Back.</em></h3>
+            <p>
+              A slice-of-life comic series about the absurd parts of product
+              marketing like stakeholder politics, founder requests at 11pm, and
+              the eternal "can you make this pop?" Author and lead storyteller.
+            </p>
+            <a
+              href="https://www.linkedin.com/in/souravghosh1512/"
+              target="_blank"
+              class="project-link"
+              >Read on LinkedIn →</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section" id="contact" style="border-bottom: none">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 06 / Contact</div>
+          <h2 class="section-title">Open to <em>full-time PMM roles.</em></h2>
+        </div>
+
+        <div class="contact-grid">
+          <p class="contact-prose">
+            If you're a SaaS company hiring a senior or principal PMM,
+            especially in
+            <em>AI infrastructure, dev tools, or vertical SaaS</em>, let's talk.
+          </p>
+          <div class="contact-list">
+            <a href="mailto:souravghosh1512@outlook.com" class="contact-item">
+              <span class="label">// Email</span>
+              <span class="value">Let's chat <span class="arrow">→</span></span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/souravghosh1512/"
+              target="_blank"
+              class="contact-item"
+            >
+              <span class="label">// LinkedIn</span>
+              <span class="value"
+                >/in/sourav-ghosh <span class="arrow">→</span></span
+              >
+            </a>
+            <a
+              href="https://trydetourclub.com"
+              target="_blank"
+              class="contact-item"
+            >
+              <span class="label">// Detour Club</span>
+              <span class="value"
+                >trydetourclub.com <span class="arrow">→</span></span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>© Sourav Ghosh · Product Marketing</span>
+        <span>● BUILT WITH HTML, FRAUNCES &amp; ATTITUDE</span>
+        <span>Index / Portfolio · v3</span>
+      </div>
+    </footer>
+  </body>
+</html>

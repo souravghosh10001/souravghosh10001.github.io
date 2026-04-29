@@ -1,0 +1,1683 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planet SIM GTM Case Study — Sourav Ghosh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0f0e0c;
+        --paper: #f4efe6;
+        --paper-2: #ece4d5;
+        --accent: #e94f1d;
+        --accent-2: #1b4332;
+        --muted: #6b6357;
+        --rule: #1f1b16;
+        --highlight: #ffe066;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Inter Tight", sans-serif;
+        font-size: 17px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        background-image: radial-gradient(
+          circle at 1px 1px,
+          rgba(15, 14, 12, 0.06) 1px,
+          transparent 0
+        );
+        background-size: 22px 22px;
+      }
+
+      .serif {
+        font-family: "Fraunces", serif;
+      }
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ====== TOP RIBBON ====== */
+      .ribbon {
+        border-bottom: 1px solid var(--rule);
+        background: var(--ink);
+        color: var(--paper);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .ribbon-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 32px;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .ribbon-inner span:nth-child(2) {
+        color: var(--highlight);
+      }
+
+      /* ====== HERO ====== */
+      .hero {
+        padding: 80px 0 60px;
+        border-bottom: 2px solid var(--rule);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-meta {
+        display: flex;
+        gap: 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+      }
+      .hero-meta .dot {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background: var(--accent);
+        border-radius: 50%;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+
+      .hero h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: clamp(48px, 7vw, 96px);
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+      }
+      .hero h1 .accent {
+        color: var(--accent);
+        font-style: italic;
+        font-weight: 400;
+      }
+      .hero h1 .strike {
+        position: relative;
+        display: inline-block;
+      }
+      .hero h1 .strike::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 52%;
+        height: 6px;
+        background: var(--accent);
+        transform: rotate(-1deg);
+      }
+
+      .hero-sub {
+        font-size: 19px;
+        max-width: 720px;
+        color: var(--muted);
+        margin-bottom: 48px;
+        line-height: 1.5;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        border-top: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+      }
+      .hero-stat {
+        padding: 28px 24px;
+        border-right: 1px solid var(--rule);
+        position: relative;
+      }
+      .hero-stat:last-child {
+        border-right: none;
+      }
+      .hero-stat .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+      .hero-stat .num {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 56px;
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+      .hero-stat .num.green {
+        color: var(--accent-2);
+      }
+      .hero-stat .num.red {
+        color: var(--accent);
+      }
+      .hero-stat .sub {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+
+      /* ====== SECTION HEADER ====== */
+      .section {
+        padding: 80px 0;
+        border-bottom: 1px solid var(--rule);
+      }
+      .section-head {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 32px;
+        margin-bottom: 48px;
+        align-items: start;
+      }
+      .section-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        border-top: 2px solid var(--accent);
+        padding-top: 10px;
+      }
+      .section-title {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: clamp(32px, 4.5vw, 56px);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        max-width: 900px;
+      }
+      .section-title em {
+        font-style: italic;
+        color: var(--accent);
+        font-weight: 400;
+      }
+
+      /* ====== TLDR CARD ====== */
+      .tldr {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 48px;
+        border-radius: 4px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        margin-bottom: 48px;
+        position: relative;
+        overflow: hidden;
+      }
+      .tldr::before {
+        content: "TL;DR";
+        position: absolute;
+        top: 16px;
+        right: 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--highlight);
+      }
+      .tldr-text {
+        font-family: "Fraunces", serif;
+        font-size: 22px;
+        line-height: 1.4;
+        font-weight: 400;
+      }
+      .tldr-text strong {
+        color: var(--highlight);
+        font-weight: 600;
+      }
+      .tldr-pivots {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-self: end;
+      }
+      .pivot-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        border: 1px solid var(--paper);
+        padding: 10px 14px;
+        text-transform: uppercase;
+      }
+      .pivot-tag span {
+        color: var(--highlight);
+      }
+
+      /* ====== METRICS TABLE ====== */
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .metric-card {
+        background: var(--paper-2);
+        border: 1px solid var(--rule);
+        padding: 28px;
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+      .metric-card:hover {
+        transform: translateY(-4px);
+      }
+      .metric-card .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+      .metric-flow {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr auto;
+        align-items: center;
+        gap: 16px;
+      }
+      .metric-before,
+      .metric-after {
+        font-family: "Fraunces", serif;
+        font-size: 36px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .metric-before {
+        color: var(--muted);
+        text-decoration: line-through;
+        text-decoration-thickness: 2px;
+      }
+      .metric-after {
+        color: var(--ink);
+      }
+      .metric-arrow {
+        font-family: "JetBrains Mono", monospace;
+        color: var(--accent);
+        font-size: 18px;
+      }
+      .metric-change {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 4px 10px;
+        background: var(--ink);
+        color: var(--highlight);
+        display: inline-block;
+      }
+      .metric-change.green {
+        background: var(--accent-2);
+        color: white;
+      }
+
+      /* ====== PROBLEM SECTION ====== */
+      .problem-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+      .callout {
+        background: var(--paper-2);
+        border-left: 4px solid var(--accent);
+        padding: 32px;
+        font-family: "Fraunces", serif;
+        font-size: 24px;
+        line-height: 1.4;
+        font-style: italic;
+        color: var(--ink);
+      }
+      .callout .small {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-style: normal;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 16px;
+      }
+
+      .buyer-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .buyer-card {
+        border: 1px solid var(--rule);
+        padding: 20px;
+        background: white;
+      }
+      .buyer-card .icon {
+        width: 40px;
+        height: 40px;
+        background: var(--accent);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 20px;
+        margin-bottom: 14px;
+      }
+      .buyer-card .name {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 6px;
+      }
+      .buyer-card .desc {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      /* ====== FUNNEL VIZ ====== */
+      .funnels {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        margin-top: 32px;
+      }
+      .funnel-box {
+        border: 1px solid var(--rule);
+        padding: 32px;
+        background: var(--paper-2);
+      }
+      .funnel-box.after {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .funnel-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .funnel-box.before .funnel-label {
+        color: var(--muted);
+      }
+      .funnel-box.after .funnel-label {
+        color: var(--highlight);
+      }
+      .funnel-headline {
+        font-family: "Fraunces", serif;
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        letter-spacing: -0.02em;
+      }
+      .funnel-step {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 14px 0;
+        border-bottom: 1px dashed currentColor;
+        opacity: 0.9;
+      }
+      .funnel-step:last-child {
+        border-bottom: none;
+      }
+      .funnel-step .step-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        width: 24px;
+      }
+      .funnel-step .step-name {
+        flex: 1;
+        font-family: "Fraunces", serif;
+        font-size: 16px;
+      }
+      .funnel-step .step-rate {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .funnel-box.before .step-rate {
+        color: var(--accent);
+      }
+      .funnel-box.after .step-rate {
+        color: var(--highlight);
+      }
+      .funnel-result {
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 2px solid currentColor;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+      .funnel-result .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .funnel-result .value {
+        font-family: "Fraunces", serif;
+        font-size: 48px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+      .funnel-box.after .funnel-result .value {
+        color: var(--highlight);
+      }
+
+      /* ====== PIVOT BLOCK ====== */
+      .pivot-block {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 48px;
+        margin-bottom: 48px;
+        padding-bottom: 48px;
+        border-bottom: 1px dashed var(--rule);
+      }
+      .pivot-block:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+      .pivot-marker {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 120px;
+        line-height: 0.85;
+        color: var(--accent);
+        letter-spacing: -0.05em;
+      }
+      .pivot-marker span {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--muted);
+        letter-spacing: 0.15em;
+        margin-top: 8px;
+      }
+      .pivot-content h3 {
+        font-family: "Fraunces", serif;
+        font-size: 36px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+        line-height: 1.1;
+      }
+      .pivot-content .pivot-tag-inline {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+        display: inline-block;
+      }
+      .pivot-content > p {
+        font-size: 17px;
+        margin-bottom: 24px;
+        max-width: 720px;
+        color: var(--ink);
+      }
+
+      .mechanics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .mech-card {
+        background: var(--paper-2);
+        padding: 24px;
+        border-top: 3px solid var(--accent);
+      }
+      .mech-card .num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--accent);
+        letter-spacing: 0.15em;
+        margin-bottom: 12px;
+      }
+      .mech-card .title {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 8px;
+        line-height: 1.2;
+      }
+      .mech-card .desc {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      /* ====== PRICING ====== */
+      .pricing-compare {
+        display: grid;
+        grid-template-columns: 1fr 80px 2fr;
+        gap: 24px;
+        align-items: stretch;
+        margin-top: 24px;
+      }
+      .pricing-old {
+        background: var(--paper-2);
+        border: 1px solid var(--rule);
+        padding: 32px;
+        position: relative;
+      }
+      .pricing-old::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 8%;
+        right: 8%;
+        height: 3px;
+        background: var(--accent);
+        transform: rotate(-8deg);
+      }
+      .pricing-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fraunces", serif;
+        font-size: 48px;
+        color: var(--accent);
+        font-weight: 300;
+      }
+      .pricing-new {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .tier {
+        background: white;
+        border: 1px solid var(--rule);
+        padding: 24px 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      .tier.featured {
+        background: var(--ink);
+        color: var(--paper);
+        border-color: var(--ink);
+      }
+      .tier .tier-name {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .tier.featured .tier-name {
+        color: var(--highlight);
+      }
+      .tier .tier-price {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 48px;
+        letter-spacing: -0.04em;
+        line-height: 1;
+      }
+      .tier .tier-price small {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--muted);
+        display: block;
+        margin-top: 4px;
+      }
+      .tier.featured .tier-price small {
+        color: var(--paper-2);
+      }
+
+      .pricing-old .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+      .pricing-old .price {
+        font-family: "Fraunces", serif;
+        font-size: 36px;
+        font-weight: 700;
+      }
+      .pricing-old .price small {
+        display: block;
+        font-size: 13px;
+        color: var(--muted);
+        font-weight: 400;
+      }
+
+      .anchor-box {
+        background: var(--accent-2);
+        color: white;
+        padding: 32px;
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 32px;
+        align-items: center;
+      }
+      .anchor-box .big {
+        font-family: "Fraunces", serif;
+        font-size: 64px;
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+      .anchor-box .big small {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        opacity: 0.8;
+        margin-top: 8px;
+        letter-spacing: 0.05em;
+      }
+      .anchor-box p {
+        font-family: "Fraunces", serif;
+        font-size: 18px;
+        line-height: 1.4;
+        font-style: italic;
+      }
+
+      /* ====== OWNERSHIP TABLE ====== */
+      .ownership {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .own-col {
+        border: 1px solid var(--rule);
+        padding: 32px;
+      }
+      .own-col.mine {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .own-col h4 {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid currentColor;
+      }
+      .own-col.mine h4 {
+        color: var(--highlight);
+      }
+      .own-col ul {
+        list-style: none;
+      }
+      .own-col li {
+        padding: 12px 0;
+        border-bottom: 1px dashed currentColor;
+        font-family: "Fraunces", serif;
+        font-size: 16px;
+        display: flex;
+        gap: 12px;
+      }
+      .own-col li:last-child {
+        border-bottom: none;
+      }
+      .own-col li::before {
+        content: "◆";
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+      .own-col.mine li::before {
+        color: var(--highlight);
+      }
+
+      /* ====== LESSONS ====== */
+      .lessons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .lesson {
+        border: 1px solid var(--rule);
+        padding: 32px;
+        background: var(--paper-2);
+        position: relative;
+      }
+      .lesson .num {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 80px;
+        line-height: 1;
+        color: var(--accent);
+        letter-spacing: -0.05em;
+        margin-bottom: 16px;
+      }
+      .lesson h4 {
+        font-family: "Fraunces", serif;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        line-height: 1.2;
+      }
+      .lesson p {
+        font-size: 15px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      /* ====== TAKEAWAY ====== */
+      .takeaway {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 80px 48px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+      }
+      .takeaway::before {
+        content: '"';
+        position: absolute;
+        top: -40px;
+        left: 24px;
+        font-family: "Fraunces", serif;
+        font-size: 280px;
+        color: var(--accent);
+        line-height: 1;
+      }
+      .takeaway-content {
+        position: relative;
+        z-index: 1;
+        max-width: 880px;
+        margin: 0 auto;
+      }
+      .takeaway-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--highlight);
+        margin-bottom: 24px;
+        text-transform: uppercase;
+      }
+      .takeaway p {
+        font-family: "Fraunces", serif;
+        font-size: 24px;
+        line-height: 1.4;
+        margin-bottom: 24px;
+        font-weight: 400;
+      }
+      .takeaway p strong {
+        color: var(--highlight);
+        font-weight: 600;
+      }
+      .takeaway p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ====== FOOTER ====== */
+      .footer {
+        padding: 48px 0;
+        border-top: 2px solid var(--rule);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      /* ====== RESPONSIVE ====== */
+      @media (max-width: 900px) {
+        .container {
+          padding: 0 20px;
+        }
+        .ribbon-inner {
+          padding: 10px 20px;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+        .hero {
+          padding: 48px 0 40px;
+        }
+        .hero-stats {
+          grid-template-columns: 1fr 1fr;
+        }
+        .hero-stat {
+          border-right: none;
+          border-bottom: 1px solid var(--rule);
+        }
+        .hero-stat:nth-child(even) {
+          border-right: none;
+        }
+        .hero-stat:nth-child(2n + 1) {
+          border-right: 1px solid var(--rule);
+        }
+        .hero-stat:nth-last-child(-n + 2) {
+          border-bottom: none;
+        }
+        .section {
+          padding: 56px 0;
+        }
+        .section-head {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .tldr {
+          grid-template-columns: 1fr;
+          padding: 32px;
+          gap: 32px;
+        }
+        .tldr-text {
+          font-size: 18px;
+        }
+        .metrics-grid {
+          grid-template-columns: 1fr;
+        }
+        .problem-grid,
+        .funnels,
+        .ownership,
+        .lessons {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .pivot-block {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .pivot-marker {
+          font-size: 80px;
+        }
+        .mechanics {
+          grid-template-columns: 1fr;
+        }
+        .pricing-compare {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        .pricing-arrow {
+          transform: rotate(90deg);
+          font-size: 36px;
+        }
+        .pricing-new {
+          grid-template-columns: 1fr;
+        }
+        .anchor-box {
+          grid-template-columns: 1fr;
+          padding: 24px;
+          gap: 16px;
+          text-align: center;
+        }
+        .anchor-box .big {
+          font-size: 48px;
+        }
+        .takeaway {
+          padding: 56px 24px;
+        }
+        .takeaway p {
+          font-size: 18px;
+        }
+        .takeaway::before {
+          font-size: 180px;
+          top: -24px;
+        }
+        .metric-flow {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          text-align: center;
+        }
+        .metric-arrow {
+          transform: rotate(90deg);
+        }
+      }
+
+      /* ====== SUBTLE ENTRY ANIMATIONS ====== */
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero h1,
+      .hero-sub,
+      .hero-stats,
+      .hero-meta {
+        animation: rise 0.8s ease-out backwards;
+      }
+      .hero-meta {
+        animation-delay: 0.05s;
+      }
+      .hero h1 {
+        animation-delay: 0.1s;
+      }
+      .hero-sub {
+        animation-delay: 0.25s;
+      }
+      .hero-stats {
+        animation-delay: 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== RIBBON ===== -->
+    <div class="ribbon">
+      <div class="ribbon-inner">
+        <span>Case Study № 01 / 02</span>
+        <span>Planet Smart City × Pune</span>
+        <span>9-month GTM rebuild</span>
+      </div>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+      <div class="container">
+        <div class="hero-meta">
+          <span><a href="index.html">← Back to Index</a></span>
+          <span><span class="dot"></span>Product Marketing Manager</span>
+          <span>Planet SIM · IoT Water Mgmt</span>
+          <span>B2B SaaS · India</span>
+        </div>
+        <h1>
+          We <span class="strike">launched</span>
+          <span class="accent">re-launched</span> a product nobody knew they
+          needed
+          <span class="serif" style="font-style: italic; font-weight: 400"
+            >— and 4×'d conversion in 9 months.</span
+          >
+        </h1>
+        <p class="hero-sub">
+          Conventional B2B SaaS GTM converted at 10% lead-to-customer with CAC
+          that didn't pencil. Two pivots — a 15-day on-site experiential trial
+          and a per-flat SaaS pricing model — flipped the funnel. This is what a
+          positioning, pricing, and motion rebuild looks like in numbers.
+        </p>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="label">Lead → Customer</div>
+            <div class="num green">+400%</div>
+            <div class="sub">10% → 50%</div>
+          </div>
+          <div class="hero-stat">
+            <div class="label">CAC</div>
+            <div class="num red">−80%</div>
+            <div class="sub">₹12,558 → ₹2,379</div>
+          </div>
+          <div class="hero-stat">
+            <div class="label">Sales Cycle</div>
+            <div class="num green">−37%</div>
+            <div class="sub">63d → 40d</div>
+          </div>
+          <div class="hero-stat">
+            <div class="label">Paid Churn</div>
+            <div class="num">0%</div>
+            <div class="sub">held flat through scale</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== TL;DR ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 01 / Summary</div>
+          <h2 class="section-title">
+            The product worked. The <em>motion</em> didn't.
+          </h2>
+        </div>
+
+        <div class="tldr">
+          <div class="tldr-text">
+            We launched an IoT water platform into a market that
+            <strong>didn't believe it had a problem</strong>. Six months of
+            textbook B2B SaaS GTM produced a 10% lead-to-customer rate. Two
+            pivots fixed it. Nine months later, conversion was
+            <strong>50%</strong>, CAC had dropped <strong>80%</strong>, paid
+            churn stayed <strong>flat at 0%</strong>, and 30% of customers
+            <strong>upgraded organically</strong>. We took the same blueprint
+            into 4 more metro cities.
+          </div>
+          <div class="tldr-pivots">
+            <div class="pivot-tag">
+              <span>Pivot 01</span> &nbsp;·&nbsp; 15-day on-site trial replaces
+              the demo
+            </div>
+            <div class="pivot-tag">
+              <span>Pivot 02</span> &nbsp;·&nbsp; Per-flat SaaS pricing replaces
+              per-sensor
+            </div>
+            <div class="pivot-tag">
+              <span>Result</span> &nbsp;·&nbsp; Blueprint scaled to 4 additional
+              cities
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== METRICS ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 02 / The Numbers</div>
+          <h2 class="section-title">
+            Every stage of the funnel — <em>before & after.</em>
+          </h2>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="label">MQL → SQL</div>
+            <div class="metric-flow">
+              <div class="metric-before">40%</div>
+              <div class="metric-arrow">▶</div>
+              <div class="metric-after">90%</div>
+              <div class="metric-change green">+125%</div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="label">Demo → Paid Customer</div>
+            <div class="metric-flow">
+              <div class="metric-before">30%</div>
+              <div class="metric-arrow">▶</div>
+              <div class="metric-after">80%</div>
+              <div class="metric-change green">+167%</div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="label">Lead → Customer</div>
+            <div class="metric-flow">
+              <div class="metric-before">10%</div>
+              <div class="metric-arrow">▶</div>
+              <div class="metric-after">50%</div>
+              <div class="metric-change green">+400%</div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="label">Sales Cycle</div>
+            <div class="metric-flow">
+              <div class="metric-before">63d</div>
+              <div class="metric-arrow">▶</div>
+              <div class="metric-after">40d</div>
+              <div class="metric-change green">−37%</div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="label">CAC</div>
+            <div class="metric-flow">
+              <div class="metric-before">₹12,558</div>
+              <div class="metric-arrow">▶</div>
+              <div class="metric-after">₹2,379</div>
+              <div class="metric-change green">−80%</div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="label">Organic Upsell to Higher Tier</div>
+            <div class="metric-flow">
+              <div class="metric-before">n/a</div>
+              <div class="metric-arrow">▶</div>
+              <div class="metric-after">30%</div>
+              <div class="metric-change green">NEW</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROBLEM ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 03 / The Problem</div>
+          <h2 class="section-title">
+            Two buyers. One product. Both <em>stuck.</em>
+          </h2>
+        </div>
+
+        <div class="problem-grid">
+          <div>
+            <p style="font-size: 18px; margin-bottom: 24px; max-width: 560px">
+              The buyer set was split. Same product, two very different sales
+              motions, both stuck.
+            </p>
+            <div class="buyer-split">
+              <div class="buyer-card">
+                <div class="icon">A</div>
+                <div class="name">Enterprise Property Mgmt</div>
+                <div class="desc">
+                  Bought centrally, rolled across portfolios of residential
+                  complexes.
+                </div>
+              </div>
+              <div class="buyer-card">
+                <div class="icon">B</div>
+                <div class="name">Housing Society Committees</div>
+                <div class="desc">
+                  Facility managers buying for a single complex.
+                </div>
+              </div>
+            </div>
+
+            <p
+              style="
+                font-size: 15px;
+                color: var(--muted);
+                margin-top: 24px;
+                max-width: 560px;
+              "
+            >
+              The product itself: sensors on water tanks, real-time levels and
+              pump status on a mobile app, predictive control to prevent
+              shortages and overflows. The status quo? A security guard climbing
+              tanks with a measuring stick.
+            </p>
+          </div>
+
+          <div class="callout">
+            Indian residential water management in 2022 was, quite literally,
+            operating like it was 1995.
+            <span class="small">— Field observation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY GTM FAILED ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 04 / The Diagnosis</div>
+          <h2 class="section-title">
+            It wasn't a product problem. It was a <em>belief problem.</em>
+          </h2>
+        </div>
+
+        <p style="font-size: 18px; max-width: 780px; margin-bottom: 32px">
+          We started with the textbook B2B SaaS funnel: paid ads → MQL → SQL →
+          online demo → sales call → close. The drop-off pattern was specific
+          and informative.
+        </p>
+
+        <div class="funnels">
+          <div class="funnel-box before">
+            <div class="funnel-label">▼ Before · Conventional GTM</div>
+            <div class="funnel-headline">
+              Demo-led, decking the buyer to death.
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">01</span
+              ><span class="step-name">Paid Ads</span>
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">02</span
+              ><span class="step-name">MQL → SQL</span
+              ><span class="step-rate">40%</span>
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">03</span
+              ><span class="step-name">Online Demo</span>
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">04</span
+              ><span class="step-name">Demo → Paid</span
+              ><span class="step-rate">30%</span>
+            </div>
+            <div class="funnel-result">
+              <span class="label">End-to-end</span>
+              <span class="value">10%</span>
+            </div>
+          </div>
+
+          <div class="funnel-box after">
+            <div class="funnel-label">▲ After · Experiential GTM</div>
+            <div class="funnel-headline">
+              Trial-led, buyer surfaces the pain.
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">01</span
+              ><span class="step-name">Paid Ads</span>
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">02</span
+              ><span class="step-name">MQL → SQL</span
+              ><span class="step-rate">90%</span>
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">03</span
+              ><span class="step-name">15-Day On-Site Trial</span>
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">04</span
+              ><span class="step-name">Trial → Paid</span
+              ><span class="step-rate">80%</span>
+            </div>
+            <div class="funnel-result">
+              <span class="label">End-to-end</span>
+              <span class="value">50%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top: 48px">
+          Buyers had spent careers tolerating poor water management. They had
+          built workarounds. They had normalised the inefficiency. A slick app
+          on Zoom looked like a "nice to have" — not a fix for real, current
+          pain.
+          <span class="small"
+            >— Frameworks: April Dunford on positioning · Loss aversion >
+            novelty appeal</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PIVOT 1 ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 05 / Pivot 01</div>
+          <h2 class="section-title">Touch. Feel. <em>Convert.</em></h2>
+        </div>
+
+        <div class="pivot-block">
+          <div class="pivot-marker">
+            01
+            <span>Experiential GTM</span>
+          </div>
+          <div class="pivot-content">
+            <span class="pivot-tag-inline"
+              >▼ Replace the online demo with a 15-day on-site trial</span
+            >
+            <h3>Stop showing the product. Start letting it show itself.</h3>
+            <p>
+              Within 15 days of every successful trial, the same chain reaction
+              kicked off. The facility manager would discover something they
+              hadn't known. They'd surface it in a committee meeting. The
+              committee would ask why the rest of the property wasn't on the
+              system.
+              <strong
+                >The buying conversation flipped from us pitching to them
+                asking.</strong
+              >
+            </p>
+
+            <div class="mechanics">
+              <div class="mech-card">
+                <div class="num">MECHANIC 01</div>
+                <div class="title">Single-tower install</div>
+                <div class="desc">
+                  Not the whole society. Limited risk for them, limited install
+                  cost for us.
+                </div>
+              </div>
+              <div class="mech-card">
+                <div class="num">MECHANIC 02</div>
+                <div class="title">3 named users</div>
+                <div class="desc">
+                  Full app access for the facility manager + two committee
+                  members.
+                </div>
+              </div>
+              <div class="mech-card">
+                <div class="num">MECHANIC 03</div>
+                <div class="title">Real water data</div>
+                <div class="desc">
+                  Their tanks. Their consumption. Their anomalies. No sandbox
+                  demo.
+                </div>
+              </div>
+            </div>
+
+            <div
+              style="
+                margin-top: 32px;
+                padding: 24px;
+                background: var(--paper-2);
+                border-left: 4px solid var(--accent-2);
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  letter-spacing: 0.15em;
+                  text-transform: uppercase;
+                  color: var(--muted);
+                  margin-bottom: 8px;
+                "
+              >
+                What buyers discovered in 15 days
+              </div>
+              <div
+                style="
+                  font-family: &quot;Fraunces&quot;, serif;
+                  font-size: 18px;
+                  line-height: 1.4;
+                "
+              >
+                "A specific tower had a hidden leak." · "Pumps were running 40%
+                longer than needed." · "Peak consumption was 3 hours later than
+                we'd assumed."
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PIVOT 2 ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 06 / Pivot 02</div>
+          <h2 class="section-title">
+            Price how the buyer <em>actually budgets.</em>
+          </h2>
+        </div>
+
+        <div class="pivot-block">
+          <div class="pivot-marker">
+            02
+            <span>Pricing rebuild</span>
+          </div>
+          <div class="pivot-content">
+            <span class="pivot-tag-inline"
+              >▼ Replace per-sensor hardware pricing with per-flat SaaS</span
+            >
+            <h3>Sensors are our problem. "Per flat per month" is theirs.</h3>
+            <p>
+              The original pricing was hardware-style: ₹9,000 per sensor up
+              front + maintenance. Logical from a unit economics standpoint. A
+              disaster from a sales standpoint. Every conversation became a
+              negotiation over sensor count. We were positioned as a hardware
+              vendor, not a SaaS platform.
+            </p>
+            <p style="font-style: italic; color: var(--muted)">
+              Committee members didn't think in "sensors" or "towers." They
+              thought in "per flat per month" — the unit of accounting in an
+              Indian residential society, used for maintenance, security,
+              cleaning.
+            </p>
+
+            <div class="pricing-compare">
+              <div class="pricing-old">
+                <div class="label">▼ OLD · Hardware-style</div>
+                <div class="price">
+                  ₹9,000
+                  <small>per sensor + maintenance fee</small>
+                </div>
+              </div>
+              <div class="pricing-arrow">→</div>
+              <div class="pricing-new">
+                <div class="tier">
+                  <div class="tier-name">Essential</div>
+                  <div class="tier-price">
+                    ₹49<small>per flat / month</small>
+                  </div>
+                </div>
+                <div class="tier featured">
+                  <div class="tier-name">Advanced</div>
+                  <div class="tier-price">
+                    ₹69<small>per flat / month</small>
+                  </div>
+                </div>
+                <div class="tier">
+                  <div class="tier-name">Complete</div>
+                  <div class="tier-price">
+                    ₹99<small>per flat / month</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="anchor-box">
+              <div class="big">
+                1–3%
+                <small>of existing per-flat maintenance</small>
+              </div>
+              <p>
+                In societies where monthly maintenance was already ₹3,000–₹7,000
+                per flat, our pricing read as an addition to an existing line
+                item — not a new category of spend. Sales conversations stopped
+                being negotiations. They became tier selections.
+              </p>
+            </div>
+
+            <div
+              style="
+                margin-top: 24px;
+                padding: 20px;
+                background: var(--ink);
+                color: var(--paper);
+                border-radius: 4px;
+                display: flex;
+                gap: 24px;
+                align-items: center;
+                flex-wrap: wrap;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  letter-spacing: 0.15em;
+                  text-transform: uppercase;
+                  color: var(--highlight);
+                "
+              >
+                Worked example
+              </div>
+              <div
+                style="
+                  font-family: &quot;Fraunces&quot;, serif;
+                  font-size: 18px;
+                  flex: 1;
+                  min-width: 240px;
+                "
+              >
+                Essential plan × 120-flat society =
+                <strong style="color: var(--highlight)">₹70,560 ARR</strong>.
+                Materially higher than the original sensor-based deal — and
+                predictable year over year.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OWNERSHIP ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 07 / Scope</div>
+          <h2 class="section-title">
+            What I owned vs. what the <em>team owned.</em>
+          </h2>
+        </div>
+
+        <p
+          style="
+            font-size: 17px;
+            max-width: 720px;
+            margin-bottom: 32px;
+            color: var(--muted);
+          "
+        >
+          PMM is a connective tissue role. Being precise here matters. I didn't
+          write code, install sensors, or sign deals. I designed the GTM motion
+          the team then ran.
+        </p>
+
+        <div class="ownership">
+          <div class="own-col mine">
+            <h4>◆ Mine (PMM)</h4>
+            <ul>
+              <li>Positioning & messaging architecture</li>
+              <li>Trial-as-GTM-motion proposal</li>
+              <li>Per-flat pricing model & tier design</li>
+              <li>
+                Sales enablement: battlecards, objection guides, ROI calculator
+              </li>
+              <li>Win/loss interview program</li>
+              <li>
+                Cross-functional alignment with Product (trial UX) & Sales
+                (cadence)
+              </li>
+            </ul>
+          </div>
+          <div class="own-col">
+            <h4>◇ Theirs</h4>
+            <ul>
+              <li>
+                <strong>Product:</strong> Built trial provisioning flow +
+                multi-tenant isolation for single-tower trials
+              </li>
+              <li><strong>Sales:</strong> Executed the new motion</li>
+              <li>
+                <strong>Customer Success:</strong> Owned trial-to-paid handoff
+              </li>
+              <li>
+                <strong>Finance:</strong> Signed off on unit economics for new
+                pricing
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LESSONS ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 08 / Hindsight</div>
+          <h2 class="section-title">What I'd do <em>differently.</em></h2>
+        </div>
+
+        <div class="lessons">
+          <div class="lesson">
+            <div class="num">01</div>
+            <h4>Run a real win/loss program from week one.</h4>
+            <p>
+              We started one in month four. The signal from the first ten
+              interviews was so strong it would have shortcut at least two
+              months of guessing. I now treat structured win/loss as a day-one
+              deliverable for any PMM engagement.
+            </p>
+          </div>
+          <div class="lesson">
+            <div class="num">02</div>
+            <h4>Instrument the trial harder.</h4>
+            <p>
+              We measured trial-to-paid but lacked clean cohort data on which
+              in-trial behaviours predicted conversion. If I'd known on day
+              three that a committee member hadn't logged in, I could have
+              triggered a CS play. We caught some of this manually. It should
+              have been a system.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TAKEAWAY ===== -->
+    <section class="section" style="border-bottom: none">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 09 / The Takeaway</div>
+          <h2 class="section-title">For product marketers reading this.</h2>
+        </div>
+
+        <div class="takeaway">
+          <div class="takeaway-content">
+            <div class="takeaway-tag">// PMM principle</div>
+            <p>
+              The mistake we made for six months was assuming the funnel was
+              broken because <em>the funnel</em> was broken. The funnel was
+              broken because we were running the
+              <strong>wrong motion for the buyer's actual psychology.</strong>
+            </p>
+            <p>
+              When the buyer doesn't believe the problem exists at the level the
+              product solves, online demos and feature decks make the problem
+              worse, not better. The product has to
+              <strong>demonstrate itself</strong> in the buyer's environment, on
+              the buyer's data, before the buying conversation can become
+              productive.
+            </p>
+            <p>
+              And the pricing has to map to the
+              <strong>buyer's mental model</strong> of how they spend money —
+              not to your cost structure.
+            </p>
+            <p
+              style="
+                font-size: 18px;
+                padding-top: 16px;
+                border-top: 1px solid rgba(244, 239, 230, 0.2);
+              "
+            >
+              Both of those are <strong>PMM problems</strong>. Not Sales
+              problems. Not Product problems. That's the reason this story is
+              here.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 16px;
+        "
+      >
+        <span>Sourav Ghosh · Product Marketing</span>
+        <span
+          >Companion case study: AI-first sales enablement (90d → 45d) →</span
+        >
+        <span>Case 01 / 02</span>
+      </div>
+    </footer>
+  </body>
+</html>
