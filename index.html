@@ -148,7 +148,7 @@
       .hero h1 {
         font-family: "Fraunces", serif;
         font-weight: 800;
-        font-size: clamp(48px, 8vw, 120px);
+        font-size: clamp(48px, 8vw, 100px);
         line-height: 0.92;
         letter-spacing: -0.035em;
         margin-bottom: 32px;
@@ -389,6 +389,9 @@
       .case-stat {
         padding: 16px 12px;
         border-right: 1px solid var(--rule);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
       .case-stat:last-child {
         border-right: none;
@@ -408,11 +411,29 @@
         line-height: 1;
         letter-spacing: -0.03em;
       }
+      /* New CSS classes for Case 02 custom sizing */
+      .case-stat .num-medium {
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+      .case-stat .num-text {
+        font-family: "Inter Tight", sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 1.3;
+        color: var(--ink);
+      }
       .case-stat .num.green {
         color: var(--accent-2);
       }
       .case-stat .num.red {
         color: var(--accent);
+      }
+      .case-stat .num-medium.green {
+        color: var(--accent-2);
       }
       .case-summary {
         font-size: 15px;
@@ -517,7 +538,7 @@
         margin-right: 6px;
       }
 
-      /* ====== CAPABILITIES ====== */
+      /* ====== CAPABILITIES & AI STACK ====== */
       .cap-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -571,7 +592,38 @@
         border-color: var(--ink);
       }
 
-      /* ====== SIDE PROJECTS ====== */
+      .ai-tools-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 32px;
+      }
+      .ai-tool-box {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 24px;
+        background: var(--paper-2);
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--ink);
+        transition: transform 0.2s;
+      }
+      .ai-tool-box:hover {
+        transform: translateY(-2px);
+        background: var(--paper);
+      }
+      .ai-tool-box img {
+        height: 24px;
+        width: 24px; /* Forces uniform width */
+        object-fit: contain;
+        border-radius: 4px; /* Softens the edges of the square icons */
+      }
+
+      /* ====== AI AGENTS & SIDE PROJECTS ====== */
       .projects {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -583,6 +635,8 @@
         position: relative;
         background: var(--paper);
         transition: background 0.2s;
+        display: flex;
+        flex-direction: column;
       }
       .project:hover {
         background: var(--paper-2);
@@ -629,6 +683,7 @@
         line-height: 1.55;
         color: var(--ink);
         margin-bottom: 20px;
+        flex: 1;
       }
       .project-link {
         font-family: "JetBrains Mono", monospace;
@@ -638,7 +693,36 @@
         color: var(--accent);
         border-bottom: 1px solid var(--accent);
         padding-bottom: 2px;
-        display: inline-block;
+        display: inline-table;
+        margin-top: auto;
+        align-self: flex-start;
+      }
+
+      .comic-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+      }
+      .comic-placeholder {
+        width: 100%;
+        aspect-ratio: 1;
+        background: var(--paper-2);
+        border: 1px dashed var(--muted);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--muted);
+        text-align: center;
+        padding: 16px;
+      }
+      .comic-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       /* ====== STATEMENT BLOCK ====== */
@@ -861,17 +945,20 @@
         </div>
 
         <h1>
-          I build <span class="accent">GTM systems</span> that turn engineering
-          output into <span class="underline">pipeline</span>.
+          Making Complex Tech Marketable Through<span class="accent">
+            Clear Narratives</span
+          >
+          and <span class="underline"> GTM Orchestration</span>.
         </h1>
 
         <p class="hero-sub">
           Most product marketers use AI to write faster. I use it to
-          <strong>build infrastructure</strong>: n8n workflows that route assets
-          into Outreach cadences, NotebookLM briefs that synthesise quarters of
-          buyer signal, and custom Claude skill systems that operate as
-          colleagues. The work lives at the intersection of Product, Sales, and
-          Marketing, and it stays running after I move on.
+          <strong>build infrastructure</strong>: workflows that route assets
+          into Outreach cadences, NotebookLMs that synthesise quarters of buyer
+          signals and ready-to-consume sales wikis, custom Claude skill systems
+          that operate as colleagues, Gems that write in a specific voice...and
+          a lot more. The work lives at the intersection of Product, Sales, and
+          Marketing.
         </p>
 
         <div class="hero-modes">
@@ -884,8 +971,10 @@
           </div>
           <div class="hero-mode">
             <div class="label">// MODE 02</div>
-            <div class="what">Building products of my own.</div>
-            <div class="for">Detour Club (travel) · Circling Back (comic).</div>
+            <div class="what">Shipping AI workflows & creative narratives.</div>
+            <div class="for">
+              Travel engines (Detour Club) · PMM Comics (Circling Back).
+            </div>
           </div>
         </div>
       </div>
@@ -995,7 +1084,7 @@
             <div class="case-stats">
               <div class="case-stat">
                 <div class="label">Cycle</div>
-                <div class="num green">~75d → ~45d</div>
+                <div class="num-medium green">~75d → ~45d</div>
               </div>
               <div class="case-stat">
                 <div class="label">ACV</div>
@@ -1003,7 +1092,9 @@
               </div>
               <div class="case-stat">
                 <div class="label">Stack</div>
-                <div class="num red">n8n+</div>
+                <div class="num-text">
+                  n8n, Outreach, Nooks, Salesforce, Gemini, NotebookLM
+                </div>
               </div>
             </div>
             <p class="case-summary">
@@ -1052,13 +1143,14 @@
               <h3>Planet Smart City</h3>
               <div class="role">Product Marketing Manager · Pune</div>
               <p>
-                Global proptech B2B SaaS. Owned the full PMM function across two
-                motions for SMB and Enterprise. This is where the AI-first
-                approach fully crystallised. I built custom Claude skills for
-                competitive intel and wired Gong data into NotebookLM to
-                automate win/loss synthesis. I didn't just write positioning. I
-                built the n8n workflows that distributed those assets directly
-                into SDR sequences.
+                Global proptech pioneer. Architected the end-to-end PMM
+                infrastructure for their SaaS platform, bridging Product and
+                Revenue teams to drive 400+ enterprise trials and 300+
+                onboardings. I moved past static documentation to build dynamic
+                sales enablement systems that injected context-specific assets
+                into outreach sequences. I leveraged an AI-first stack—using
+                Claude and NotebookLM—to turn unstructured market data into
+                actionable strategy briefs.
               </p>
             </div>
             <div class="tl-highlights">
@@ -1151,105 +1243,210 @@
       </div>
     </section>
 
-    <!-- ===== CAPABILITIES ===== -->
+    <!-- ===== STRATEGIC IMPACT ===== -->
     <section class="section" id="capabilities">
       <div class="container">
         <div class="section-head">
-          <div class="section-num">§ 04 / Capability</div>
+          <div class="section-num">§ 04 / Strategic Impact</div>
           <h2 class="section-title">
-            What I bring to the <em>first 90 days.</em>
+            Deep PMM strategy <em>accelerated</em> by AI-native systems.
           </h2>
         </div>
 
         <div class="cap-grid">
           <div class="cap-block">
-            <h4>Strategy &amp; Positioning</h4>
+            <h4>Category & Market Intelligence</h4>
+            <p
+              style="font-size: 14px; color: var(--muted); margin-bottom: 16px"
+            >
+              Identifying market gaps through rigorous analysis, then scaling
+              that intelligence with automated signal extraction.
+            </p>
             <div class="cap-tags">
-              <span class="cap-tag featured">Go-to-Market Strategy</span>
-              <span class="cap-tag featured">Positioning &amp; Messaging</span>
-              <span class="cap-tag">Pricing &amp; Packaging</span>
-              <span class="cap-tag">Customer Segmentation</span>
-              <span class="cap-tag">Product Launch</span>
-              <span class="cap-tag">Competitive Intel</span>
+              <span class="cap-tag">Category Design</span>
+              <span class="cap-tag">ICP Definition</span>
+              <span class="cap-tag featured">AI-Signal Scraping</span>
+              <span class="cap-tag">Competitive Moat Analysis</span>
+              <span class="cap-tag featured">NotebookLM Synthesis</span>
             </div>
           </div>
+
           <div class="cap-block">
-            <h4>Sales Enablement</h4>
+            <h4>Growth & Technical GTM</h4>
+            <p
+              style="font-size: 14px; color: var(--muted); margin-bottom: 16px"
+            >
+              Designing high-converting outreach architectures that prioritize
+              deliverability and message-market fit.
+            </p>
             <div class="cap-tags">
-              <span class="cap-tag featured"
-                >Battlecards &amp; Objection Guides</span
-              >
-              <span class="cap-tag">Pitch Decks</span>
-              <span class="cap-tag">Win/Loss Programs</span>
-              <span class="cap-tag">Value-based Messaging</span>
-              <span class="cap-tag">SDR Cadence Design</span>
-              <span class="cap-tag">ROI Calculators</span>
+              <span class="cap-tag">Full-Funnel GTM Strategy</span>
+              <span class="cap-tag featured">Apollo/Brevo Infrastructure</span>
+              <span class="cap-tag">Technical DNS/DKIM Config</span>
+              <span class="cap-tag featured">Workflow Automation</span>
+              <span class="cap-tag">Inbox Placement Ops</span>
             </div>
           </div>
+
           <div class="cap-block">
-            <h4>AI &amp; Automation</h4>
+            <h4>Product-Led Revenue Ops</h4>
+            <p
+              style="font-size: 14px; color: var(--muted); margin-bottom: 16px"
+            >
+              Optimizing the user journey from trial to expansion by building
+              the dashboards and internal tools teams actually use.
+            </p>
             <div class="cap-tags">
-              <span class="cap-tag featured">Claude (custom skills)</span>
-              <span class="cap-tag featured">n8n</span>
-              <span class="cap-tag">NotebookLM</span>
-              <span class="cap-tag">Frase AI</span>
-              <span class="cap-tag">Synthesia</span>
-              <span class="cap-tag">Storylane</span>
-              <span class="cap-tag">Zapier · Pabbly</span>
-              <span class="cap-tag">Gemini</span>
+              <span class="cap-tag">CRM Architecture (SME)</span>
+              <span class="cap-tag featured">Prompt-Based Workflows</span>
+              <span class="cap-tag">Executive Dashboards</span>
+              <span class="cap-tag featured">n8n Logic Design</span>
+              <span class="cap-tag">Lifecycle Behavioral Scoring</span>
             </div>
           </div>
+
           <div class="cap-block">
-            <h4>Revenue Stack</h4>
+            <h4>Strategic Enablement</h4>
+            <p
+              style="font-size: 14px; color: var(--muted); margin-bottom: 16px"
+            >
+              Equipping sales and product teams with narratives that win,
+              supported by custom-built AI knowledge bases.
+            </p>
             <div class="cap-tags">
-              <span class="cap-tag featured">HubSpot</span>
-              <span class="cap-tag featured">Outreach</span>
-              <span class="cap-tag featured">Gong</span>
-              <span class="cap-tag">Salesforce MC · Eloqua</span>
-              <span class="cap-tag">ActiveCampaign · Pardot</span>
-              <span class="cap-tag">Apollo · Instantly</span>
-              <span class="cap-tag">Intercom · Zoho CRM</span>
-              <span class="cap-tag">Nooks · Synapsa</span>
-            </div>
-          </div>
-          <div class="cap-block">
-            <h4>Demand &amp; Lifecycle</h4>
-            <div class="cap-tags">
-              <span class="cap-tag featured">Demand Generation</span>
-              <span class="cap-tag featured">Lifecycle Marketing</span>
-              <span class="cap-tag">SEO (Ahrefs, SEMrush, Moz)</span>
-              <span class="cap-tag">Website / CRO</span>
-              <span class="cap-tag">Behavioural Segmentation</span>
-              <span class="cap-tag">Retention Programs</span>
-            </div>
-          </div>
-          <div class="cap-block">
-            <h4>Analytics &amp; Ops</h4>
-            <div class="cap-tags">
-              <span class="cap-tag featured">GA · GTM · Tableau</span>
-              <span class="cap-tag">Data Studio</span>
-              <span class="cap-tag">Performance Tracking</span>
-              <span class="cap-tag">Cross-functional collab</span>
-              <span class="cap-tag">Notion · Jira · Miro</span>
-              <span class="cap-tag">Marketing Analytics</span>
+              <span class="cap-tag">Value Proposition Design</span>
+              <span class="cap-tag featured">Custom Claude Assistants</span>
+              <span class="cap-tag">Sales Playbook Development</span>
+              <span class="cap-tag featured">Automated Battlecards</span>
+              <span class="cap-tag">Pricing & Packaging Strategy</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ===== AI AGENTS & WORKFLOWS ===== -->
+    <section class="section" id="ai-agents" style="background: var(--paper-2)">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 05 / AI Agents &amp; Workflows</div>
+          <h2 class="section-title">
+            Custom tools built on <em>Claude</em> and <em>Gemini.</em>
+          </h2>
+        </div>
+        <p style="font-size: 18px; margin-bottom: 40px; max-width: 800px">
+          A showcase of some specific workflows I have built to automate
+          competitive intel, synthesize product documentation, and operate as
+          marketing co-pilots for the revenue organization.
+        </p>
+        <div class="projects" style="gap: 32px">
+          <div
+            class="project"
+            style="background: var(--paper); border-color: var(--ink)"
+          >
+            <div class="project-tag">// GEMINI / NOTEBOOKLM</div>
+            <h3>Sales Wiki <em>Engine.</em></h3>
+            <p>
+              Replaced static, hard-to-search product documentation with a
+              dynamic NotebookLM knowledge base. It ingests technical specs,
+              release notes, and feature details, translating them into an
+              instantly queryable, conversational wiki. Sales reps pull
+              hyper-specific product answers during active cycles without
+              waiting on PMM.
+            </p>
+          </div>
+
+          <div
+            class="project"
+            style="background: var(--paper); border-color: var(--ink)"
+          >
+            <div class="project-tag">// CLAUDE AGENTS</div>
+            <h3>Live Battlecard <em>System.</em></h3>
+            <p>
+              A customized Claude agent workflow designed to scrape competitor
+              websites and track positioning shifts. The extracted intel is
+              formatted and injected directly into our SDR battlecards and sales
+              feeds. To maintain trust, a human-in-the-loop verification step
+              ensures 100% accuracy before the enablement material hits the
+              floor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== THE AI STACK ====== -->
+    <section
+      class="section"
+      id="ai-stack"
+      style="
+        padding-top: 64px;
+        padding-bottom: 64px;
+        border-bottom: 1px solid var(--rule);
+      "
+    >
+      <div class="container">
+        <h4
+          style="
+            font-family: &quot;JetBrains Mono&quot;, monospace;
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 16px;
+          "
+        >
+          The AI-First Toolbelt
+        </h4>
+        <div class="ai-tools-grid">
+          <div class="ai-tool-box">
+            <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=128" alt="Claude">
+            <span>Claude <span style="font-weight: 400; color: var(--muted)">// Skills, Cowork, Plugins, Design</span></span>
+          </div>
+
+          <div class="ai-tool-box">
+            <img src="https://www.google.com/s2/favicons?domain=notebooklm.google.com&sz=128" alt="NotebookLM">
+            <span>NotebookLM <span style="font-weight: 400; color: var(--muted)">// Source Synthesis, Audio Overviews</span></span>
+          </div>
+
+          <div class="ai-tool-box">
+            <img src="https://www.google.com/s2/favicons?domain=klingai.com&sz=128" alt="Kling">
+            <span>Kling <span style="font-weight: 400; color: var(--muted)">// Video Generation</span></span>
+          </div>
+
+          <div class="ai-tool-box">
+            <img src="https://www.google.com/s2/favicons?domain=scheduler.ai&sz=128" alt="Synapsa">
+            <span>Synapsa <span style="font-weight: 400; color: var(--muted)">// Sales Automation</span></span>
+          </div>
+
+          <div class="ai-tool-box">
+            <img src="https://www.google.com/s2/favicons?domain=storylane.io&sz=128" alt="Storylane">
+            <span>Storylane <span style="font-weight: 400; color: var(--muted)">// Interactive Demos</span></span>
+          </div>
+
+          <div class="ai-tool-box">
+            <img src="https://www.google.com/s2/favicons?domain=synthesia.io&sz=128" alt="Synthesia">
+            <span>Synthesia <span style="font-weight: 400; color: var(--muted)">// AI Video Avatars</span></span>
+          </div>
+
+          <div class="ai-tool-box">
+            <img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=128" alt="Gemini">
+            <span>Gemini <span style="font-weight: 400; color: var(--muted)">// First drafts, wireframes & landing page prototypes</span></span>
+          </div>
+        </div>
+    </section>
+
     <!-- ===== SIDE PROJECTS ===== -->
     <section class="section" id="building">
       <div class="container">
         <div class="section-head">
-          <div class="section-num">§ 05 / Building</div>
+          <div class="section-num">§ 06 / Building</div>
           <h2 class="section-title">
             Two side bets I'm <em>shipping</em> on the side.
           </h2>
         </div>
 
-        <div class="projects">
-          <div class="project">
+        <div class="project">
             <div class="project-status">Pre-launch</div>
             <div class="project-tag">// Travel · Consumer</div>
             <h3>Detour <em>Club.</em></h3>
@@ -1259,13 +1456,30 @@
               look at them again. Currently building the curation engine, the
               database, and the backend.
             </p>
-            <a
-              href="https://trydetourclub.com"
-              target="_blank"
-              class="project-link"
-              >trydetourclub.com →</a
-            >
+
+            <!-- Mobile Screenshots Grid -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; margin-bottom: 24px;">
+              
+              <!-- Screen 1 Placeholder -->
+              <div style="width: 100%; aspect-ratio: 9/19; background: var(--paper-2); border: 1px dashed var(--muted); border-radius: 8px; overflow: hidden;">
+                <img src="https://placehold.co/300x633/ece4d5/6b6357?text=Screen+1" alt="Detour Club Screen 1" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+
+              <!-- Screen 2 Placeholder -->
+              <div style="width: 100%; aspect-ratio: 9/19; background: var(--paper-2); border: 1px dashed var(--muted); border-radius: 8px; overflow: hidden;">
+                <img src="https://placehold.co/300x633/ece4d5/6b6357?text=Screen+2" alt="Detour Club Screen 2" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+
+              <!-- Screen 3 Placeholder -->
+              <div style="width: 100%; aspect-ratio: 9/19; background: var(--paper-2); border: 1px dashed var(--muted); border-radius: 8px; overflow: hidden;">
+                <img src="https://placehold.co/300x633/ece4d5/6b6357?text=Screen+3" alt="Detour Club Screen 3" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+
+            </div>
+
+            <a href="https://trydetourclub.com" target="_blank" class="project-link">trydetourclub.com →</a>
           </div>
+
           <div class="project">
             <div class="project-status live">Live · Weekly</div>
             <div class="project-tag">// Comic · LinkedIn</div>
@@ -1275,6 +1489,20 @@
               marketing like stakeholder politics, founder requests at 11pm, and
               the eternal "can you make this pop?" Author and lead storyteller.
             </p>
+
+            <div class="comic-grid">
+              <div class="comic-placeholder">
+                <!-- REPLACE WITH IMAGE URL LATER -->
+                <!-- Example: <img src="comic-1.jpg" alt="Comic Strip 1"> -->
+                [ Insert Comic Strip 1 ]
+              </div>
+              <div class="comic-placeholder">
+                <!-- REPLACE WITH IMAGE URL LATER -->
+                <!-- Example: <img src="comic-2.jpg" alt="Comic Strip 2"> -->
+                [ Insert Comic Strip 2 ]
+              </div>
+            </div>
+
             <a
               href="https://www.linkedin.com/in/souravghosh1512/"
               target="_blank"
@@ -1290,7 +1518,7 @@
     <section class="section" id="contact" style="border-bottom: none">
       <div class="container">
         <div class="section-head">
-          <div class="section-num">§ 06 / Contact</div>
+          <div class="section-num">§ 07 / Contact</div>
           <h2 class="section-title">Open to <em>full-time PMM roles.</em></h2>
         </div>
 
