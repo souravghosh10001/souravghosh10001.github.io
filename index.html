@@ -1448,38 +1448,42 @@
         </div>
 
         <div class="project">
-            <div class="project-status">Pre-launch</div>
-            <div class="project-tag">// Travel · Consumer</div>
-            <h3>Detour <em>Club.</em></h3>
-            <p>
-              A travel discovery app for people who plan trips by collecting
-              links from blogs, Reddit threads, and YouTube videos and never
-              look at them again. Currently building the curation engine, the
-              database, and the backend.
-            </p>
+  <div class="project-status">Pre-launch</div>
+  
+  <!-- New Flex Wrapper for side-by-side layout -->
+  <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; height: 100%; margin-top: 16px;">
+    
+    <!-- Left Column: Text & CTA -->
+    <div style="flex: 1; min-width: 280px; display: flex; flex-direction: column;">
+      <div class="project-tag">// Travel · Consumer</div>
+      <h3>Detour <em>Club.</em></h3>
+      <p style="margin-bottom: 24px;">
+        A travel discovery app for people who plan trips by collecting links from blogs, Reddit threads, and YouTube videos and never look at them again. Currently building the curation engine, the database, and the backend.
+      </p>
+      <a href="https://trydetourclub.com" target="_blank" class="project-link">trydetourclub.com →</a>
+    </div>
 
-            <!-- Mobile Screenshots Grid -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; margin-bottom: 24px; max-width: 360px;">
-              
-              <!-- Screen 1 Placeholder -->
-              <div style="width: 100%; background: var(--paper-2); border: 1px dashed var(--muted); border-radius: 8px; overflow: hidden; display: flex">
-                <img src="assets/screen1.png" alt="Detour Club Screen 1" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
+    <!-- Right Column: Phone Grid -->
+    <div style="flex: 1; min-width: 260px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 360px; margin: 0 auto;">
+      
+      <!-- Screen 1 -->
+      <div style="width: 100%; background: var(--paper-2); border: 1px dashed var(--muted); border-radius: 8px; overflow: hidden; display: flex;">
+        <img src="assets/screen1.png" alt="Detour Club Screen 1" style="width: 100%; height: auto; object-fit: contain; display: block;">
+      </div>
 
-              <!-- Screen 2 Placeholder -->
-              <div style="width: 100%; background: var(--paper-2); border: 1px dashed var(--muted); border-radius: 8px; overflow: hidden; display: flex;">
-                <img src="assets/screen2.png" alt="Detour Club Screen 2" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
+      <!-- Screen 2 -->
+      <div style="width: 100%; background: var(--paper-2); border: 1px dashed var(--muted); border-radius: 8px; overflow: hidden; display: flex;">
+        <img src="assets/screen2.png" alt="Detour Club Screen 2" style="width: 100%; height: auto; object-fit: contain; display: block;">
+      </div>
 
-              <!-- Screen 3 Placeholder -->
-             <div style="width: 100%; background: var(--paper-2); border: 1px dashed var(--muted); border-radius: 8px; overflow: hidden; display: flex;">
-                <img src="assets/screen3.png" alt="Detour Club Screen 3" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-
-            </div>
-
-            <a href="https://trydetourclub.com" target="_blank" class="project-link">trydetourclub.com →</a>
-          </div>
+      <!-- Screen 3 -->
+      <div style="width: 100%; background: var(--paper-2); border: 1px dashed var(--muted); border-radius: 8px; overflow: hidden; display: flex;">
+        <img src="assets/screen3.png" alt="Detour Club Screen 3" style="width: 100%; height: auto; object-fit: contain; display: block;">
+      </div>
+      
+    </div>
+  </div>
+</div>
 
           <div class="project">
             <div class="project-status live">Live · Weekly</div>
