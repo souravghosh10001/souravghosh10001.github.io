@@ -618,9 +618,9 @@
       }
       .ai-tool-box img {
         height: 24px;
-        width: 24px; /* Forces uniform width */
+        width: 24px;
         object-fit: contain;
-        border-radius: 4px; /* Softens the edges of the square icons */
+        border-radius: 4px;
       }
 
       /* ====== AI AGENTS & SIDE PROJECTS ====== */
@@ -700,30 +700,28 @@
 
       .comic-grid {
         display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 24px;
-  margin-bottom: 24px;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 24px;
+        margin-bottom: 24px;
       }
       .comic-placeholder {
         width: 100%;
-  /* Removed aspect-ratio: 1; to stop forcing a square */
-  background: var(--paper-2);
-  border: 1px dashed var(--muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 11px;
-  color: var(--muted);
-  text-align: center;
-  /* Removed padding so the image goes edge-to-edge if desired */
+        background: var(--paper-2);
+        border: 1px dashed var(--muted);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--muted);
+        text-align: center;
       }
       .comic-placeholder img {
         width: 100%;
-  height: auto; /* Lets the image calculate its own height */
-  object-fit: contain; /* Prevents cropping */
-  display: block; /* Removes the tiny gap below inline images */
+        height: auto;
+        object-fit: contain;
+        display: block;
       }
 
       /* ====== STATEMENT BLOCK ====== */
@@ -841,6 +839,285 @@
         color: var(--highlight);
       }
 
+      /* ====== AI LAB ANIMATION CLASSES ====== */
+      .ai-metric {
+        font-size: 14px;
+        letter-spacing: 0.04em;
+        color: var(--highlight);
+        background: rgba(255,255,255,0.07);
+        border-left: 3px solid var(--highlight);
+        padding: 12px 16px;
+        margin-bottom: 28px;
+        line-height: 1.5;
+      }
+      .ai-metric strong {
+        font-weight: 700;
+        color: var(--highlight);
+      }
+      .ai-see-all-wrap {
+        border-top: 1px solid var(--rule);
+        padding-top: 24px;
+        margin-top: 8px;
+      }
+      
+      .ai-hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 56px;
+        border-radius: 4px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 40px;
+      }
+      .ai-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      .ai-hero-label {
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--highlight);
+        margin-bottom: 18px;
+      }
+      .ai-hero-desc {
+        font-size: 16px;
+        line-height: 1.65;
+        color: rgba(244,239,230,0.75);
+        margin-bottom: 32px;
+        max-width: 480px;
+      }
+      .ai-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--accent);
+        color: var(--paper);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 14px 24px;
+        border-radius: 2px;
+        text-decoration: none;
+        transition: background 0.2s, transform 0.2s;
+      }
+      .ai-cta-btn:hover {
+        background: #c23e16;
+        transform: translateY(-2px);
+      }
+      .ai-cta-arrow {
+        transition: transform 0.2s;
+      }
+      .ai-cta-btn:hover .ai-cta-arrow {
+        transform: translateX(4px);
+      }
+
+      .ai-console {
+        background: #f4efe6;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+      }
+      .ai-console-bar {
+        background: #1f1b16;
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .ai-console-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+      }
+      .ai-console-dot.pulse {
+        animation: pulse 1.8s ease-in-out infinite;
+      }
+      .ai-console-status {
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(244,239,230,0.8);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .ai-console-inner {
+        padding: 20px;
+      }
+      .ai-console-steps {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+      .ai-step-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #ccc;
+        transition: background 0.3s, transform 0.3s;
+        flex-shrink: 0;
+      }
+      .ai-step-dot.active {
+        background: var(--accent);
+        transform: scale(1.4);
+      }
+      .ai-step-text {
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        color: var(--muted);
+        margin-left: 4px;
+        transition: opacity 0.3s;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .ai-flow {
+        display: flex;
+        align-items: center;
+        gap: 0;
+      }
+      .ai-flow-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+      .ai-flow-node {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 9px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-family: "Inter Tight", sans-serif;
+        white-space: nowrap;
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+      .ai-flow-node.input {
+        background: white;
+        border: 1px solid #ddd;
+        color: #555;
+      }
+      .ai-flow-node.input.pulsing {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(233,79,29,0.12);
+      }
+      .ai-flow-connector {
+        flex: 1;
+        position: relative;
+        height: 2px;
+        background: #ddd;
+        margin: 0 8px;
+        overflow: hidden;
+      }
+      .ai-flow-connector.active {
+        background: rgba(233,79,29,0.3);
+      }
+      .ai-flow-dot {
+        position: absolute;
+        top: -3px;
+        left: -8px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+        opacity: 0;
+      }
+      .ai-flow-dot.active {
+        animation: flowDot 0.9s ease-in-out forwards;
+      }
+      @keyframes flowDot {
+        0% { left: 0; opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { left: calc(100% + 8px); opacity: 0; }
+      }
+      .ai-flow-proc {
+        flex-shrink: 0;
+      }
+      .ai-flow-node.proc {
+        background: var(--ink);
+        border: none;
+        color: var(--paper);
+        font-size: 16px;
+        padding: 10px 12px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .ai-flow-node.proc.active {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 6px rgba(233,79,29,0.15);
+      }
+      .ai-flow-output {
+        flex-shrink: 0;
+      }
+      .ai-output-card {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 8px 10px;
+        width: 110px;
+        transition: border-color 0.3s, box-shadow 0.3s, opacity 0.3s;
+        opacity: 0.4;
+      }
+      .ai-output-card.revealed {
+        opacity: 1;
+        border-color: var(--accent);
+        box-shadow: 0 4px 12px rgba(233,79,29,0.12);
+      }
+      .ai-output-title {
+        font-size: 9px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #333;
+        margin-bottom: 6px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .ai-output-lines {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .ai-output-line {
+        height: 4px;
+        background: #e0e0e0;
+        border-radius: 2px;
+        width: 100%;
+      }
+      .ai-output-line.short { width: 65%; }
+      .ai-output-line.medium { width: 80%; }
+      
+      .ai-see-all {
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        border-bottom: 1px solid var(--accent);
+        padding-bottom: 2px;
+        display: inline-block;
+        transition: color 0.2s;
+      }
+      .ai-see-all:hover {
+        color: #c23e16;
+      }
+
       /* ====== RESPONSIVE ====== */
       @media (max-width: 900px) {
         .container {
@@ -915,11 +1192,24 @@
           gap: 16px;
           font-size: 10px;
         }
+        
+        .ai-hero {
+          grid-template-columns: 1fr;
+          padding: 36px 28px;
+          gap: 32px;
+        }
+        .ai-flow {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 8px;
+        }
+        .ai-flow-connector {
+          display: none;
+        }
       }
     </style>
   </head>
   <body>
-    <!-- ===== TOP RIBBON ===== -->
     <div class="ribbon">
       <div class="ribbon-inner">
         <span>SOURAV GHOSH · PRODUCT MARKETING · B2B SaaS</span>
@@ -933,7 +1223,6 @@
       </div>
     </div>
 
-    <!-- ===== HERO ===== -->
     <section class="hero">
       <div class="container">
         <div class="hero-meta">
@@ -965,23 +1254,22 @@
         <div class="hero-modes">
           <div class="hero-mode">
             <div class="label">// MODE 01</div>
-            <div class="what">Senior PMM at SaaS companies.</div>
+            <div class="what">AI-enabled PMM at B2B SaaS companies.</div>
             <div class="for">
               Full-time. Remote-first. AI-infra, dev-tool, vertical SaaS.
             </div>
           </div>
           <div class="hero-mode">
             <div class="label">// MODE 02</div>
-            <div class="what">Shipping AI workflows & creative narratives.</div>
+            <div class="what">Shipping pet projects for continuous learning.</div>
             <div class="for">
-              Travel engines (Detour Club) · PMM Comics (Circling Back).
+              Travel app (Detour Club) · PMM Comics (Circling Back).
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== THE THESIS ===== -->
     <section class="section" id="thesis">
       <div class="container">
         <div class="section-head">
@@ -1023,7 +1311,6 @@
       </div>
     </section>
 
-    <!-- ===== SELECTED WORK ===== -->
     <section class="section" id="work">
       <div class="container">
         <div class="section-head">
@@ -1114,7 +1401,6 @@
       </div>
     </section>
 
-    <!-- ===== STATEMENT ===== -->
     <section class="statement">
       <div class="container">
         <p class="statement-text">
@@ -1124,7 +1410,6 @@
       </div>
     </section>
 
-    <!-- ===== CAREER TIMELINE ===== -->
     <section class="section" id="career">
       <div class="container">
         <div class="section-head">
@@ -1244,7 +1529,6 @@
       </div>
     </section>
 
-    <!-- ===== STRATEGIC IMPACT ===== -->
     <section class="section" id="capabilities">
       <div class="container">
         <div class="section-head">
@@ -1326,13 +1610,12 @@
       </div>
     </section>
 
-    <!-- ===== AI AGENTS & WORKFLOWS ===== -->
     <section class="section" id="ai-agents" style="background: var(--paper-2)">
       <div class="container">
         <div class="section-head">
           <div class="section-num">§ 05 / AI Agents &amp; Workflows</div>
           <h2 class="section-title">
-            Custom tools built on <em>Claude</em> and <em>Gemini.</em>
+            Custom tools built using <em>LLMs</em> and <em>Agentic Frameworks.</em>
           </h2>
         </div>
         <p style="font-size: 18px; margin-bottom: 40px; max-width: 800px">
@@ -1340,43 +1623,71 @@
           competitive intel, synthesize product documentation, and operate as
           marketing co-pilots for the revenue organization.
         </p>
-        <div class="projects" style="gap: 32px">
-          <div
-            class="project"
-            style="background: var(--paper); border-color: var(--ink)"
-          >
-            <div class="project-tag">// GEMINI / NOTEBOOKLM</div>
-            <h3>Sales Wiki <em>Engine.</em></h3>
-            <p>
-              Replaced static, hard-to-search product documentation with a
-              dynamic NotebookLM knowledge base. It ingests technical specs,
-              release notes, and feature details, translating them into an
-              instantly queryable, conversational wiki. Sales reps pull
-              hyper-specific product answers during active cycles without
-              waiting on PMM.
+        
+        <div class="ai-hero">
+          <div class="ai-hero-left">
+            <div class="ai-hero-label mono">// AI-FIRST PRODUCT MARKETER</div>
+            <p class="ai-hero-desc">
+              Most PMMs use AI to write faster. I use it to
+              protect thinking time. I've built n8n workflows, Claude skill systems, and AI pipelines
+              that absorb the repetitive infrastructure work like competitive research, synthesis,
+              enablement materials and launch briefs so the hours that are freed up go to
+              positioning decisions, strategic arguments, and PMM work that actually compounds.
             </p>
+            <div class="ai-metric mono">
+              Hundreds of hours of PMM infrastructure work, <strong>automated and running in production.</strong>
+            </div>
+            <a href="ai-showcase.html" class="ai-cta-btn">
+              See the full AI toolkit <span class="ai-cta-arrow">→</span>
+            </a>
           </div>
 
-          <div
-            class="project"
-            style="background: var(--paper); border-color: var(--ink)"
-          >
-            <div class="project-tag">// CLAUDE AGENTS</div>
-            <h3>Live Battlecard <em>System.</em></h3>
-            <p>
-              A customized Claude agent workflow designed to scrape competitor
-              websites and track positioning shifts. The extracted intel is
-              formatted and injected directly into our SDR battlecards and sales
-              feeds. To maintain trust, a human-in-the-loop verification step
-              ensures 100% accuracy before the enablement material hits the
-              floor.
-            </p>
+          <div class="ai-hero-right">
+            <div class="ai-console">
+              <div class="ai-console-bar">
+                <span class="ai-console-dot pulse"></span>
+                <span class="ai-console-status mono" id="aiToolName">Competitive snapshot</span>
+              </div>
+              <div class="ai-console-inner">
+                <div class="ai-console-steps">
+                  <span class="ai-step-dot active" id="aiDot0"></span>
+                  <span class="ai-step-dot" id="aiDot1"></span>
+                  <span class="ai-step-dot" id="aiDot2"></span>
+                  <span class="ai-step-dot" id="aiDot3"></span>
+                  <span class="ai-step-text mono" id="aiStepText">Monitoring competitor data...</span>
+                </div>
+                <div class="ai-flow">
+                  <div class="ai-flow-inputs" id="aiFlowInputs">
+                    <div class="ai-flow-node input pulsing" data-idx="0">🌐 <span>Websites</span></div>
+                    <div class="ai-flow-node input pulsing" data-idx="1">💰 <span>Pricing</span></div>
+                    <div class="ai-flow-node input pulsing" data-idx="2">⭐ <span>Reviews</span></div>
+                  </div>
+                  <div class="ai-flow-connector" id="aiConnL">
+                    <div class="ai-flow-dot" id="aiDotL"></div>
+                  </div>
+                  <div class="ai-flow-proc">
+                    <div class="ai-flow-node proc" id="aiProc">🤖</div>
+                  </div>
+                  <div class="ai-flow-connector" id="aiConnR">
+                    <div class="ai-flow-dot" id="aiDotR"></div>
+                  </div>
+                  <div class="ai-flow-output">
+                    <div class="ai-output-card" id="aiOutputCard">
+                      <div class="ai-output-title mono" id="aiOutputTitle">Monday Digest</div>
+                      <div class="ai-output-lines">
+                        <div class="ai-output-line"></div>
+                        <div class="ai-output-line short"></div>
+                        <div class="ai-output-line medium"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
     </section>
 
-    <!-- ===== THE AI STACK ====== -->
     <section
       class="section"
       id="ai-stack"
@@ -1397,7 +1708,7 @@
             margin-bottom: 16px;
           "
         >
-          The AI-First Toolbelt
+          The Toolbelt
         </h4>
         <div class="ai-tools-grid">
           <div class="ai-tool-box">
@@ -1435,55 +1746,46 @@
             <span>Gemini <span style="font-weight: 400; color: var(--muted)">// First drafts, wireframes & landing page prototypes</span></span>
           </div>
         </div>
+      </div>
     </section>
 
-    <!-- ===== SIDE PROJECTS ===== -->
     <section class="section" id="building">
       <div class="container">
         <div class="section-head">
           <div class="section-num">§ 06 / Building</div>
           <h2 class="section-title">
-            Two side bets I'm <em>shipping</em> on the side.
+            Two side bets I'm <em>shipping</em> for fun.
           </h2>
         </div>
 
         <div class="project">
-  <div class="project-status">Pre-launch</div>
-  
-  <!-- Increased margin-top to 36px to give the Pre-launch badge room to breathe -->
-  <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; height: 100%; margin-top: 36px;">
-    
-    <!-- Left Column: Text & CTA -->
-    <div style="flex: 1; min-width: 280px; display: flex; flex-direction: column;">
-      <div class="project-tag">// Travel · Consumer</div>
-      <h3>Detour <em>Club.</em></h3>
-      <p style="margin-bottom: 24px;">
-        A travel discovery app for people who plan trips by collecting links from blogs, Reddit threads, and YouTube videos and never look at them again. Currently building the curation engine, the database, and the backend.
-      </p>
-      <a href="https://trydetourclub.com" target="_blank" class="project-link">trydetourclub.com →</a>
-    </div>
+          <div class="project-status">Pre-launch</div>
+          
+          <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; height: 100%; margin-top: 36px;">
+            <div style="flex: 1; min-width: 280px; display: flex; flex-direction: column;">
+              <div class="project-tag">// Travel · Consumer</div>
+              <h3>Detour <em>Club.</em></h3>
+              <p style="margin-bottom: 24px;">
+                A travel discovery app for people who plan trips by collecting links from blogs, Reddit threads, and YouTube videos and never look at them again. Currently building the curation engine, the database, and the backend.
+              </p>
+              <a href="https://trydetourclub.com" target="_blank" class="project-link">trydetourclub.com →</a>
+            </div>
 
-    <!-- Right Column: Phone Grid -->
-    <div style="flex: 1; min-width: 260px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 360px; margin: 0 auto;">
-      
-      <!-- Screen 1: Removed dashed border and background -->
-      <div style="width: 100%; border-radius: 8px; overflow: hidden; display: flex;">
-        <img src="assets/screen1.png" alt="Detour Club Screen 1" style="width: 100%; height: auto; object-fit: contain; display: block;">
-      </div>
+            <div style="flex: 1; min-width: 260px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 360px; margin: 0 auto;">
+              <div style="width: 100%; border-radius: 8px; overflow: hidden; display: flex;">
+                <img src="assets/screen1.png" alt="Detour Club Screen 1" style="width: 100%; height: auto; object-fit: contain; display: block;">
+              </div>
 
-      <!-- Screen 2 -->
-      <div style="width: 100%; border-radius: 8px; overflow: hidden; display: flex;">
-        <img src="assets/screen2.png" alt="Detour Club Screen 2" style="width: 100%; height: auto; object-fit: contain; display: block;">
-      </div>
+              <div style="width: 100%; border-radius: 8px; overflow: hidden; display: flex;">
+                <img src="assets/screen2.png" alt="Detour Club Screen 2" style="width: 100%; height: auto; object-fit: contain; display: block;">
+              </div>
 
-      <!-- Screen 3 -->
-      <div style="width: 100%; border-radius: 8px; overflow: hidden; display: flex;">
-        <img src="assets/screen3.png" alt="Detour Club Screen 3" style="width: 100%; height: auto; object-fit: contain; display: block;">
-      </div>
-      
-    </div>
-  </div>
-</div>
+              <div style="width: 100%; border-radius: 8px; overflow: hidden; display: flex;">
+                <img src="assets/screen3.png" alt="Detour Club Screen 3" style="width: 100%; height: auto; object-fit: contain; display: block;">
+              </div>
+            </div>
+          </div>
+        </div>
 
           <div class="project">
             <div class="project-status live">Live · Weekly</div>
@@ -1497,11 +1799,9 @@
 
             <div class="comic-grid">
               <div class="comic-placeholder">
-                <!-- REPLACE WITH IMAGE URL LATER -->
                 <img src="assets/the-three-wishes.png" alt="Comic Strip 1"> 
               </div>
               <div class="comic-placeholder">
-                <!-- REPLACE WITH IMAGE URL LATER -->
                <img src="assets/the-toddler-pivot.png" alt="Comic Strip 2">
               </div>
             </div>
@@ -1517,17 +1817,16 @@
       </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
     <section class="section" id="contact" style="border-bottom: none">
       <div class="container">
         <div class="section-head">
           <div class="section-num">§ 07 / Contact</div>
-          <h2 class="section-title">Open to <em>full-time PMM roles.</em></h2>
+          <h2 class="section-title">Open to <em>discussing roles and projects.</em></h2>
         </div>
 
         <div class="contact-grid">
           <p class="contact-prose">
-            If you're a SaaS company hiring a senior or principal PMM,
+            If you're a SaaS company looking for an AI-forward senior PMM,
             especially in
             <em>AI infrastructure, dev tools, or vertical SaaS</em>, let's talk.
           </p>
@@ -1561,7 +1860,6 @@
       </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
     <footer class="footer">
       <div class="footer-inner">
         <span>© Sourav Ghosh · Product Marketing</span>
@@ -1569,5 +1867,109 @@
         <span>Index / Portfolio · v3</span>
       </div>
     </footer>
+
+    <script>
+      const AI_PREVIEW_TOOLS = [
+        { name: "Competitive snapshot", proc: "🤖", output: "Monday Digest",
+          inputs: [["🌐", "Websites"], ["💰", "Pricing"], ["⭐", "Reviews"]],
+          steps: ["Monitoring competitor data...", "Agent extracting signals...", "Synthesising themes...", "Delivering Slack digest..."] },
+        { name: "Sales one-pager generator", proc: "⚙️", output: "Sales_One_Pager.pdf",
+          inputs: [["📝", "Intake Form"], ["📊", "CRM Data"]],
+          steps: ["Reading product brief...", "Extracting key value props...", "Formatting to brand guidelines...", "Sales-ready PDF generated..."] },
+        { name: "ICP interview synthesiser", proc: "🧠", output: "ICP Themes",
+          inputs: [["🎙", "Transcripts"], ["💬", "Notes"]],
+          steps: ["Ingesting 50 transcripts...", "Clustering insight themes...", "Identifying core objections...", "Surfacing verbatims..."] },
+        { name: "Objection handler", proc: "🛡", output: "Recommended Responses",
+          inputs: [["💬", "Slack Ping"], ["🎙", "Gong Data"]],
+          steps: ["Receiving AE query...", "Searching Gong history...", "Ranking best responses...", "Replying in thread..."] },
+        { name: "Win-loss analyser", proc: "🔍", output: "Win/Loss Dashboard",
+          inputs: [["📊", "CRM Data"], ["📋", "Surveys"]],
+          steps: ["Ingesting 12mo deal data...", "Cross-referencing exit surveys...", "Mapping win/loss patterns...", "Updating insights dashboard..."] },
+      ];
+
+      let aiToolIdx = 0, aiStep = 0;
+
+      function setAiTool(tool) {
+        const nameEl = document.getElementById("aiToolName");
+        const inputsEl = document.getElementById("aiFlowInputs");
+        const procEl = document.getElementById("aiProc");
+        const outputTitleEl = document.getElementById("aiOutputTitle");
+        if (!nameEl) return;
+        nameEl.textContent = tool.name;
+        procEl.textContent = tool.proc;
+        outputTitleEl.textContent = tool.output;
+        inputsEl.innerHTML = tool.inputs.map(([icon, label]) =>
+          `<div class="ai-flow-node input" data-pulsing="false">${icon} <span>${label}</span></div>`
+        ).join("");
+      }
+
+      function updateAiStep() {
+        const tool = AI_PREVIEW_TOOLS[aiToolIdx];
+        const textEl = document.getElementById("aiStepText");
+        const outputCard = document.getElementById("aiOutputCard");
+        const dotL = document.getElementById("aiDotL");
+        const dotR = document.getElementById("aiDotR");
+        const connL = document.getElementById("aiConnL");
+        const connR = document.getElementById("aiConnR");
+        const procEl = document.getElementById("aiProc");
+        const inputNodes = document.querySelectorAll("#aiFlowInputs .ai-flow-node");
+        if (!textEl) return;
+
+        // Update step dots
+        for (let i = 0; i < 4; i++) {
+          const dot = document.getElementById("aiDot" + i);
+          if (dot) dot.classList.toggle("active", i === aiStep);
+        }
+
+        // Update step text
+        textEl.style.opacity = 0;
+        setTimeout(() => {
+          textEl.textContent = tool.steps[aiStep];
+          textEl.style.opacity = 1;
+        }, 200);
+
+        // Input nodes pulse on step 0
+        inputNodes.forEach(n => n.classList.toggle("pulsing", aiStep === 0));
+
+        // Left connector animation
+        if (aiStep === 1) {
+          connL.classList.add("active");
+          dotL.classList.remove("active");
+          void dotL.offsetWidth; // reset animation
+          dotL.classList.add("active");
+        } else {
+          connL.classList.remove("active");
+          dotL.classList.remove("active");
+        }
+
+        // Processor pulse
+        procEl.classList.toggle("active", aiStep === 2);
+
+        // Right connector animation
+        if (aiStep === 2) {
+          connR.classList.add("active");
+          dotR.classList.remove("active");
+          void dotR.offsetWidth;
+          dotR.classList.add("active");
+        } else {
+          connR.classList.remove("active");
+          dotR.classList.remove("active");
+        }
+
+        // Output reveal
+        if (outputCard) outputCard.classList.toggle("revealed", aiStep === 3);
+
+        // Advance step
+        aiStep = (aiStep + 1) % 4;
+        if (aiStep === 0) {
+          aiToolIdx = (aiToolIdx + 1) % AI_PREVIEW_TOOLS.length;
+          setAiTool(AI_PREVIEW_TOOLS[aiToolIdx]);
+        }
+      }
+
+      // Start the animation after page loads
+      setAiTool(AI_PREVIEW_TOOLS[0]);
+      setInterval(updateAiStep, 2600);
+    </script>
   </body>
 </html>
