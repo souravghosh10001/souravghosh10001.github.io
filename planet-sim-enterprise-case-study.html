@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Enterprise GTM Case Study — Sourav Ghosh</title>
+    <title>Planet SIM GTM Case Study — Sourav Ghosh</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +20,6 @@
         --muted: #6b6357;
         --rule: #1f1b16;
         --highlight: #ffe066;
-        --wire: #e94f1d;
       }
 
       * {
@@ -125,28 +124,24 @@
         font-style: italic;
         font-weight: 400;
       }
-      .hero h1 .number {
-        display: inline-block;
-        font-family: "Fraunces", serif;
-        font-style: italic;
-        color: var(--accent);
+      .hero h1 .strike {
         position: relative;
+        display: inline-block;
       }
-      .hero h1 .number::after {
+      .hero h1 .strike::after {
         content: "";
         position: absolute;
-        bottom: 8px;
         left: 0;
         right: 0;
-        height: 8px;
-        background: var(--highlight);
-        z-index: -1;
-        opacity: 0.6;
+        top: 52%;
+        height: 6px;
+        background: var(--accent);
+        transform: rotate(-1deg);
       }
 
       .hero-sub {
         font-size: 19px;
-        max-width: 760px;
+        max-width: 720px;
         color: var(--muted);
         margin-bottom: 48px;
         line-height: 1.5;
@@ -194,7 +189,7 @@
         margin-top: 6px;
       }
 
-      /* ====== SECTIONS ====== */
+      /* ====== SECTION HEADER ====== */
       .section {
         padding: 80px 0;
         border-bottom: 1px solid var(--rule);
@@ -228,7 +223,7 @@
         font-weight: 400;
       }
 
-      /* ====== TLDR ====== */
+      /* ====== TLDR CARD ====== */
       .tldr {
         background: var(--ink);
         color: var(--paper);
@@ -279,519 +274,7 @@
         color: var(--highlight);
       }
 
-      /* ====== COMPANION CALLOUT ====== */
-      .companion {
-        background: var(--paper-2);
-        border: 1px solid var(--rule);
-        border-left: 4px solid var(--accent);
-        padding: 20px 24px;
-        margin-bottom: 48px;
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .companion .label {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--accent);
-        flex-shrink: 0;
-      }
-      .companion .body {
-        font-family: "Fraunces", serif;
-        font-size: 17px;
-        font-style: italic;
-        flex: 1;
-        min-width: 280px;
-      }
-
-      /* ====== SETUP / PRODUCTS ====== */
-      .products {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-        margin-bottom: 32px;
-      }
-      .product-card {
-        background: white;
-        border: 1px solid var(--rule);
-        padding: 28px;
-        position: relative;
-      }
-      .product-card .tag {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 10px;
-        letter-spacing: 0.2em;
-        color: var(--accent);
-        margin-bottom: 12px;
-      }
-      .product-card h3 {
-        font-family: "Fraunces", serif;
-        font-weight: 700;
-        font-size: 28px;
-        margin-bottom: 8px;
-        letter-spacing: -0.02em;
-      }
-      .product-card p {
-        font-size: 14px;
-        color: var(--muted);
-        line-height: 1.5;
-      }
-
-      .team-strip {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0;
-        border: 1px solid var(--rule);
-        background: var(--ink);
-        color: var(--paper);
-      }
-      .team-strip > div {
-        padding: 24px;
-        border-right: 1px solid rgba(244, 239, 230, 0.15);
-      }
-      .team-strip > div:last-child {
-        border-right: none;
-      }
-      .team-strip .label {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 10px;
-        letter-spacing: 0.2em;
-        color: var(--highlight);
-        margin-bottom: 8px;
-      }
-      .team-strip .big {
-        font-family: "Fraunces", serif;
-        font-weight: 800;
-        font-size: 42px;
-        line-height: 1;
-        letter-spacing: -0.03em;
-      }
-      .team-strip .desc {
-        font-size: 13px;
-        color: rgba(244, 239, 230, 0.7);
-        margin-top: 8px;
-      }
-
-      /* ====== FUNNEL TIMELINE ====== */
-      .timeline {
-        margin-top: 32px;
-        display: grid;
-        gap: 0;
-      }
-      .timeline-row {
-        display: grid;
-        grid-template-columns: 60px 1fr 200px 100px;
-        align-items: center;
-        padding: 18px 0;
-        border-bottom: 1px solid var(--rule);
-        gap: 24px;
-      }
-      .timeline-row:first-child {
-        border-top: 1px solid var(--rule);
-      }
-      .timeline-row .step {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        color: var(--accent);
-        letter-spacing: 0.15em;
-      }
-      .timeline-row .name {
-        font-family: "Fraunces", serif;
-        font-size: 18px;
-        font-weight: 500;
-      }
-      .timeline-row .bar {
-        height: 8px;
-        background: var(--paper-2);
-        position: relative;
-        border: 1px solid var(--rule);
-      }
-      .timeline-row .bar-fill {
-        height: 100%;
-        background: var(--accent);
-      }
-      .timeline-row .bar.bottleneck .bar-fill {
-        background: var(--ink);
-      }
-      .timeline-row .bar.bottleneck::after {
-        content: "⚠ BOTTLENECK";
-        position: absolute;
-        top: -22px;
-        right: 0;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 10px;
-        letter-spacing: 0.15em;
-        color: var(--accent);
-        font-weight: 700;
-      }
-      .timeline-row .duration {
-        font-family: "JetBrains Mono", monospace;
-        font-weight: 700;
-        font-size: 14px;
-        text-align: right;
-      }
-      .timeline-total {
-        margin-top: 24px;
-        padding: 20px 24px;
-        background: var(--ink);
-        color: var(--paper);
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        flex-wrap: wrap;
-        gap: 16px;
-      }
-      .timeline-total .label {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        letter-spacing: 0.2em;
-        color: var(--highlight);
-      }
-      .timeline-total .value {
-        font-family: "Fraunces", serif;
-        font-size: 48px;
-        font-weight: 800;
-        letter-spacing: -0.03em;
-      }
-      .timeline-total .value small {
-        font-size: 14px;
-        color: rgba(244, 239, 230, 0.6);
-        font-weight: 400;
-        margin-left: 12px;
-      }
-
-      /* ====== BOTTLENECKS ====== */
-      .bottlenecks {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-      }
-      .bottleneck-card {
-        background: var(--paper-2);
-        border: 1px solid var(--rule);
-        padding: 32px;
-        position: relative;
-      }
-      .bottleneck-card .num {
-        font-family: "Fraunces", serif;
-        font-weight: 800;
-        font-size: 80px;
-        line-height: 0.85;
-        color: var(--accent);
-        letter-spacing: -0.05em;
-        margin-bottom: 16px;
-      }
-      .bottleneck-card h4 {
-        font-family: "Fraunces", serif;
-        font-size: 24px;
-        font-weight: 600;
-        margin-bottom: 12px;
-        letter-spacing: -0.02em;
-      }
-      .bottleneck-card p {
-        font-size: 15px;
-        color: var(--muted);
-        margin-bottom: 16px;
-        line-height: 1.5;
-      }
-      .gong-quote {
-        background: var(--ink);
-        color: var(--paper);
-        padding: 16px;
-        font-family: "Fraunces", serif;
-        font-size: 14px;
-        font-style: italic;
-        margin-bottom: 8px;
-        position: relative;
-        border-left: 3px solid var(--highlight);
-      }
-      .gong-quote::before {
-        content: "GONG TAG";
-        position: absolute;
-        top: -8px;
-        left: 12px;
-        background: var(--highlight);
-        color: var(--ink);
-        font-family: "JetBrains Mono", monospace;
-        font-style: normal;
-        font-size: 9px;
-        letter-spacing: 0.15em;
-        padding: 2px 6px;
-        font-weight: 700;
-      }
-
-      .diag-tools {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        margin-top: 16px;
-      }
-      .diag-tool {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        background: white;
-        border: 1px solid var(--rule);
-        padding: 6px 10px;
-        letter-spacing: 0.05em;
-      }
-      .diag-tool span {
-        color: var(--accent);
-      }
-
-      /* ====== FIX BLOCKS ====== */
-      .fix-block {
-        display: grid;
-        grid-template-columns: 200px 1fr;
-        gap: 48px;
-        margin-bottom: 48px;
-        padding-bottom: 48px;
-        border-bottom: 1px dashed var(--rule);
-      }
-      .fix-block:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-        margin-bottom: 0;
-      }
-      .fix-marker {
-        font-family: "Fraunces", serif;
-        font-weight: 800;
-        font-size: 100px;
-        line-height: 0.85;
-        color: var(--accent);
-        letter-spacing: -0.05em;
-      }
-      .fix-marker span {
-        display: block;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        font-weight: 500;
-        color: var(--muted);
-        letter-spacing: 0.15em;
-        margin-top: 12px;
-        line-height: 1.4;
-      }
-      .fix-content h3 {
-        font-family: "Fraunces", serif;
-        font-size: 36px;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        margin-bottom: 8px;
-        line-height: 1.1;
-      }
-      .fix-content .pivot-tag-inline {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--accent);
-        margin-bottom: 16px;
-        display: inline-block;
-      }
-      .fix-content > p {
-        font-size: 17px;
-        margin-bottom: 24px;
-        max-width: 760px;
-      }
-
-      /* ====== SMB → ENTERPRISE TRANSPOSE ====== */
-      .transpose {
-        display: grid;
-        grid-template-columns: 1fr 80px 1fr;
-        gap: 16px;
-        align-items: stretch;
-        margin-top: 24px;
-      }
-      .transpose-col {
-        background: white;
-        border: 1px solid var(--rule);
-        padding: 24px;
-      }
-      .transpose-col.target {
-        background: var(--ink);
-        color: var(--paper);
-        border-color: var(--ink);
-      }
-      .transpose-col .label {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 10px;
-        letter-spacing: 0.2em;
-        color: var(--muted);
-        margin-bottom: 12px;
-      }
-      .transpose-col.target .label {
-        color: var(--highlight);
-      }
-      .transpose-col h5 {
-        font-family: "Fraunces", serif;
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 16px;
-      }
-      .transpose-col ul {
-        list-style: none;
-      }
-      .transpose-col li {
-        padding: 8px 0;
-        border-bottom: 1px dashed currentColor;
-        font-size: 14px;
-        display: flex;
-        gap: 8px;
-      }
-      .transpose-col li:last-child {
-        border-bottom: none;
-      }
-      .transpose-col li::before {
-        content: "◆";
-        color: var(--accent);
-        flex-shrink: 0;
-      }
-      .transpose-col.target li::before {
-        color: var(--highlight);
-      }
-      .transpose-arrow {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: "Fraunces", serif;
-        font-size: 48px;
-        color: var(--accent);
-        font-weight: 300;
-      }
-      .transpose-arrow span {
-        display: block;
-        text-align: center;
-      }
-      .transpose-arrow .label {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 9px;
-        letter-spacing: 0.15em;
-        color: var(--muted);
-        margin-top: 8px;
-        text-transform: uppercase;
-      }
-
-      /* ====== AI STACK BLUEPRINT ====== */
-      .stack-wrap {
-        background: var(--paper-2);
-        border: 1px solid var(--rule);
-        padding: 40px;
-        margin-top: 24px;
-        position: relative;
-        overflow: hidden;
-      }
-      .stack-wrap::before {
-        content: "SYSTEM BLUEPRINT";
-        position: absolute;
-        top: 12px;
-        right: 16px;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 10px;
-        letter-spacing: 0.2em;
-        color: var(--muted);
-      }
-
-      .stack-flow {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 16px;
-        margin-bottom: 24px;
-        position: relative;
-      }
-
-      .stack-layer {
-        border: 1px solid var(--rule);
-        background: white;
-        padding: 20px;
-        position: relative;
-      }
-      .stack-layer.dark {
-        background: var(--ink);
-        color: var(--paper);
-      }
-      .stack-layer .layer-label {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 10px;
-        letter-spacing: 0.2em;
-        color: var(--accent);
-        margin-bottom: 12px;
-      }
-      .stack-layer.dark .layer-label {
-        color: var(--highlight);
-      }
-      .stack-layer .layer-title {
-        font-family: "Fraunces", serif;
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 12px;
-        letter-spacing: -0.02em;
-      }
-      .tools-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-      .tool-chip {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        background: var(--paper-2);
-        color: var(--ink);
-        padding: 4px 10px;
-        border: 1px solid var(--rule);
-        letter-spacing: 0.05em;
-      }
-      .stack-layer.dark .tool-chip {
-        background: rgba(244, 239, 230, 0.1);
-        color: var(--paper);
-        border-color: rgba(244, 239, 230, 0.3);
-      }
-
-      .stack-routing {
-        background: var(--ink);
-        color: var(--paper);
-        padding: 24px;
-        border-radius: 4px;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 24px;
-        align-items: center;
-      }
-      .stack-routing .key {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        color: var(--highlight);
-        letter-spacing: 0.15em;
-        white-space: nowrap;
-      }
-      .stack-routing .formula {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 16px;
-        line-height: 1.6;
-      }
-      .stack-routing .formula span {
-        color: var(--highlight);
-        font-weight: 700;
-      }
-
-      .honest-note {
-        background: white;
-        border-left: 4px solid var(--accent-2);
-        padding: 20px 24px;
-        margin-top: 24px;
-        font-family: "Fraunces", serif;
-        font-size: 16px;
-        font-style: italic;
-        color: var(--muted);
-      }
-      .honest-note strong {
-        color: var(--ink);
-        font-style: normal;
-        font-weight: 600;
-      }
-
-      /* ====== METRICS / RESULTS ====== */
+      /* ====== METRICS TABLE ====== */
       .metrics-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -855,195 +338,207 @@
         color: white;
       }
 
-      .psc-context {
-        background: var(--ink);
-        color: var(--paper);
-        padding: 32px 40px;
-        margin-top: 24px;
-        position: relative;
-      }
-      .psc-context::before {
-        content: "BROADER PSC CONTEXT";
-        position: absolute;
-        top: 12px;
-        right: 16px;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 10px;
-        letter-spacing: 0.2em;
-        color: var(--highlight);
-      }
-      .psc-grid {
+      /* ====== PROBLEM SECTION ====== */
+      .problem-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
-        margin-top: 24px;
-      }
-      .psc-stat .num {
-        font-family: "Fraunces", serif;
-        font-size: 42px;
-        font-weight: 800;
-        letter-spacing: -0.03em;
-        color: var(--highlight);
-        line-height: 1;
-      }
-      .psc-stat .label {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        letter-spacing: 0.1em;
-        color: rgba(244, 239, 230, 0.7);
-        margin-top: 8px;
-        text-transform: uppercase;
-      }
-      .psc-context > p {
-        font-family: "Fraunces", serif;
-        font-style: italic;
-        font-size: 15px;
-        color: rgba(244, 239, 230, 0.7);
-        margin-top: 24px;
-        line-height: 1.5;
-      }
-
-      /* ====== STRATEGIC BYPRODUCT ====== */
-      .byproduct {
-        background: var(--paper-2);
-        border: 1px solid var(--rule);
-        padding: 48px;
-        display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 1fr;
         gap: 48px;
         align-items: start;
       }
-      .byproduct .left {
+      .callout {
+        background: var(--paper-2);
+        border-left: 4px solid var(--accent);
+        padding: 32px;
         font-family: "Fraunces", serif;
-        font-size: 56px;
-        font-weight: 800;
-        letter-spacing: -0.04em;
-        line-height: 0.95;
+        font-size: 24px;
+        line-height: 1.4;
+        font-style: italic;
         color: var(--ink);
       }
-      .byproduct .left em {
-        color: var(--accent);
-        font-style: italic;
-        font-weight: 400;
+      .callout .small {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-style: normal;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 16px;
       }
-      .byproduct .right p {
-        font-size: 16px;
-        margin-bottom: 16px;
-        line-height: 1.6;
-      }
-      .byproduct .right p:last-child {
-        margin-bottom: 0;
-      }
-      .confidence-meters {
-        margin-top: 24px;
+
+      /* ====== FUNNEL VIZ ====== */
+      .funnels {
         display: grid;
-        gap: 12px;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        margin-top: 32px;
       }
-      .confidence-row {
-        display: grid;
-        grid-template-columns: 200px 1fr;
-        gap: 16px;
+      .funnel-box {
+        border: 1px solid var(--rule);
+        padding: 32px;
+        background: var(--paper-2);
+      }
+      .funnel-box.after {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .funnel-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .funnel-box.before .funnel-label {
+        color: var(--muted);
+      }
+      .funnel-box.after .funnel-label {
+        color: var(--highlight);
+      }
+      .funnel-headline {
+        font-family: "Fraunces", serif;
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        letter-spacing: -0.02em;
+      }
+      .funnel-step {
+        display: flex;
         align-items: center;
+        gap: 16px;
+        padding: 14px 0;
+        border-bottom: 1px dashed currentColor;
+        opacity: 0.9;
       }
-      .confidence-row .label {
+      .funnel-step:last-child {
+        border-bottom: none;
+      }
+      .funnel-step .step-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        width: 24px;
+      }
+      .funnel-step .step-name {
+        flex: 1;
+        font-family: "Fraunces", serif;
+        font-size: 16px;
+      }
+      .funnel-step .step-rate {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .funnel-box.before .step-rate {
+        color: var(--accent);
+      }
+      .funnel-box.after .step-rate {
+        color: var(--highlight);
+      }
+      .funnel-result {
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 2px solid currentColor;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+      .funnel-result .label {
         font-family: "JetBrains Mono", monospace;
         font-size: 11px;
         letter-spacing: 0.1em;
         text-transform: uppercase;
       }
-      .confidence-row .meter {
-        height: 12px;
-        background: white;
-        border: 1px solid var(--rule);
-        position: relative;
-      }
-      .confidence-row .meter::after {
-        content: "";
-        display: block;
-        height: 100%;
-        background: var(--accent-2);
-        width: var(--w, 80%);
-      }
-
-      /* ====== OWNERSHIP ====== */
-      .ownership {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-      }
-      .own-col {
-        border: 1px solid var(--rule);
-        padding: 32px;
-      }
-      .own-col.mine {
-        background: var(--ink);
-        color: var(--paper);
-      }
-      .own-col h4 {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 12px;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        margin-bottom: 24px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid currentColor;
-      }
-      .own-col.mine h4 {
-        color: var(--highlight);
-      }
-      .own-col ul {
-        list-style: none;
-      }
-      .own-col li {
-        padding: 12px 0;
-        border-bottom: 1px dashed currentColor;
+      .funnel-result .value {
         font-family: "Fraunces", serif;
-        font-size: 16px;
-        display: flex;
-        gap: 12px;
+        font-size: 48px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
       }
-      .own-col li:last-child {
-        border-bottom: none;
-      }
-      .own-col li::before {
-        content: "◆";
-        color: var(--accent);
-        flex-shrink: 0;
-      }
-      .own-col.mine li::before {
+      .funnel-box.after .funnel-result .value {
         color: var(--highlight);
       }
 
-      /* ====== LESSONS ====== */
-      .lessons {
+      /* ====== PIVOT BLOCK ====== */
+      .pivot-block {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 48px;
+        margin-bottom: 48px;
+        padding-bottom: 48px;
+        border-bottom: 1px dashed var(--rule);
+      }
+      .pivot-block:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+      .pivot-marker {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 120px;
+        line-height: 0.85;
+        color: var(--accent);
+        letter-spacing: -0.05em;
+      }
+      .pivot-marker span {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--muted);
+        letter-spacing: 0.15em;
+        margin-top: 8px;
+      }
+      .pivot-content h3 {
+        font-family: "Fraunces", serif;
+        font-size: 36px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+        line-height: 1.1;
+      }
+      .pivot-content .pivot-tag-inline {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+        display: inline-block;
+      }
+      .pivot-content > p {
+        font-size: 17px;
+        margin-bottom: 24px;
+        max-width: 720px;
+        color: var(--ink);
+      }
+
+      .mechanics {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 16px;
+        margin-top: 24px;
       }
-      .lesson {
-        border: 1px solid var(--rule);
-        padding: 28px;
+      .mech-card {
         background: var(--paper-2);
-        position: relative;
+        padding: 24px;
+        border-top: 3px solid var(--accent);
       }
-      .lesson .num {
-        font-family: "Fraunces", serif;
-        font-weight: 800;
-        font-size: 64px;
-        line-height: 1;
+      .mech-card .num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
         color: var(--accent);
-        letter-spacing: -0.05em;
-        margin-bottom: 14px;
-      }
-      .lesson h4 {
-        font-family: "Fraunces", serif;
-        font-size: 19px;
-        font-weight: 600;
+        letter-spacing: 0.15em;
         margin-bottom: 12px;
-        line-height: 1.2;
-        letter-spacing: -0.01em;
       }
-      .lesson p {
+      .mech-card .title {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 8px;
+        line-height: 1.2;
+      }
+      .mech-card .desc {
         font-size: 14px;
         color: var(--muted);
         line-height: 1.5;
@@ -1082,55 +577,19 @@
         margin-bottom: 24px;
         text-transform: uppercase;
       }
-      .takeaway-points {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 32px;
-        margin-bottom: 32px;
-      }
-      .takeaway-point {
-        border-top: 2px solid var(--highlight);
-        padding-top: 16px;
-      }
-      .takeaway-point .num {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        color: var(--highlight);
-        letter-spacing: 0.2em;
-        margin-bottom: 12px;
-      }
-      .takeaway-point h4 {
+      .takeaway p {
         font-family: "Fraunces", serif;
-        font-size: 28px;
-        font-weight: 600;
-        margin-bottom: 16px;
-        line-height: 1.15;
-        letter-spacing: -0.02em;
+        font-size: 24px;
+        line-height: 1.4;
+        margin-bottom: 24px;
+        font-weight: 400;
       }
-      .takeaway-point p {
-        font-family: "Fraunces", serif;
-        font-size: 16px;
-        line-height: 1.5;
-        color: rgba(244, 239, 230, 0.85);
-      }
-      .takeaway-point p strong {
+      .takeaway p strong {
         color: var(--highlight);
         font-weight: 600;
       }
-
-      .clayto-pitch {
-        margin-top: 32px;
-        padding: 24px;
-        border: 1px dashed rgba(244, 239, 230, 0.3);
-        font-family: "Fraunces", serif;
-        font-size: 18px;
-        line-height: 1.5;
-        font-style: italic;
-      }
-      .clayto-pitch strong {
-        color: var(--highlight);
-        font-style: normal;
-        font-weight: 600;
+      .takeaway p:last-child {
+        margin-bottom: 0;
       }
 
       /* ====== FOOTER ====== */
@@ -1169,6 +628,9 @@
           border-right: none;
           border-bottom: 1px solid var(--rule);
         }
+        .hero-stat:nth-child(even) {
+          border-right: none;
+        }
         .hero-stat:nth-child(2n + 1) {
           border-right: 1px solid var(--rule);
         }
@@ -1190,59 +652,33 @@
         .tldr-text {
           font-size: 18px;
         }
-        .products {
+        .metrics-grid {
           grid-template-columns: 1fr;
         }
-        .team-strip {
-          grid-template-columns: 1fr;
-        }
-        .team-strip > div {
-          border-right: none;
-          border-bottom: 1px solid rgba(244, 239, 230, 0.15);
-        }
-        .team-strip > div:last-child {
-          border-bottom: none;
-        }
-        .timeline-row {
-          grid-template-columns: 50px 1fr;
-          gap: 12px;
-          padding: 14px 0;
-        }
-        .timeline-row .bar,
-        .timeline-row .duration {
-          grid-column: 2 / 3;
-        }
-        .timeline-row .duration {
-          text-align: left;
-          padding-top: 4px;
-        }
-        .bottlenecks {
-          grid-template-columns: 1fr;
-        }
-        .fix-block {
+        .problem-grid,
+        .funnels {
           grid-template-columns: 1fr;
           gap: 24px;
         }
-        .fix-marker {
+        .pivot-block {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .pivot-marker {
           font-size: 80px;
         }
-        .transpose {
-          grid-template-columns: 1fr;
-          gap: 12px;
-        }
-        .transpose-arrow {
-          transform: rotate(90deg);
-          font-size: 36px;
-        }
-        .stack-flow {
+        .mechanics {
           grid-template-columns: 1fr;
         }
-        .stack-routing {
-          grid-template-columns: 1fr;
-          gap: 12px;
+        .takeaway {
+          padding: 56px 24px;
         }
-        .metrics-grid {
-          grid-template-columns: 1fr;
+        .takeaway p {
+          font-size: 18px;
+        }
+        .takeaway::before {
+          font-size: 180px;
+          top: -24px;
         }
         .metric-flow {
           grid-template-columns: 1fr;
@@ -1252,45 +688,9 @@
         .metric-arrow {
           transform: rotate(90deg);
         }
-        .psc-grid {
-          grid-template-columns: 1fr 1fr;
-          gap: 16px;
-        }
-        .byproduct {
-          grid-template-columns: 1fr;
-          padding: 32px;
-          gap: 24px;
-        }
-        .byproduct .left {
-          font-size: 36px;
-        }
-        .confidence-row {
-          grid-template-columns: 1fr;
-          gap: 6px;
-        }
-        .ownership {
-          grid-template-columns: 1fr;
-        }
-        .lessons {
-          grid-template-columns: 1fr;
-        }
-        .takeaway {
-          padding: 56px 24px;
-        }
-        .takeaway-points {
-          grid-template-columns: 1fr;
-          gap: 24px;
-        }
-        .takeaway-point h4 {
-          font-size: 22px;
-        }
-        .takeaway::before {
-          font-size: 180px;
-          top: -24px;
-        }
       }
 
-      /* ====== ENTRY ANIMATIONS ====== */
+      /* ====== SUBTLE ENTRY ANIMATIONS ====== */
       @keyframes rise {
         from {
           opacity: 0;
@@ -1322,834 +722,321 @@
     </style>
   </head>
   <body>
-    <!-- ===== RIBBON ===== -->
     <div class="ribbon">
       <div class="ribbon-inner">
         <span>Case Study № 02 / 02</span>
-        <span>Planet Smart City × Pune · Enterprise Motion</span>
-        <span>~12-month sales cycle compression</span>
+        <span>Planet Smart City × Pune</span>
+        <span>GTM Pivot: Live Trials</span>
       </div>
     </div>
 
-    <!-- ===== HERO ===== -->
     <header class="hero">
       <div class="container">
         <div class="hero-meta">
-          <span><a href="index.html">← Back to Index</a></span>
+          <span
+            ><a href="index.html" style="color: inherit; text-decoration: none"
+              >← Back to Index</a
+            ></span
+          >
           <span><span class="dot"></span>Product Marketing Manager</span>
-          <span>Planet SIM + Planet App · ACV ₹15-20 lakh</span>
-          <span>Builders + 200+ Flat Committees</span>
+          <span>Planet SIM · IoT Water Mgmt</span>
+          <span>B2B SaaS · India</span>
         </div>
         <h1>
-          We took an SMB playbook into enterprise
-          <span class="accent">— and cut sales cycles by</span>
-          <span class="number">~40%</span>
+          We <span class="strike">demoed</span>
+          <span class="accent">installed</span> the product for free
+          <span class="serif" style="font-style: italic; font-weight: 400"
+            >— and 4×'d conversion.</span
+          >
         </h1>
         <p class="hero-sub">
-          Enterprise deals at ₹15-20 lakh ACV were stuck in 60-90 day cycles.
-          Two bottlenecks: post-demo silence and per-line-item pricing
-          negotiations. We compressed the cycle to ~45 days by porting the SMB
-          experiential playbook into enterprise, then wiring it into SDR/AE
-          workflow with an AI-first sales enablement stack.
+          We were selling an unprecedented physical solution using a standard
+          digital SaaS playbook, and it was tanking. Here is how replacing
+          screen-shares with 15-day live, on-site trials broke the adoption
+          barrier and completely transformed our sales pipeline.
         </p>
 
         <div class="hero-stats">
           <div class="hero-stat">
-            <div class="label">Enterprise Sales Cycle</div>
-            <div class="num green">−40%</div>
-            <div class="sub">~75d → ~45d</div>
+            <div class="label">Demo → Customer</div>
+            <div class="num green">40%</div>
+            <div class="sub">Up from 10% initially</div>
           </div>
           <div class="hero-stat">
-            <div class="label">Post-demo to sign-off</div>
-            <div class="num green">−58%</div>
-            <div class="sub">~60d → ~25d</div>
+            <div class="label">Sales Cycle</div>
+            <div class="num green">45d</div>
+            <div class="sub">Down from 80d average</div>
           </div>
           <div class="hero-stat">
-            <div class="label">Sales Team</div>
-            <div class="num">4 + 12</div>
-            <div class="sub">SDRs + AEs</div>
+            <div class="label">Sales Motion</div>
+            <div class="num">Shift</div>
+            <div class="sub">Push → Consultative</div>
           </div>
           <div class="hero-stat">
-            <div class="label">AI Stack Tools</div>
-            <div class="num">6</div>
-            <div class="sub">wired, not generated</div>
+            <div class="label">Product Feedback</div>
+            <div class="num">Rapid</div>
+            <div class="sub">Real-world usage data</div>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- ===== TL;DR ===== -->
     <section class="section">
       <div class="container">
         <div class="section-head">
           <div class="section-num">§ 01 / Summary</div>
           <h2 class="section-title">
-            SMB worked. Enterprise needed the same insight, <em>scaled.</em>
+            The product was brilliant. The <em>imagination barrier</em> was too
+            high.
           </h2>
-        </div>
-
-        <div class="companion">
-          <div class="label">▶ Companion to Case Study 01</div>
-          <div class="body">
-            "How we 4×'d lead-to-customer conversion by rebuilding our GTM
-            around experiential trials and per-unit pricing." Read that one
-            first if you haven't — this story builds on it.
-          </div>
         </div>
 
         <div class="tldr">
           <div class="tldr-text">
-            Two bottlenecks were eating enterprise cycles:
-            <strong>post-demo silence</strong> while champions tried to
-            translate the demo to their committee, and
-            <strong>per-line-item pricing negotiations</strong>. The fix had two
-            layers — port the SMB experiential trial + per-flat pricing into
-            enterprise, and wire an
-            <strong>AI-first sales enablement stack</strong> that put the right
-            asset in front of the right rep at the right cadence step. Cycle
-            compressed from ~75 to ~45 days.
+            We launched an IoT water platform into a market that had
+            <strong>managed water manually for decades</strong>. By relying on a
+            digital B2B playbook (Zoom demos and feature pitches), our SDRs were
+            forced into "push selling" abstract concepts. We took a bold bet:
+            <strong>killing the online demo</strong> and offering a 15-day live,
+            on-site installation for free. Using their own operational data, the
+            product sold itself.
           </div>
           <div class="tldr-pivots">
             <div class="pivot-tag">
-              <span>Layer 01</span> &nbsp;·&nbsp; Port SMB playbook → enterprise
-              scale
+              <span>Insight</span> &nbsp;·&nbsp; You can't demo a physical
+              paradigm shift via screen-share.
             </div>
             <div class="pivot-tag">
-              <span>Layer 02</span> &nbsp;·&nbsp; AI-first sales enablement
-              infrastructure
+              <span>Pivot</span> &nbsp;·&nbsp; High upfront cost of free
+              installations to unblock the funnel.
             </div>
             <div class="pivot-tag">
-              <span>Byproduct</span> &nbsp;·&nbsp; Sales team confidence in a
-              niche category
+              <span>Result</span> &nbsp;·&nbsp; 40% conversion rate & 45-day
+              sales cycles.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== SETUP ===== -->
     <section class="section">
       <div class="container">
         <div class="section-head">
-          <div class="section-num">§ 02 / The Setup</div>
+          <div class="section-num">§ 02 / The Status Quo</div>
           <h2 class="section-title">
-            Two products. Two buyer types. <em>One sales motion.</em>
+            The failure of the <em>textbook SaaS playbook.</em>
           </h2>
         </div>
 
-        <div class="products">
-          <div class="product-card">
-            <div class="tag">PRODUCT 01 · INFRASTRUCTURE</div>
-            <h3>Planet SIM</h3>
-            <p>
-              IoT for water tank automation and lighting operations. Technical,
-              infrastructure-heavy.
+        <div class="problem-grid">
+          <div>
+            <p style="font-size: 18px; margin-bottom: 24px; max-width: 560px">
+              Initially, we ran the standard B2B motion: an SDR qualifies the
+              lead, books an online demo, walks the prospect through the app
+              interface, and tries to close a contract.
+            </p>
+            <p style="font-size: 18px; margin-bottom: 24px; max-width: 560px">
+              After listening to dozens of SDR call recordings, a glaring
+              pattern emerged. Our SDRs were wasting hours explaining predictive
+              usage and pump efficiency to a highly skeptical audience.
+            </p>
+            <p style="font-size: 15px; color: var(--muted); max-width: 560px">
+              The buyers (housing society committees and facility managers) saw
+              the slick dashboard as a "nice to have" digital novelty, not a fix
+              for real, current pain. The translation from our app features to
+              their daily operational reality was getting lost over Zoom.
             </p>
           </div>
-          <div class="product-card">
-            <div class="tag">PRODUCT 02 · SOFTWARE</div>
-            <h3>Planet App</h3>
-            <p>
-              Property management software: security automation, billing, space
-              booking, community management.
-            </p>
-          </div>
-        </div>
 
-        <div
-          style="
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 32px;
-          "
-          class="products"
-        >
-          <div class="product-card">
-            <div class="tag">BUYER A</div>
-            <h3>Builders</h3>
-            <p>
-              Developers selling new residential projects who could spec the
-              products into the property.
-            </p>
-          </div>
-          <div class="product-card">
-            <div class="tag">BUYER B</div>
-            <h3>Large Society Committees</h3>
-            <p>
-              Existing housing societies, typically 200+ flats, multi-tower
-              complexes.
-            </p>
-          </div>
-        </div>
-
-        <div class="team-strip">
-          <div>
-            <div class="label">SDRS</div>
-            <div class="big">4</div>
-            <div class="desc">
-              Cadence + qualification through experiential demo.
-            </div>
-          </div>
-          <div>
-            <div class="label">AES</div>
-            <div class="big">12</div>
-            <div class="desc">Negotiation + close after demo handoff.</div>
-          </div>
-          <div>
-            <div class="label">ACV</div>
-            <div class="big">₹15-20L</div>
-            <div class="desc">Annual contract value per enterprise deal.</div>
+          <div class="callout">
+            "They didn't need a better pitch deck. They needed to touch the
+            solution, feel it, and look at their own data to imagine the
+            possibilities."
+            <span class="small">— Ground-level insight from call reviews</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== TIMELINE / BROKEN FUNNEL ===== -->
     <section class="section">
       <div class="container">
         <div class="section-head">
-          <div class="section-num">§ 03 / The Funnel</div>
+          <div class="section-num">§ 03 / The Pivot</div>
           <h2 class="section-title">
-            Five stages. Two of them <em>ate the cycle.</em>
+            Flipping the funnel to <em>Show, Don't Tell.</em>
           </h2>
         </div>
 
-        <div class="timeline">
-          <div class="timeline-row">
-            <span class="step">01</span>
-            <span class="name">Inbound to first call</span>
-            <div class="bar">
-              <div class="bar-fill" style="width: 1%"></div>
-            </div>
-            <span class="duration">~24 hrs</span>
-          </div>
-          <div class="timeline-row">
-            <span class="step">02</span>
-            <span class="name">First call → demo confirmation</span>
-            <div class="bar">
-              <div class="bar-fill" style="width: 18%"></div>
-            </div>
-            <span class="duration">~14 days</span>
-          </div>
-          <div class="timeline-row">
-            <span class="step">03</span>
-            <span class="name">Post-demo follow-ups + negotiation</span>
-            <div class="bar bottleneck">
-              <div class="bar-fill" style="width: 40%"></div>
-            </div>
-            <span class="duration">~30 days</span>
-          </div>
-          <div class="timeline-row">
-            <span class="step">04</span>
-            <span class="name">Buying committee sign-off</span>
-            <div class="bar bottleneck">
-              <div class="bar-fill" style="width: 40%"></div>
-            </div>
-            <span class="duration">~30 days</span>
-          </div>
-          <div class="timeline-row">
-            <span class="step">05</span>
-            <span class="name"
-              >Confirmation → signed contract + onboarding</span
-            >
-            <div class="bar">
-              <div class="bar-fill" style="width: 13%"></div>
-            </div>
-            <span class="duration">~10 days</span>
-          </div>
-        </div>
+        <p style="font-size: 18px; max-width: 780px; margin-bottom: 32px">
+          <strong>I proposed a high-stakes shift</strong>: assume the upfront
+          cost of hardware, staff, and installation to get the product
+          physically into the buyer's environment. We replaced the friction of
+          selling a concept with the undeniable proof of their own data.
+        </p>
 
-        <div class="timeline-total">
-          <span class="label">▼ Total cycle</span>
-          <span class="value"
-            >60-90d <small>· avg ~75 in steady state</small></span
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== BOTTLENECKS ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-num">§ 04 / The Diagnosis</div>
-          <h2 class="section-title">What was <em>actually</em> broken.</h2>
-        </div>
-
-        <div class="bottlenecks">
-          <div class="bottleneck-card">
-            <div class="num">01</div>
-            <h4>The post-demo gap.</h4>
-            <p>
-              AEs got strong reactions in demos. Then deals went quiet for weeks
-              while the buying committee deliberated. The product was novel
-              enough that prospects didn't have a vocabulary for it yet. The
-              committee had nothing to feel, touch, or evaluate, so they
-              defaulted to delay.
-            </p>
-            <div class="gong-quote">
-              "We love what we saw, but we need to bring this to our committee."
+        <div class="funnels">
+          <div class="funnel-box before">
+            <div class="funnel-label">▼ Before · Abstract Selling</div>
+            <div class="funnel-headline">
+              Screen-shares and theoretical ROI.
             </div>
-            <div class="gong-quote">
-              "I can't really describe to them what I saw. Can you send
-              something?"
+            <div class="funnel-step">
+              <span class="step-num">01</span
+              ><span class="step-name">SDR Qualifies Lead</span>
             </div>
-          </div>
-
-          <div class="bottleneck-card">
-            <div class="num">02</div>
-            <h4>Pricing negotiations.</h4>
-            <p>
-              Same problem we'd diagnosed at the SMB level: per-sensor,
-              per-installation hardware-style pricing was triggering line-item
-              negotiations instead of tier-selection conversations. At
-              enterprise ACV, the negotiation surface was bigger and the cycle
-              drag was longer.
-            </p>
-            <div class="diag-tools">
-              <div class="diag-tool">
-                <span>+</span> Monthly 1:1s with each rep
-              </div>
-              <div class="diag-tool"><span>+</span> Gong call reviews</div>
-              <div class="diag-tool">
-                <span>+</span> HubSpot/Zoho stall data
-              </div>
-              <div class="diag-tool"><span>+</span> NotebookLM (later)</div>
+            <div class="funnel-step">
+              <span class="step-num">02</span
+              ><span class="step-name">Online Zoom Demo</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== FIX 1: PORT SMB PLAYBOOK ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-num">§ 05 / Fix · Layer 01</div>
-          <h2 class="section-title">
-            Scale the SMB playbook into <em>enterprise.</em>
-          </h2>
-        </div>
-
-        <div class="fix-block">
-          <div class="fix-marker">
-            01
-            <span>Port + scale</span>
-          </div>
-          <div class="fix-content">
-            <span class="pivot-tag-inline"
-              >▼ Same insight, bigger trial, multi-stakeholder pricing</span
-            >
-            <h3>The motion ports. The mechanics scale.</h3>
-            <p>
-              The core SMB insight (case study 01) was that buyers in this
-              category needed experiential proof in their own environment before
-              they could move forward. The same insight applied to enterprise —
-              just with bigger and more complex buying groups.
-            </p>
-
-            <div class="transpose">
-              <div class="transpose-col">
-                <div class="label">▼ FROM · SMB MOTION</div>
-                <h5>Single-tower trial</h5>
-                <ul>
-                  <li>1 tower install</li>
-                  <li>3 named users (FM + 2 committee)</li>
-                  <li>Real water data, day one</li>
-                  <li>Per-flat SaaS tiering</li>
-                  <li>Annual billing discount</li>
-                </ul>
-              </div>
-              <div class="transpose-arrow">
-                <span>
-                  →
-                  <span class="label">scaled into</span>
-                </span>
-              </div>
-              <div class="transpose-col target">
-                <div class="label">▼ TO · ENTERPRISE MOTION</div>
-                <h5>Pilot install + multi-stakeholder access</h5>
-                <ul>
-                  <li>Builder: pilot in 1 tower of flagship project</li>
-                  <li>Committee: single-tower install, 3-5 named users</li>
-                  <li>Project manager + facility lead + ops/tech rep</li>
-                  <li>Per-flat tiering with volume discount at 200+ flats</li>
-                  <li>Annual contracts</li>
-                </ul>
-              </div>
+            <div class="funnel-step">
+              <span class="step-num">03</span
+              ><span class="step-name">Push Features & Concept</span>
             </div>
-
+            <div class="funnel-result">
+              <span class="label">Demo → Customer</span>
+              <span class="value">10%</span>
+            </div>
             <div
-              style="
-                margin-top: 32px;
-                padding: 24px;
-                background: var(--paper-2);
-                border-left: 4px solid var(--accent-2);
-              "
+              class="funnel-result"
+              style="border-top: none; padding-top: 0; margin-top: 8px"
             >
-              <div
-                style="
-                  font-family: &quot;JetBrains Mono&quot;, monospace;
-                  font-size: 11px;
-                  letter-spacing: 0.15em;
-                  text-transform: uppercase;
-                  color: var(--muted);
-                  margin-bottom: 8px;
-                "
-              >
-                Why it attacked both bottlenecks
-              </div>
-              <div
-                style="
-                  font-family: &quot;Fraunces&quot;, serif;
-                  font-size: 17px;
-                  line-height: 1.45;
-                "
-              >
-                Post-demo silence shrank because the trial gave the champion
-                something <strong>concrete</strong> to bring to committee — a
-                working install in their own building. Pricing negotiation
-                shrank because <strong>tier-selection is faster</strong> than
-                component-by-component haggling.
-              </div>
+              <span class="label">Avg Sales Cycle</span>
+              <span class="value" style="font-size: 24px">80 Days</span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ===== FIX 2: AI STACK ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-num">§ 06 / Fix · Layer 02</div>
-          <h2 class="section-title">
-            AI-first sales enablement as the <em>scaling lever.</em>
-          </h2>
-        </div>
-
-        <div class="fix-block">
-          <div class="fix-marker">
-            02
-            <span>System wiring</span>
-          </div>
-          <div class="fix-content">
-            <span class="pivot-tag-inline"
-              >▼ Distinctive to the enterprise motion</span
+          <div class="funnel-box after">
+            <div class="funnel-label">▲ After · Experiential GTM</div>
+            <div class="funnel-headline">
+              Live data and consultative review.
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">01</span
+              ><span class="step-name">SDR Qualifies Lead</span>
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">02</span
+              ><span class="step-name">Free Hardware Install</span>
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">03</span
+              ><span class="step-name">15-Day Trial on Real Data</span>
+            </div>
+            <div class="funnel-result">
+              <span class="label">Trial → Customer</span>
+              <span class="value">40%</span>
+            </div>
+            <div
+              class="funnel-result"
+              style="border-top: none; padding-top: 0; margin-top: 8px"
             >
-            <h3>Right asset. Right rep. Right language. Right cadence step.</h3>
-            <p>
-              With 4 SDRs and 12 AEs running cadences across 2 products and 2
-              buyer segments, the assets each rep needed at any moment varied a
-              lot. Manually getting the right asset to the right rep was
-              failing. Assets sat in shared drives nobody used during a live
-              cadence.
-            </p>
-
-            <div class="stack-wrap">
-              <div class="stack-flow">
-                <div class="stack-layer">
-                  <div class="layer-label">▼ INPUT</div>
-                  <div class="layer-title">Diagnosis</div>
-                  <div class="tools-row">
-                    <span class="tool-chip">Gong</span>
-                    <span class="tool-chip">NotebookLM</span>
-                    <span class="tool-chip">HubSpot</span>
-                    <span class="tool-chip">Zoho</span>
-                    <span class="tool-chip">Win/Loss</span>
-                  </div>
-                  <p
-                    style="
-                      font-size: 13px;
-                      color: var(--muted);
-                      margin-top: 14px;
-                      line-height: 1.4;
-                    "
-                  >
-                    Weekly Gong reviews caught new objections. NotebookLM
-                    synthesized ~20 win/loss transcripts into quarterly briefs
-                    informing pricing + messaging.
-                  </p>
-                </div>
-
-                <div class="stack-layer dark">
-                  <div class="layer-label">▼ ROUTING</div>
-                  <div class="layer-title">n8n workflow</div>
-                  <div class="tools-row">
-                    <span class="tool-chip">n8n</span>
-                    <span class="tool-chip">Outreach</span>
-                  </div>
-                  <p
-                    style="
-                      font-size: 13px;
-                      color: rgba(244, 239, 230, 0.7);
-                      margin-top: 14px;
-                      line-height: 1.4;
-                    "
-                  >
-                    Routed enablement assets into Outreach cadences based on
-                    deal segment + cadence stage.
-                  </p>
-                </div>
-
-                <div class="stack-layer">
-                  <div class="layer-label">▼ OUTPUT</div>
-                  <div class="layer-title">Asset library</div>
-                  <div class="tools-row">
-                    <span class="tool-chip">Storylane</span>
-                    <span class="tool-chip">Synthesia</span>
-                    <span class="tool-chip">Battlecards</span>
-                    <span class="tool-chip">ROI calc</span>
-                  </div>
-                  <p
-                    style="
-                      font-size: 13px;
-                      color: var(--muted);
-                      margin-top: 14px;
-                      line-height: 1.4;
-                    "
-                  >
-                    Storylane demos by product × buyer type. Synthesia
-                    walkthroughs in regional languages. Battlecards + ROI tagged
-                    by segment + stage.
-                  </p>
-                </div>
-              </div>
-
-              <div class="stack-routing">
-                <div class="key">▶ ROUTING LOGIC</div>
-                <div class="formula">
-                  IF <span>segment</span> = builder AND <span>product</span> =
-                  Planet SIM AND <span>cadence_step</span> = 03<br />
-                  THEN send
-                  <span>builder-specific Planet SIM Storylane walkthrough</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="honest-note">
-              <strong>Honest scope:</strong> the wiring itself was not exotic.
-              The value was in getting the <strong>asset taxonomy</strong> right
-              (segment × stage × product matrix took several iterations) and the
-              <strong>timing logic</strong> (which assets fired at which cadence
-              step). The infrastructure made it impossible for an SDR to send a
-              generic asset when a segment-specific one existed.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== RESULTS ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-num">§ 07 / The Numbers</div>
-          <h2 class="section-title">
-            Cycle compression where it <em>mattered most.</em>
-          </h2>
-        </div>
-
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <div class="label">Enterprise Sales Cycle (avg)</div>
-            <div class="metric-flow">
-              <div class="metric-before">~75d</div>
-              <div class="metric-arrow">▶</div>
-              <div class="metric-after">~45d</div>
-              <div class="metric-change green">−40%</div>
-            </div>
-          </div>
-          <div class="metric-card">
-            <div class="label">Post-demo → Committee Sign-off</div>
-            <div class="metric-flow">
-              <div class="metric-before">~60d</div>
-              <div class="metric-arrow">▶</div>
-              <div class="metric-after">~25d</div>
-              <div class="metric-change green">−58%</div>
-            </div>
-          </div>
-          <div class="metric-card">
-            <div class="label">Pricing Negotiation Friction</div>
-            <div class="metric-flow">
-              <div class="metric-before" style="font-size: 22px">
-                Per-line haggle
-              </div>
-              <div class="metric-arrow">▶</div>
-              <div class="metric-after" style="font-size: 22px">
-                Tier select
-              </div>
-              <div class="metric-change">qualitative</div>
-            </div>
-          </div>
-          <div class="metric-card">
-            <div class="label">Cycle Range</div>
-            <div class="metric-flow">
-              <div class="metric-before">60-90d</div>
-              <div class="metric-arrow">▶</div>
-              <div class="metric-after">~45d</div>
-              <div class="metric-change green">tighter band</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="psc-context">
-          <div class="psc-grid">
-            <div class="psc-stat">
-              <div class="num">400+</div>
-              <div class="label">Enterprise-tier trials initiated</div>
-            </div>
-            <div class="psc-stat">
-              <div class="num">300+</div>
-              <div class="label">Onboardings completed</div>
-            </div>
-            <div class="psc-stat">
-              <div class="num">2 yrs</div>
-              <div class="label">Double-digit ARR growth</div>
-            </div>
-            <div class="psc-stat">
-              <div class="num">~100%</div>
-              <div class="label">Net retention sustained</div>
-            </div>
-          </div>
-          <p>
-            ▲ These numbers cover both motions (SMB from case study 01 +
-            enterprise here). I can't cleanly split which trials and onboardings
-            came from which motion, so I'm citing them PSC-wide rather than
-            claiming them for the enterprise story specifically.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== STRATEGIC BYPRODUCT ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-num">§ 08 / The Byproduct</div>
-          <h2 class="section-title">
-            The number hardest to chart — and the one that
-            <em>mattered most.</em>
-          </h2>
-        </div>
-
-        <div class="byproduct">
-          <div class="left">Sales team <em>confidence.</em></div>
-          <div class="right">
-            <p>
-              Selling a novel category into a market that doesn't believe it has
-              a problem is demoralising work. Reps grind, deals stall,
-              motivation drains.
-            </p>
-            <p>
-              Once the experiential trial was in place, the per-flat pricing was
-              scripted, and the right asset showed up in the right cadence step
-              automatically — the team's posture shifted. Deals flowed. Reps
-              started recommending Planet SIM and Planet App into builder
-              networks <strong>unprompted</strong>. SDR-to-AE handoffs got
-              cleaner because both sides trusted the motion.
-            </p>
-            <p style="font-style: italic; color: var(--muted)">
-              In a niche category, sales team confidence is a
-              <strong style="color: var(--ink); font-style: normal"
-                >leading indicator</strong
+              <span class="label">Avg Sales Cycle</span>
+              <span
+                class="value"
+                style="font-size: 24px; color: var(--highlight)"
+                >45 Days</span
               >
-              of whether the motion will scale.
-            </p>
-
-            <div class="confidence-meters">
-              <div class="confidence-row">
-                <span class="label">Cadence completion rates</span>
-                <div class="meter" style="--w: 88%"></div>
-              </div>
-              <div class="confidence-row">
-                <span class="label">Voluntary asset usage</span>
-                <div class="meter" style="--w: 82%"></div>
-              </div>
-              <div class="confidence-row">
-                <span class="label">AE willingness on bigger deals</span>
-                <div class="meter" style="--w: 90%"></div>
-              </div>
             </div>
-            <p
-              style="
-                font-size: 12px;
-                color: var(--muted);
-                margin-top: 8px;
-                font-family: &quot;JetBrains Mono&quot;, monospace;
-                letter-spacing: 0.05em;
-              "
-            >
-              ▲ Directional indicators we tracked, not precise values
-            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== OWNERSHIP ===== -->
     <section class="section">
       <div class="container">
         <div class="section-head">
-          <div class="section-num">§ 09 / Scope</div>
+          <div class="section-num">§ 04 / Business Impact</div>
           <h2 class="section-title">
-            I designed the system. The <em>team operated it.</em>
+            The ripple effects of a <em>tangible product motion.</em>
           </h2>
         </div>
 
-        <div class="ownership">
-          <div class="own-col mine">
-            <h4>◆ Mine (PMM)</h4>
-            <ul>
-              <li>Positioning + messaging for the enterprise motion</li>
-              <li>Proposal to port the SMB playbook into enterprise</li>
-              <li>Asset taxonomy: segment × stage × product</li>
-              <li>Win/loss interview program</li>
-              <li>AI-first sales enablement design</li>
-              <li>
-                Cross-functional alignment with RevOps to wire n8n into Outreach
-              </li>
-              <li>
-                Gong review cadence + NotebookLM market intelligence briefs
-              </li>
-            </ul>
-          </div>
-          <div class="own-col">
-            <h4>◇ Theirs</h4>
-            <ul>
-              <li>
-                <strong>RevOps:</strong> Owned the actual n8n implementation +
-                Outreach configuration
-              </li>
-              <li>
-                <strong>Sales leadership:</strong> Ran the cadence redesign with
-                SDRs and AEs
-              </li>
-              <li>
-                <strong>Product:</strong> Built multi-tenant trial provisioning
-              </li>
-              <li>
-                <strong>Customer Success:</strong> Owned trial-to-paid handoff
-                at enterprise scale
-              </li>
-            </ul>
+        <div class="pivot-block" style="border: none; padding: 0">
+          <div class="pivot-content" style="grid-column: 1 / -1">
+            <p>
+              The upfront cost of acquiring sensors and dispatching installation
+              staff was significant. But by eliminating the guesswork for the
+              customer, the ROI was immediate. Beyond quadrupling our conversion
+              rate and nearly halving the sales cycle, the operational dynamic
+              of the company shifted.
+            </p>
+
+            <div class="mechanics">
+              <div class="mech-card">
+                <div class="num">WIN 01</div>
+                <div class="title">SDR Morale Skyrocketed</div>
+                <div class="desc">
+                  Sales reps were no longer begging for attention or
+                  hard-selling abstract ideas. They became consultants reviewing
+                  a prospect's actual water leaks and inefficiencies.
+                </div>
+              </div>
+              <div class="mech-card">
+                <div class="num">WIN 02</div>
+                <div class="title">Rapid Product Iteration</div>
+                <div class="desc">
+                  With hardware deployed in multiple live, unpredictable
+                  residential environments, the product team received a firehose
+                  of early-stage feedback that accelerated platform evolution.
+                </div>
+              </div>
+              <div class="mech-card">
+                <div class="num">WIN 03</div>
+                <div class="title">Viral Internal Expansion</div>
+                <div class="desc">
+                  When a facility manager saw real savings on a trial tower,
+                  they became our internal champion, automatically pitching the
+                  expansion to the rest of the housing society committee.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== LESSONS ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-num">§ 10 / Hindsight</div>
-          <h2 class="section-title">What I'd do <em>differently.</em></h2>
-        </div>
-
-        <div class="lessons">
-          <div class="lesson">
-            <div class="num">01</div>
-            <h4>Build the asset taxonomy before the workflow.</h4>
-            <p>
-              I designed n8n routing while the asset library was still being
-              built. The taxonomy iterated three times before it was right, and
-              each iteration meant rewiring n8n logic. Should have spent a clean
-              two weeks on taxonomy first.
-            </p>
-          </div>
-          <div class="lesson">
-            <div class="num">02</div>
-            <h4>Run a more rigorous A/B on cadence variants.</h4>
-            <p>
-              We changed the cadence and the assets simultaneously. I can't
-              cleanly attribute the ~40% cycle reduction to one or the other.
-              Most was the trial + pricing reframe, but I'd love to know how
-              much the AI-routed assets contributed independently.
-            </p>
-          </div>
-          <div class="lesson">
-            <div class="num">03</div>
-            <h4>Get NotebookLM into the workflow earlier.</h4>
-            <p>
-              I started using it as a synthesis layer about six months in. The
-              first quarterly brief it produced changed how we positioned
-              against legacy competitors. If I'd had that brief in month two,
-              the messaging would have been sharper from the start.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== TAKEAWAY ===== -->
     <section class="section" style="border-bottom: none">
       <div class="container">
         <div class="section-head">
-          <div class="section-num">§ 11 / The Takeaway</div>
+          <div class="section-num">§ 05 / The Takeaway</div>
           <h2 class="section-title">For product marketers reading this.</h2>
         </div>
 
         <div class="takeaway">
           <div class="takeaway-content">
-            <div class="takeaway-tag">// Two PMM principles</div>
-
-            <div class="takeaway-points">
-              <div class="takeaway-point">
-                <div class="num">PRINCIPLE 01</div>
-                <h4>
-                  The best PMM ideas are usually
-                  <strong style="color: var(--highlight); font-weight: 600"
-                    >replays.</strong
-                  >
-                </h4>
-                <p>
-                  When something works in one segment, the next move is figuring
-                  out which parts port and which need rebuilding. The SMB
-                  Touch-Feel-Convert motion didn't work in enterprise out of the
-                  box. It needed bigger trials, multi-stakeholder asset design,
-                  AI-routed cadence support. But the underlying insight —
-                  <strong
-                    >buyers in novel categories need experiential proof in their
-                    own environment</strong
-                  >
-                  — was the same. PMM is often less about invention and more
-                  about <strong>transposition.</strong>
-                </p>
-              </div>
-
-              <div class="takeaway-point">
-                <div class="num">PRINCIPLE 02</div>
-                <h4>
-                  AI-first PMM in 2026 is about
-                  <strong style="color: var(--highlight); font-weight: 600"
-                    >wiring</strong
-                  >, not generation.
-                </h4>
-                <p>
-                  The interesting use of AI here isn't that we drafted
-                  battlecards faster (we did). It's that we used n8n, Outreach,
-                  Storylane, Synthesia, Gong, and NotebookLM as a
-                  <strong>system</strong> that put the right asset, in the right
-                  language, in front of the right rep, at the right cadence
-                  moment. PMM in the next decade is about building these systems
-                  — not just producing the assets that go into them.
-                </p>
-              </div>
-            </div>
-
-            <div class="clayto-pitch">
-              That second takeaway is also, transparently, the entire pitch
-              behind <strong>Clayto.io</strong>. If you want to see what
-              AI-first PMM looks like as a service rather than a case study,
-              that's where I do this work now.
-            </div>
+            <div class="takeaway-tag">// PMM principle</div>
+            <p>
+              The mistake we made initially was assuming the funnel was broken
+              because <em>the funnel</em> was broken. The truth was, we were
+              running the
+              <strong>wrong motion for a legacy market.</strong>
+            </p>
+            <p>
+              When a buyer has never seen a solution like yours before, online
+              demos and feature lists don't break through the noise. To unblock
+              adoption for unprecedented tech, you have to absorb the friction.
+              <strong
+                >Demonstrate the product in the buyer's environment, on the
+                buyer's data,</strong
+              >
+              and watch the conversation shift from resistance to relief.
+            </p>
+            <p
+              style="
+                font-size: 18px;
+                padding-top: 16px;
+                border-top: 1px solid rgba(244, 239, 230, 0.2);
+              "
+            >
+              Spotting the friction point between the product and the sales
+              motion is a <strong>PMM problem</strong>. Fixing it changes the
+              trajectory of the company.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
     <footer class="footer">
       <div
         class="container"
@@ -2162,8 +1049,8 @@
         "
       >
         <span>Sourav Ghosh · Product Marketing</span>
-        <span>← Companion: SMB GTM rebuild (10% → 50% conversion)</span>
-        <span>Case 02 / 02</span>
+        <span>Companion case study: Demo Pivot and PLG</span>
+        <span>Case 02/02</span>
       </div>
     </footer>
   </body>
