@@ -593,7 +593,105 @@
         color: var(--paper);
         border-color: var(--ink);
       }
-
+/* ====== PHASES (§ 04) ====== */
+.section-sub {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 760px;
+  margin-top: 20px;
+  grid-column: 2;
+}
+.phase-stack {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+.phase-block {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
+  padding: 40px;
+  border-bottom: 1px solid var(--rule);
+}
+.phase-block:last-child {
+  border-bottom: none;
+}
+.phase-left {
+  display: flex;
+  flex-direction: column;
+}
+.phase-num {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-top: 2px solid var(--accent);
+  padding-top: 10px;
+  margin-bottom: 20px;
+  display: inline-block;
+  width: fit-content;
+}
+.phase-title {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+.phase-tagline {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-2);
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+.phase-body {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+.phase-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.phase-tag-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.phase-tag-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.phase-output {
+  margin-top: 4px;
+  padding: 18px 20px;
+  background: var(--paper-2);
+  border-left: 3px solid var(--accent);
+  border-radius: 2px;
+}
+.phase-output-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.phase-output p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink);
+}
       .ai-tools-grid {
         display: flex;
         flex-wrap: wrap;
@@ -923,7 +1021,17 @@
       .ai-cta-btn:hover .ai-cta-arrow {
         transform: translateX(4px);
       }
-
+.phase-block {
+  grid-template-columns: 1fr;
+  gap: 28px;
+  padding: 28px;
+}
+.phase-title {
+  font-size: 26px;
+}
+.section-sub {
+  grid-column: 1;
+}
       .ai-console {
         background: #f4efe6;
         border-radius: 8px;
@@ -1397,7 +1505,12 @@
               <h3>Planet Smart City</h3>
               <div class="role">Product Marketing Manager · Pune</div>
               <p>
-                Global proptech pioneer. Joined as the first and only PMM when there was no GTM infrastructure, no positioning, no enablement, and no CRM. Built all of it from scratch: the revenue systems, the market launch motion, the pricing model, the sales enablement stack, and the positioning across two distinct buyer segments. By the time I left, the GTM machine was running with 85%+ rep adoption, 400+ trials driven, and $1M + ARR achieved in year 1.
+                Global proptech pioneer. Architected the end-to-end PMM
+                infrastructure for their SaaS platform. Bridged Product and
+                Revenue teams to diagnose GTM bottlenecks (like pricing and demo structures) and restructure our market approach. I moved past static documentation to build dynamic
+                sales enablement systems that injected context-specific assets
+                into outreach sequences, and leveraged an AI-first stack—using
+                Claude and NotebookLM—to automate the grunt work of market research.
               </p>
             </div>
             <div class="tl-highlights">
@@ -1425,7 +1538,12 @@
               <h3>Freelance Paid Media Consultant</h3>
               <div class="role">Independent · Mumbai</div>
               <p>
-                Short consulting stint between full-time roles. Ran paid media and built marketing infrastructure for e-commerce clients across the US, UK, and Australia. Mostly confirmed that I'm more interested in building GTM systems than managing ad accounts.
+                Applied enterprise systems thinking to SMB constraints. I built
+                automated lead qualification workflows using Zapier to route
+                WordPress form submissions directly into client CRMs based on
+                dynamic scoring logic. I managed media planning and creative
+                strategy while ensuring the underlying data pipelines were
+                airtight.
               </p>
             </div>
             <div class="tl-highlights">
@@ -1443,7 +1561,12 @@
               <h3>ZEE Entertainment (ZEE5)</h3>
               <div class="role">Marketing Manager · Mumbai</div>
               <p>
-                Fast-paced consumer marketing at scale. Ran multi-market launch campaigns across 3 language segments and led a $30K influencer campaign that delivered 30M+ impressions and 27,500+ new signups. Learned how to move fast, test messaging quickly, and report on what actually mattered.
+                Transitioned my B2B systems-thinking into high-volume consumer
+                marketing. Instead of manually tracking social campaigns across
+                three languages, I built automated reporting pipelines that
+                pulled engagement metrics directly into unified dashboards. This
+                infrastructure removed hours of weekly grunt work, allowing the team to scale our influencer programs
+                and show launches.
               </p>
             </div>
             <div class="tl-highlights">
@@ -1461,7 +1584,12 @@
               <h3>Infosys Limited</h3>
               <div class="role">Marketing Executive · Bengaluru</div>
               <p>
-Enterprise B2B marketing for one of the largest IT services companies in the world. Ran ABM programs targeting C-suite buyers across global accounts, managed the full marketing automation stack on Salesforce Marketing Cloud and Eloqua, and built lead scoring and nurture sequences from scratch. Where the instinct for systems-level marketing started.
+                Where the automation foundation was laid. I ran paid and email
+                campaigns for enterprise service lines, managed Salesforce
+                Marketing Cloud, and handled Oracle Eloqua. I built lead
+                management workflows from scratch. This was my introduction to
+                thinking in systems, learning early on how to connect disjointed
+                tools so marketing could scale without adding headcount.
               </p>
             </div>
             <div class="tl-highlights">
@@ -1474,87 +1602,124 @@ Enterprise B2B marketing for one of the largest IT services companies in the wor
         </div>
       </div>
     </section>
+<section class="section" id="capabilities">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">§ 04 / The First 90 Days</div>
+      <h2 class="section-title">
+        How I'd show up <em>if you hired me</em> tomorrow.
+      </h2>
+    </div>
 
-    <section class="section" id="capabilities">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-num">§ 04 / Strategic Impact</div>
-          <h2 class="section-title">
-            Deep PMM strategy <em>accelerated</em> by AI-native systems.
-          </h2>
+    <div class="phase-stack">
+
+      <div class="phase-block">
+        <div class="phase-left">
+          <div class="phase-num">Phase 01 / Days 1&ndash;30</div>
+          <h3 class="phase-title">Ground &amp; Diagnose</h3>
+          <p class="phase-tagline">Learn your world before I touch anything.</p>
+          <p class="phase-body">
+            The first month is product immersion, ICP depth, and sales motion audit. I become a power user. I sit with product and engineering. I review won and lost deals. I shadow demos and review Gong calls. By day 30 I know what you sell, who actually buys it, and where the GTM motion is leaking.
+          </p>
         </div>
-
-        <div class="cap-grid">
-          <div class="cap-block">
-            <h4>Category & Market Intelligence</h4>
-            <p
-              style="font-size: 14px; color: var(--muted); margin-bottom: 16px"
-            >
-              Identifying market gaps through rigorous analysis and customer shadowing, then scaling
-              that intelligence with automated signal extraction.
-            </p>
+        <div class="phase-right">
+          <div class="phase-tag-group">
+            <div class="phase-tag-label">// PMM Work</div>
             <div class="cap-tags">
-              <span class="cap-tag">Category Design</span>
-              <span class="cap-tag">ICP Definition</span>
-              <span class="cap-tag featured">AI-Signal Scraping</span>
-              <span class="cap-tag">Competitive Moat Analysis</span>
-              <span class="cap-tag featured">NotebookLM Synthesis</span>
+              <span class="cap-tag">Product Immersion</span>
+              <span class="cap-tag">ICP Mapping</span>
+              <span class="cap-tag">Win/Loss Review</span>
+              <span class="cap-tag">Competitive Teardown</span>
+              <span class="cap-tag">Sales Call Shadowing</span>
             </div>
           </div>
-
-          <div class="cap-block">
-            <h4>Growth & Technical GTM</h4>
-            <p
-              style="font-size: 14px; color: var(--muted); margin-bottom: 16px"
-            >
-              Designing high-converting sales architectures that sit perfectly between the buyer's reality and the product's value.
-            </p>
+          <div class="phase-tag-group">
+            <div class="phase-tag-label">// AI Accelerant</div>
             <div class="cap-tags">
-              <span class="cap-tag">Full-Funnel GTM Strategy</span>
-              <span class="cap-tag featured">Apollo/Brevo Infrastructure</span>
-              <span class="cap-tag">Technical DNS/DKIM Config</span>
-              <span class="cap-tag featured">Workflow Automation</span>
-              <span class="cap-tag">Inbox Placement Ops</span>
+              <span class="cap-tag featured">NotebookLM Knowledge Base</span>
+              <span class="cap-tag featured">Gong Call Synthesis</span>
+              <span class="cap-tag featured">Signal Scraping</span>
             </div>
           </div>
-
-          <div class="cap-block">
-            <h4>Product-Led Revenue Ops</h4>
-            <p
-              style="font-size: 14px; color: var(--muted); margin-bottom: 16px"
-            >
-              Bridging product value and sales execution by building
-              the operational workflows and internal tools teams actually use.
-            </p>
-            <div class="cap-tags">
-              <span class="cap-tag">CRM Architecture (SME)</span>
-              <span class="cap-tag featured">Prompt-Based Workflows</span>
-              <span class="cap-tag">Executive Dashboards</span>
-              <span class="cap-tag featured">n8n Logic Design</span>
-              <span class="cap-tag">Lifecycle Behavioral Scoring</span>
-            </div>
-          </div>
-
-          <div class="cap-block">
-            <h4>Strategic Enablement</h4>
-            <p
-              style="font-size: 14px; color: var(--muted); margin-bottom: 16px"
-            >
-              Equipping sales teams with narratives based on buyer reality,
-              supported by custom-built AI knowledge bases.
-            </p>
-            <div class="cap-tags">
-              <span class="cap-tag">Value Proposition Design</span>
-              <span class="cap-tag featured">Custom Claude Assistants</span>
-              <span class="cap-tag">Sales Playbook Development</span>
-              <span class="cap-tag featured">Automated Battlecards</span>
-              <span class="cap-tag">Pricing & Packaging Strategy</span>
-            </div>
+          <div class="phase-output">
+            <div class="phase-output-label">What lands on your desk by day 30</div>
+            <p>A one-page diagnostic memo. The product's value prop matrix. The actual ICP drilldowns. Hypotheses on what's broken.</p>
           </div>
         </div>
       </div>
-    </section>
 
+      <div class="phase-block">
+        <div class="phase-left">
+          <div class="phase-num">Phase 02 / Days 31&ndash;60</div>
+          <h3 class="phase-title">Rebuild the Broken Piece</h3>
+          <p class="phase-tagline">Pick the highest-leverage fix and implement it.</p>
+          <p class="phase-body">
+            Pricing, positioning, sales motion, ICP, packaging. One of these is usually the real bottleneck. I pick it based on the diagnostic, rebuild it from buyer reality, and get it into market by week 8. The goal isn't a polished launch. It's a tested artifact that 5 sales reps can pressure-test on live calls.
+          </p>
+        </div>
+        <div class="phase-right">
+          <div class="phase-tag-group">
+            <div class="phase-tag-label">// PMM Work</div>
+            <div class="cap-tags">
+              <span class="cap-tag">Positioning Rewrite</span>
+              <span class="cap-tag">Pricing Model Redesign</span>
+              <span class="cap-tag">New Sales Narrative</span>
+              <span class="cap-tag">Battlecard Refresh</span>
+              <span class="cap-tag">ICP Segmentation</span>
+            </div>
+          </div>
+          <div class="phase-tag-group">
+            <div class="phase-tag-label">// AI Accelerant</div>
+            <div class="cap-tags">
+              <span class="cap-tag featured">Custom Claude Assistants</span>
+              <span class="cap-tag featured">Automated Competitive Intel</span>
+              <span class="cap-tag featured">Custom Skills & Workflows</span>
+            </div>
+          </div>
+          <div class="phase-output">
+            <div class="phase-output-label">What lands on your desk by day 60</div>
+            <p>A new GTM artifact, in market, tested on real calls. Plus a feedback loop that says whether the new motion is converting better than the old one.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-left">
+          <div class="phase-num">Phase 03 / Days 61&ndash;90</div>
+          <h3 class="phase-title">Systemize So It Holds</h3>
+          <p class="phase-tagline">Make the new motion run on rails.</p>
+          <p class="phase-body">
+            The last 30 days are about wiring the operating layer underneath. Enablement assets reps will use without being asked. Triggered human-in-the-loop workflows that keep the assets updated.
+          </p>
+        </div>
+        <div class="phase-right">
+          <div class="phase-tag-group">
+            <div class="phase-tag-label">// PMM Work</div>
+            <div class="cap-tags">
+              <span class="cap-tag">GTM Architecture</span>
+              <span class="cap-tag">Pressure Test Positioning</span>
+              <span class="cap-tag">Enablement Asset Library</span>
+              <span class="cap-tag">SDR and AE Asset Adoption</span>
+            </div>
+          </div>
+          <div class="phase-tag-group">
+            <div class="phase-tag-label">// AI Accelerant</div>
+            <div class="cap-tags">
+              <span class="cap-tag featured">n8n Workflows</span>
+              <span class="cap-tag featured">Automated Reporting</span>
+              <span class="cap-tag featured">AI Enablement of SDRs/AEs</span>
+            </div>
+          </div>
+          <div class="phase-output">
+            <div class="phase-output-label">What lands on your desk by day 90</div>
+            <p>A GTM machine that compounds. 80%+ rep adoption on the new playbook. A dashboard that tells you weekly whether the new motion is winning.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
     <section class="section" id="ai-agents" style="background: var(--paper-2)">
       <div class="container">
         <div class="section-head">
