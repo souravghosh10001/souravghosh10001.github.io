@@ -1,0 +1,2243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sourav Ghosh: B2B SaaS Product Marketer & GTM Strategist</title>
+    <meta
+      name="description"
+      content="B2B SaaS product marketer sitting at the intersection of sales, product, and the customer. 10+ years repositioning products, fixing pricing, and rebuilding GTM motions to unblock stuck revenue, powered by AI workflows."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0f0e0c;
+        --paper: #f4efe6;
+        --paper-2: #ece4d5;
+        --accent: #e94f1d;
+        --accent-2: #1b4332;
+        --muted: #6b6357;
+        --rule: #1f1b16;
+        --highlight: #ffe066;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Inter Tight", sans-serif;
+        font-size: 17px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        background-image: radial-gradient(
+          circle at 1px 1px,
+          rgba(15, 14, 12, 0.06) 1px,
+          transparent 0
+        );
+        background-size: 22px 22px;
+      }
+
+      .serif {
+        font-family: "Fraunces", serif;
+      }
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ====== TOP RIBBON ====== */
+      .ribbon {
+        border-bottom: 1px solid var(--rule);
+        background: var(--ink);
+        color: var(--paper);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .ribbon-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 32px;
+        max-width: 1280px;
+        margin: 0 auto;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .ribbon-inner span:nth-child(2) {
+        color: var(--highlight);
+      }
+      .ribbon-nav {
+        display: flex;
+        gap: 24px;
+      }
+      .ribbon-nav a {
+        transition: color 0.2s;
+      }
+      .ribbon-nav a:hover {
+        color: var(--highlight);
+      }
+
+      /* ====== HERO ====== */
+      .hero {
+        padding: 100px 0 80px;
+        border-bottom: 2px solid var(--rule);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-meta {
+        display: flex;
+        gap: 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+      }
+      .hero-meta .dot {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background: var(--accent);
+        border-radius: 50%;
+        margin-right: 8px;
+        vertical-align: middle;
+        animation: pulse 2s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+
+      .hero-intro {
+        display: flex;
+        align-items: center;
+        gap: 56px;
+        margin-bottom: 56px;
+      }
+      .hero-portrait-wrap {
+        flex-shrink: 0;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+      .hero-portrait {
+        width: 172px;
+        height: 172px;
+        object-fit: cover;
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+        box-shadow: 5px 5px 0 var(--ink);
+      }
+      .hero-portrait-cap {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .hero h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: clamp(48px, 8vw, 100px);
+        line-height: 0.92;
+        letter-spacing: -0.035em;
+        margin-bottom: 32px;
+        max-width: 1200px;
+      }
+      .hero h1 .accent {
+        color: var(--accent);
+        font-style: italic;
+        font-weight: 400;
+      }
+      .hero h1 .green {
+        color: var(--accent-2);
+        font-style: italic;
+        font-weight: 400;
+      }
+      .hero h1 .underline {
+        position: relative;
+        display: inline-block;
+      }
+      .hero h1 .underline::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -4px;
+        height: 8px;
+        background: var(--highlight);
+        z-index: -1;
+      }
+
+      .hero-sub {
+        font-size: 21px;
+        max-width: 720px;
+        color: var(--ink);
+        margin-bottom: 0;
+        line-height: 1.5;
+      }
+      .hero-sub strong {
+        background: var(--highlight);
+        padding: 0 4px;
+        font-weight: 500;
+      }
+
+      .hero-modes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        border-top: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+      }
+      .hero-mode {
+        padding: 28px 24px;
+        border-right: 1px solid var(--rule);
+        position: relative;
+        transition: background 0.2s;
+      }
+      .hero-mode:last-child {
+        border-right: none;
+      }
+      .hero-mode:hover {
+        background: var(--paper-2);
+      }
+      .hero-mode .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 12px;
+      }
+      .hero-mode .what {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 6px;
+      }
+      .hero-mode .for {
+        font-size: 13px;
+        color: var(--muted);
+        font-family: "JetBrains Mono", monospace;
+        letter-spacing: 0.05em;
+      }
+
+      /* ====== SECTION HEADER ====== */
+      .section {
+        padding: 100px 0;
+        border-bottom: 1px solid var(--rule);
+      }
+      .section-head {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 32px;
+        margin-bottom: 56px;
+        align-items: start;
+      }
+      .section-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        border-top: 2px solid var(--accent);
+        padding-top: 10px;
+      }
+      .section-title {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: clamp(32px, 4.8vw, 64px);
+        line-height: 1.02;
+        letter-spacing: -0.025em;
+        max-width: 1000px;
+      }
+      .section-title em {
+        font-style: italic;
+        color: var(--accent);
+        font-weight: 400;
+      }
+      .section-title .green {
+        font-style: italic;
+        color: var(--accent-2);
+        font-weight: 400;
+      }
+
+      /* ====== POSITIONING / THESIS ====== */
+      .thesis {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 64px 56px;
+        border-radius: 4px;
+        position: relative;
+        overflow: hidden;
+      }
+      .thesis::before {
+        content: "// THE ARGUMENT";
+        position: absolute;
+        top: 24px;
+        right: 32px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--highlight);
+      }
+      .thesis-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: start;
+      }
+      .thesis-claim {
+        font-family: "Fraunces", serif;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 1.25;
+        letter-spacing: -0.015em;
+      }
+      .thesis-claim strong {
+        color: var(--highlight);
+        font-weight: 600;
+      }
+      .thesis-evidence {
+        font-size: 16px;
+        line-height: 1.6;
+        color: rgba(244, 239, 230, 0.8);
+      }
+      .thesis-evidence p {
+        margin-bottom: 16px;
+      }
+      .thesis-evidence p:last-child {
+        margin-bottom: 0;
+      }
+      .thesis-evidence strong {
+        color: var(--paper);
+        font-weight: 600;
+      }
+
+      /* ====== WORK / CASE STUDIES ====== */
+      .work-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+      .case {
+        background: var(--paper);
+        border: 1px solid var(--rule);
+        padding: 40px;
+        position: relative;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        min-height: 480px;
+      }
+      .case:hover {
+        transform: translate(-3px, -3px);
+        box-shadow: 6px 6px 0 var(--ink);
+      }
+      .case-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        color: var(--accent);
+        margin-bottom: 16px;
+      }
+      .case-title {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 20px;
+      }
+      .case-title em {
+        font-style: italic;
+        color: var(--accent);
+        font-weight: 400;
+      }
+      .case-meta {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 24px;
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .case-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        border-top: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+        margin-bottom: 24px;
+      }
+      .case-stat {
+        padding: 16px 12px;
+        border-right: 1px solid var(--rule);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .case-stat:last-child {
+        border-right: none;
+      }
+      .case-stat .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 9px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 4px;
+      }
+      .case-stat .num {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+      .case-stat .num-medium {
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+      .case-stat .num-text {
+        font-family: "Inter Tight", sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 1.3;
+        color: var(--ink);
+      }
+      .case-stat .num.green {
+        color: var(--accent-2);
+      }
+      .case-stat .num.red {
+        color: var(--accent);
+      }
+      .case-stat .num-text.green {
+        color: var(--accent-2);
+      }
+      .case-stat .num-medium.green {
+        color: var(--accent-2);
+      }
+      .case-summary {
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--ink);
+        margin-bottom: 24px;
+        flex: 1;
+      }
+      .case-cta {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        border-top: 1px solid var(--rule);
+        padding-top: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .case-cta .arrow {
+        font-size: 18px;
+        transition: transform 0.2s;
+      }
+      .case:hover .case-cta .arrow {
+        transform: translateX(4px);
+      }
+
+      /* ====== CAREER TIMELINE ====== */
+      .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .tl-item {
+        display: grid;
+        grid-template-columns: 200px 1fr 280px;
+        gap: 32px;
+        padding: 40px 0;
+        border-top: 1px solid var(--rule);
+        align-items: start;
+      }
+      .tl-item:last-child {
+        border-bottom: 1px solid var(--rule);
+      }
+      .tl-period {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .tl-period .duration {
+        display: block;
+        color: var(--accent);
+        margin-top: 4px;
+        font-size: 11px;
+      }
+      .tl-main h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin-bottom: 4px;
+      }
+      .tl-main .role {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 12px;
+      }
+      .tl-main p {
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--ink);
+      }
+      .tl-highlights {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .tl-highlight {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--ink);
+        padding: 8px 12px;
+        background: var(--paper-2);
+        border-left: 3px solid var(--accent);
+      }
+      .tl-highlight strong {
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+        text-transform: none;
+        color: var(--accent);
+        margin-right: 6px;
+      }
+
+      /* ====== CAPABILITIES & AI STACK ====== */
+      .cap-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        border: 1px solid var(--rule);
+      }
+      .cap-block {
+        padding: 32px;
+        border-right: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+      }
+      .cap-block:nth-child(2n) {
+        border-right: none;
+      }
+      .cap-block:nth-last-child(-n + 2) {
+        border-bottom: none;
+      }
+      .cap-block h4 {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .cap-block h4::before {
+        content: "◆";
+        color: var(--accent);
+      }
+      .cap-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .cap-tag {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 6px 12px;
+        background: var(--paper-2);
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+        letter-spacing: -0.01em;
+      }
+      .cap-tag.featured {
+        background: var(--ink);
+        color: var(--paper);
+        border-color: var(--ink);
+      }
+/* ====== PHASES (§ 04) ====== */
+.section-sub {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 760px;
+  margin-top: 20px;
+  grid-column: 2;
+}
+.phase-stack {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+.phase-block {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
+  padding: 40px;
+  border-bottom: 1px solid var(--rule);
+}
+.phase-block:last-child {
+  border-bottom: none;
+}
+.phase-left {
+  display: flex;
+  flex-direction: column;
+}
+.phase-num {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-top: 2px solid var(--accent);
+  padding-top: 10px;
+  margin-bottom: 20px;
+  display: inline-block;
+  width: fit-content;
+}
+.phase-title {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+.phase-tagline {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-2);
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+.phase-body {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+.phase-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.phase-tag-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.phase-tag-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.phase-output {
+  margin-top: 4px;
+  padding: 18px 20px;
+  background: var(--paper-2);
+  border-left: 3px solid var(--accent);
+  border-radius: 2px;
+}
+.phase-output-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.phase-output p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+      .ai-tools-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 32px;
+      }
+      .ai-tool-box {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 24px;
+        background: var(--paper-2);
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--ink);
+        transition: transform 0.2s;
+      }
+      .ai-tool-box:hover {
+        transform: translateY(-2px);
+        background: var(--paper);
+      }
+      .ai-tool-box img {
+        height: 24px;
+        width: 24px;
+        object-fit: contain;
+        border-radius: 4px;
+      }
+
+      /* ====== AI AGENTS & SIDE PROJECTS ====== */
+      .projects {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .project {
+        border: 1px solid var(--rule);
+        padding: 32px;
+        position: relative;
+        background: var(--paper);
+        transition: background 0.2s;
+        display: flex;
+        flex-direction: column;
+      }
+      .project:hover {
+        background: var(--paper-2);
+      }
+      .project-status {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        background: var(--accent);
+        color: var(--paper);
+        border-radius: 2px;
+      }
+      .project-status.live {
+        background: var(--accent-2);
+      }
+      .project-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+      .project h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin-bottom: 14px;
+      }
+      .project h3 em {
+        font-style: italic;
+        color: var(--accent);
+        font-weight: 400;
+      }
+      .project p {
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--ink);
+        margin-bottom: 20px;
+        flex: 1;
+      }
+      .project-link {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        border-bottom: 1px solid var(--accent);
+        padding-bottom: 2px;
+        display: inline-table;
+        margin-top: auto;
+        align-self: flex-start;
+      }
+
+      .comic-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+      }
+      .comic-placeholder {
+        width: 100%;
+        background: var(--paper-2);
+        border: 1px dashed var(--muted);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--muted);
+        text-align: center;
+      }
+      .comic-placeholder img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      /* ====== STATEMENT BLOCK ====== */
+      .statement {
+        padding: 64px 0;
+        border-top: 2px solid var(--rule);
+        border-bottom: 2px solid var(--rule);
+      }
+      .statement-text {
+        font-family: "Fraunces", serif;
+        font-weight: 400;
+        font-size: clamp(28px, 3.6vw, 48px);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        max-width: 1100px;
+      }
+      .statement-text em {
+        font-style: italic;
+        color: var(--accent);
+      }
+      .statement-text strong {
+        font-weight: 600;
+        position: relative;
+        display: inline-block;
+      }
+      .statement-text strong::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 6px;
+        background: var(--highlight);
+        z-index: -1;
+      }
+
+      /* ====== CONTACT ====== */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: start;
+      }
+      .contact-prose {
+        font-family: "Fraunces", serif;
+        font-size: 24px;
+        line-height: 1.4;
+        font-weight: 400;
+        color: var(--ink);
+      }
+      .contact-prose em {
+        font-style: italic;
+        color: var(--accent);
+      }
+      .contact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        border-top: 1px solid var(--rule);
+      }
+      .contact-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--rule);
+        transition: padding 0.2s;
+      }
+      .contact-item:hover {
+        padding-left: 12px;
+      }
+      .contact-item .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .contact-item .value {
+        font-family: "Fraunces", serif;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+      }
+      .contact-item .value .arrow {
+        display: inline-block;
+        margin-left: 8px;
+        color: var(--accent);
+        transition: transform 0.2s;
+      }
+      .contact-item:hover .value .arrow {
+        transform: translateX(4px);
+      }
+
+      /* ====== FOOTER ====== */
+      .footer {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 32px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .footer-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .footer span:nth-child(2) {
+        color: var(--highlight);
+      }
+
+      /* ====== AI LAB ANIMATION CLASSES ====== */
+      .ai-metric {
+        font-size: 14px;
+        letter-spacing: 0.04em;
+        color: var(--highlight);
+        background: rgba(255,255,255,0.07);
+        border-left: 3px solid var(--highlight);
+        padding: 12px 16px;
+        margin-bottom: 28px;
+        line-height: 1.5;
+      }
+      .ai-metric strong {
+        font-weight: 700;
+        color: var(--highlight);
+      }
+      .ai-see-all-wrap {
+        border-top: 1px solid var(--rule);
+        padding-top: 24px;
+        margin-top: 8px;
+      }
+      
+      .ai-hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 56px;
+        border-radius: 4px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 40px;
+      }
+      .ai-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      .ai-hero-label {
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--highlight);
+        margin-bottom: 18px;
+      }
+      .ai-hero-desc {
+        font-size: 16px;
+        line-height: 1.65;
+        color: rgba(244,239,230,0.75);
+        margin-bottom: 32px;
+        max-width: 480px;
+      }
+      .ai-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--accent);
+        color: var(--paper);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 14px 24px;
+        border-radius: 2px;
+        text-decoration: none;
+        transition: background 0.2s, transform 0.2s;
+      }
+      .ai-cta-btn:hover {
+        background: #c23e16;
+        transform: translateY(-2px);
+      }
+      .ai-cta-arrow {
+        transition: transform 0.2s;
+      }
+      .ai-cta-btn:hover .ai-cta-arrow {
+        transform: translateX(4px);
+      }
+.phase-block {
+  grid-template-columns: 1fr;
+  gap: 28px;
+  padding: 28px;
+}
+.phase-title {
+  font-size: 26px;
+}
+.section-sub {
+  grid-column: 1;
+}
+      .ai-console {
+        background: #f4efe6;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+      }
+      .ai-console-bar {
+        background: #1f1b16;
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .ai-console-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+      }
+      .ai-console-dot.pulse {
+        animation: pulse 1.8s ease-in-out infinite;
+      }
+      .ai-console-status {
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(244,239,230,0.8);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .ai-console-inner {
+        padding: 20px;
+      }
+      .ai-console-steps {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+      .ai-step-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #ccc;
+        transition: background 0.3s, transform 0.3s;
+        flex-shrink: 0;
+      }
+      .ai-step-dot.active {
+        background: var(--accent);
+        transform: scale(1.4);
+      }
+      .ai-step-text {
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        color: var(--muted);
+        margin-left: 4px;
+        transition: opacity 0.3s;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .ai-flow {
+        display: flex;
+        align-items: center;
+        gap: 0;
+      }
+      .ai-flow-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+      .ai-flow-node {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 9px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-family: "Inter Tight", sans-serif;
+        white-space: nowrap;
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+      .ai-flow-node.input {
+        background: white;
+        border: 1px solid #ddd;
+        color: #555;
+      }
+      .ai-flow-node.input.pulsing {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(233,79,29,0.12);
+      }
+      .ai-flow-connector {
+        flex: 1;
+        position: relative;
+        height: 2px;
+        background: #ddd;
+        margin: 0 8px;
+        overflow: hidden;
+      }
+      .ai-flow-connector.active {
+        background: rgba(233,79,29,0.3);
+      }
+      .ai-flow-dot {
+        position: absolute;
+        top: -3px;
+        left: -8px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+        opacity: 0;
+      }
+      .ai-flow-dot.active {
+        animation: flowDot 0.9s ease-in-out forwards;
+      }
+      @keyframes flowDot {
+        0% { left: 0; opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { left: calc(100% + 8px); opacity: 0; }
+      }
+      .ai-flow-proc {
+        flex-shrink: 0;
+      }
+      .ai-flow-node.proc {
+        background: var(--ink);
+        border: none;
+        color: var(--paper);
+        font-size: 16px;
+        padding: 10px 12px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .ai-flow-node.proc.active {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 6px rgba(233,79,29,0.15);
+      }
+      .ai-flow-output {
+        flex-shrink: 0;
+      }
+      .ai-output-card {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 8px 10px;
+        width: 110px;
+        transition: border-color 0.3s, box-shadow 0.3s, opacity 0.3s;
+        opacity: 0.4;
+      }
+      .ai-output-card.revealed {
+        opacity: 1;
+        border-color: var(--accent);
+        box-shadow: 0 4px 12px rgba(233,79,29,0.12);
+      }
+      .ai-output-title {
+        font-size: 9px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #333;
+        margin-bottom: 6px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .ai-output-lines {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .ai-output-line {
+        height: 4px;
+        background: #e0e0e0;
+        border-radius: 2px;
+        width: 100%;
+      }
+      .ai-output-line.short { width: 65%; }
+      .ai-output-line.medium { width: 80%; }
+      
+      .ai-see-all {
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        border-bottom: 1px solid var(--accent);
+        padding-bottom: 2px;
+        display: inline-block;
+        transition: color 0.2s;
+      }
+      .ai-see-all:hover {
+        color: #c23e16;
+      }
+
+      /* ====== RESPONSIVE ====== */
+      @media (max-width: 900px) {
+        .container {
+          padding: 0 20px;
+        }
+        .ribbon-inner {
+          padding: 10px 20px;
+        }
+        .hero {
+          padding: 64px 0 48px;
+        }
+        .hero-intro {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 28px;
+        }
+        .hero-portrait-wrap {
+          flex-direction: row;
+          align-items: center;
+          gap: 16px;
+          margin-left: 0;
+        }
+        .hero-portrait {
+          width: 120px;
+          height: 120px;
+        }
+        .section {
+          padding: 64px 0;
+        }
+        .section-head {
+          grid-template-columns: 1fr;
+          gap: 16px;
+          margin-bottom: 32px;
+        }
+        .hero-modes {
+          grid-template-columns: 1fr;
+        }
+        .hero-mode {
+          border-right: none;
+          border-bottom: 1px solid var(--rule);
+        }
+        .hero-mode:last-child {
+          border-bottom: none;
+        }
+        .thesis {
+          padding: 40px 28px;
+        }
+        .thesis-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .thesis-claim {
+          font-size: 24px;
+        }
+        .work-grid {
+          grid-template-columns: 1fr;
+        }
+        .case {
+          min-height: auto;
+          padding: 28px;
+        }
+        .case-stats {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .tl-item {
+          grid-template-columns: 1fr;
+          gap: 16px;
+          padding: 28px 0;
+        }
+        .tl-highlights {
+          gap: 8px;
+        }
+        .cap-grid {
+          grid-template-columns: 1fr;
+        }
+        .cap-block {
+          border-right: none;
+        }
+        .projects {
+          grid-template-columns: 1fr;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .ribbon-nav {
+          gap: 16px;
+          font-size: 10px;
+        }
+        
+        .ai-hero {
+          grid-template-columns: 1fr;
+          padding: 36px 28px;
+          gap: 32px;
+        }
+        .ai-flow {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 8px;
+        }
+        .ai-flow-connector {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ribbon">
+      <div class="ribbon-inner">
+        <span>SOURAV GHOSH · STRATEGIC PMM · B2B SaaS</span>
+        <span>● AVAILABLE FOR FULL-TIME SENIOR PMM ROLES</span>
+        <div class="ribbon-nav">
+          <a href="#work">Work</a>
+          <a href="#career">Career</a>
+          <a href="#building">Building</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-meta">
+          <span
+            ><span class="dot"></span>B2B SAAS · PRODUCT MARKETING · GTM</span
+          >
+          <span>10+ YEARS · POSITIONING · PRICING · LAUNCHES</span>
+          <span>MOST RECENTLY @ SALESINTEL · REMOTE (USA)</span>
+        </div>
+
+        <h1>
+          The <span class="green">B2B SaaS</span> PMM you call when the product's good but <span class="accent">revenue is stuck.</span>
+        </h1>
+
+        <div class="hero-intro">
+          <p class="hero-sub">
+            I'm a <strong>B2B SaaS</strong> product marketer working at the <strong>intersection of Sales, Product, and the Customer</strong>, and I use that vantage point to diagnose why revenue is stuck. The real cause is usually a misaligned pricing model or a sales motion that doesn't match how buyers actually buy. <strong>I rebuild the motion around market reality and wire up AI workflows to scale it.</strong> That's the job.</p>
+          <figure class="hero-portrait-wrap">
+            <img
+              src="assets/headshot.JPG"
+              alt="Sourav Ghosh, Product Marketing Manager"
+              class="hero-portrait"
+            />
+            <figcaption class="hero-portrait-cap">Sourav Ghosh · Strategic PMM</figcaption>
+          </figure>
+        </div>
+
+        <div class="hero-modes">
+          <div class="hero-mode">
+            <div class="label">// MODE 01</div>
+            <div class="what">B2B SaaS Product Marketer</div>
+            <div class="for">
+              Full-time. Remote-first. AI-enabled.
+            </div>
+          </div>
+          <div class="hero-mode">
+            <div class="label">// MODE 02</div>
+            <div class="what">Using AI to Ship Pet Projects</div>
+            <div class="for">
+              Travel app · PMM Comics  · In-house CRM. 
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="thesis">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 01 / Position</div>
+          <h2 class="section-title">
+            The argument I'm <em>actually</em> making.
+          </h2>
+        </div>
+
+        <div class="thesis">
+          <div class="thesis-grid">
+            <div class="thesis-claim">
+              Great PMM in <strong>B2B SaaS</strong> comes down to one thing: understanding the <strong>customer, sales motion, and product</strong> well enough to diagnose why revenue is stuck, then building the systems to unblock it.
+            </div>
+            <div class="thesis-evidence">
+              <p>
+                I've spent 10+ years architecting marketing and sales systems for B2B SaaS. When a product isn't selling, the cause is usually structural: a misaligned pricing model or a broken sales motion.
+              </p>
+              <p>
+                I go into the field to find the buyer's true mental model, restructure the offering, and then use my automation background to build workflows that scale the new playbook. I run win/loss interviews AND wire Gong into NotebookLM to synthesise the data.
+              </p>
+              <p>
+                Strategy that unblocks revenue, powered by AI systems that remove the grunt work. That's the bet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 02 / Selected Work</div>
+          <h2 class="section-title">
+            Four case studies. <em>Unblocking revenue</em> through positioning, launches, and GTM pivots.
+          </h2>
+        </div>
+
+        <div class="work-grid">
+          <a href="salesintel-case-study.html" class="case">
+            <div class="case-num">CASE 01 / REPOSITIONING</div>
+            <h3 class="case-title">
+              From a <em>price war</em> to pipeline: repositioning a commoditizing data vendor.
+            </h3>
+            <div class="case-meta">
+              <span>SalesIntel</span>
+              <span>B2B SaaS</span>
+              <span>Positioning</span>
+            </div>
+            <div class="case-stats">
+              <div class="case-stat">
+                <div class="label">SQL Lift</div>
+                <div class="num green">+28%</div>
+              </div>
+              <div class="case-stat">
+                <div class="label">Buying Axis</div>
+                <div class="num-text green">Data → Pipeline</div>
+              </div>
+              <div class="case-stat">
+                <div class="label">Proof</div>
+                <div class="num-text">Live homepage</div>
+              </div>
+            </div>
+            <p class="case-summary">
+              Selling as a "ZoomInfo alternative" traps you in a price-and-accuracy war you cannot win. I helped move the buying conversation from "whose data is more accurate" to "who actually generates pipeline," rebuilt the landing-page narrative around AI agents instead of record counts, then carried the new story through onboarding, one-pagers, and battlecards. The rebuilt narrative lifted SQLs by 28%.
+            </p>
+            <div class="case-cta">
+              Read the case study <span class="arrow">→</span>
+            </div>
+          </a>
+
+          <a href="gtm-canvas-case-study.html" class="case">
+            <div class="case-num">CASE 02 / PRODUCT LAUNCH</div>
+            <h3 class="case-title">
+              Launching an agentic product without leading with <em>"AI agent."</em>
+            </h3>
+            <div class="case-meta">
+              <span>SalesIntel</span>
+              <span>GTM Canvas</span>
+              <span>Product Launch</span>
+            </div>
+            <div class="case-stats">
+              <div class="case-stat">
+                <div class="label">Framing</div>
+                <div class="num-text green">Job-first</div>
+              </div>
+              <div class="case-stat">
+                <div class="label">Launch Kit</div>
+                <div class="num-text green">5 assets</div>
+              </div>
+              <div class="case-stat">
+                <div class="label">Proof</div>
+                <div class="num-text">Launch video</div>
+              </div>
+            </div>
+            <p class="case-summary">
+              GTM Canvas was SalesIntel's agentic-automation flagship, launched into an audience that buys contact records and is tired of "AI agent" claims. I built the launch around the job the agent does, building and prioritizing lists and sequencing outreach, not the technology behind it, and shipped one story across the page, deck, one-pager, and a video that lets buyers watch it work.
+            </p>
+            <div class="case-cta">
+              Read the case study <span class="arrow">→</span>
+            </div>
+          </a>
+
+          <a href="planet-sim-case-study.html" class="case">
+            <div class="case-num">CASE 03 / PRICING PIVOT</div>
+            <h3 class="case-title">
+              Shifting the conversation: How a <em>pricing pivot</em> rescued our value proposition.
+            </h3>
+            <div class="case-meta">
+              <span>Planet Smart City</span>
+              <span>Planet SIM</span>
+              <span>GTM Rebuild</span>
+            </div>
+            <div class="case-stats">
+              <div class="case-stat">
+                <div class="label">Objections</div>
+                <div class="num-text green">Eliminated</div>
+              </div>
+              <div class="case-stat">
+                <div class="label">Ticket Size</div>
+                <div class="num-text green">Increased</div>
+              </div>
+              <div class="case-stat">
+                <div class="label">Sales Focus</div>
+                <div class="num-text">Value-led</div>
+              </div>
+            </div>
+            <p class="case-summary">
+              Our IoT solution was logically priced on unit economics (per-sensor), forcing buyers to haggle over hardware. By getting out of the building and uncovering the buyer's true budgeting mental model, we pivoted to a SaaS-style per-flat subscription. This killed hardware objections and unlocked higher deal values seamlessly.
+            </p>
+            <div class="case-cta">
+              Read the case study <span class="arrow">→</span>
+            </div>
+          </a>
+
+          <a href="planet-sim-enterprise-case-study.html" class="case">
+            <div class="case-num">CASE 04 / MOTION PIVOT</div>
+            <h3 class="case-title">
+              We replaced abstract demos with live trials and <em>4×'d conversion.</em>
+            </h3>
+            <div class="case-meta">
+              <span>Planet Smart City</span>
+              <span>Planet SIM</span>
+              <span>Experiential PLG</span>
+            </div>
+            <div class="case-stats">
+              <div class="case-stat">
+                <div class="label">Win Rate</div>
+                <div class="num green">40%</div>
+              </div>
+              <div class="case-stat">
+                <div class="label">Cycle</div>
+                <div class="num-medium green">80d → 45d</div>
+              </div>
+              <div class="case-stat">
+                <div class="label">Motion</div>
+                <div class="num-text">Consultative</div>
+              </div>
+            </div>
+            <p class="case-summary">
+              Selling a physical paradigm shift via Zoom wasn't working. The imagination barrier was too high. We took a bold bet: killing the online demo entirely and offering a free 15-day live, on-site installation. By letting buyers experience their own operational data, the SDR motion flipped from push-selling to consulting, and the product sold itself.
+            </p>
+            <div class="case-cta">
+              Read the case study <span class="arrow">→</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement">
+      <div class="container">
+        <p class="statement-text">
+          Most stuck revenue traces back to <em>structure</em>: a pricing model,
+          a sales motion, or a story that doesn't match
+          <strong>how buyers actually buy.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="career">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 03 / Career</div>
+          <h2 class="section-title">
+            Ten years of <em>going into the field, finding the real problem, and building the machine</em> that solves it.
+          </h2>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-period">
+              Dec 2025 to Mar 2026
+              <span class="duration">4 months</span>
+            </div>
+            <div class="tl-main">
+              <h3>SalesIntel</h3>
+              <div class="role">Product Marketing Manager · Remote (USA)</div>
+              <p>
+                B2B SaaS GTM data platform, mid-reposition from data vendor to
+                agentic pipeline generation. I owned the landing-page narrative
+                and conversion proof inside that shift, then carried the new
+                positioning through the enablement stack: onboarding docs,
+                launch videos, sales one-pagers, and battlecards. Ran PMM for
+                five Tier-1 launches including GTM Canvas (agentic automation),
+                and built an AI competitive-intel workflow that scraped,
+                structured, and shipped a weekly digest across five competitors.
+              </p>
+            </div>
+            <div class="tl-highlights">
+              <div class="tl-highlight">
+                <strong>+28%</strong>SQLs from new narrative
+              </div>
+              <div class="tl-highlight">
+                <strong>5</strong>Tier-1 launches owned
+              </div>
+              <div class="tl-highlight">
+                <strong>5</strong>competitors, weekly AI digest
+              </div>
+              <div class="tl-highlight">Win/loss to battlecards</div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-period">
+              Apr 2021 to Dec 2025
+              <span class="duration">4 years 9 months</span>
+            </div>
+            <div class="tl-main">
+              <h3>Planet Smart City</h3>
+              <div class="role">Product Marketing Manager · Pune</div>
+              <p>
+                Global proptech pioneer. Architected the end-to-end PMM
+                infrastructure for their SaaS platform. Bridged Product and
+                Revenue teams to diagnose GTM bottlenecks (like pricing and demo structures) and restructure our market approach. I moved past static documentation to build dynamic
+                sales enablement systems that injected context-specific assets
+                into outreach sequences, and leveraged an AI-first stack, using
+                Claude and NotebookLM, to automate the grunt work of market research.
+              </p>
+            </div>
+            <div class="tl-highlights">
+              <div class="tl-highlight">
+                <strong>400+</strong>enterprise trials
+              </div>
+              <div class="tl-highlight">
+                <strong>50%</strong>cross-channel conv. lift
+              </div>
+              <div class="tl-highlight">
+                <strong>20%</strong>of inbound from SEO
+              </div>
+              <div class="tl-highlight">
+                <strong>~100%</strong>net retention, 2 yrs
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-period">
+              Aug 2020 to Mar 2021
+              <span class="duration">8 months</span>
+            </div>
+            <div class="tl-main">
+              <h3>Freelance Paid Media Consultant</h3>
+              <div class="role">Independent · Mumbai</div>
+              <p>
+                Applied enterprise systems thinking to SMB constraints. I built
+                automated lead qualification workflows using Zapier to route
+                WordPress form submissions directly into client CRMs based on
+                dynamic scoring logic. I managed media planning and creative
+                strategy while ensuring the underlying data pipelines were
+                airtight.
+              </p>
+            </div>
+            <div class="tl-highlights">
+              <div class="tl-highlight">3 geos · 7+ clients</div>
+              <div class="tl-highlight">ROAS · AOV · email subs</div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-period">
+              Dec 2019 to Jul 2020
+              <span class="duration">8 months</span>
+            </div>
+            <div class="tl-main">
+              <h3>ZEE Entertainment (ZEE5)</h3>
+              <div class="role">Marketing Manager · Mumbai</div>
+              <p>
+                Transitioned my B2B systems-thinking into high-volume consumer
+                marketing. Instead of manually tracking social campaigns across
+                three languages, I built automated reporting pipelines that
+                pulled engagement metrics directly into unified dashboards. This
+                infrastructure removed hours of weekly grunt work, allowing the team to scale our influencer programs
+                and show launches.
+              </p>
+            </div>
+            <div class="tl-highlights">
+              <div class="tl-highlight">3 languages</div>
+              <div class="tl-highlight">Influencer programs</div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-period">
+              Jul 2016 to Aug 2019
+              <span class="duration">3 years 1 month</span>
+            </div>
+            <div class="tl-main">
+              <h3>Infosys Limited</h3>
+              <div class="role">Marketing Executive · Bengaluru</div>
+              <p>
+                Where the automation foundation was laid. I ran paid and email
+                campaigns for enterprise service lines, managed Salesforce
+                Marketing Cloud, and handled Oracle Eloqua. I built lead
+                management workflows from scratch. This was my introduction to
+                thinking in systems, learning early on how to connect disjointed
+                tools so marketing could scale without adding headcount.
+              </p>
+            </div>
+            <div class="tl-highlights">
+              <div class="tl-highlight">
+                <strong>+15%</strong>email engagement
+              </div>
+              <div class="tl-highlight">Stack for 10+ marketers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<section class="section" id="capabilities">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">§ 04 / The First 90 Days</div>
+      <h2 class="section-title">
+        How I'd show up <em>if you hired me</em> tomorrow.
+      </h2>
+    </div>
+
+    <div class="phase-stack">
+
+      <div class="phase-block">
+        <div class="phase-left">
+          <div class="phase-num">Phase 01 / Days 1&ndash;30</div>
+          <h3 class="phase-title">Ground &amp; Diagnose</h3>
+          <p class="phase-tagline">Learn your world before I touch anything.</p>
+          <p class="phase-body">
+            The first month is product immersion, ICP depth, and sales motion audit. I become a power user. I sit with product and engineering. I review won and lost deals. I shadow demos and review Gong calls. By day 30 I know what you sell, who actually buys it, and where the GTM motion is leaking.
+          </p>
+        </div>
+        <div class="phase-right">
+          <div class="phase-tag-group">
+            <div class="phase-tag-label">// PMM Work</div>
+            <div class="cap-tags">
+              <span class="cap-tag">Product Immersion</span>
+              <span class="cap-tag">ICP Mapping</span>
+              <span class="cap-tag">Win/Loss Review</span>
+              <span class="cap-tag">Competitive Teardown</span>
+              <span class="cap-tag">Sales Call Shadowing</span>
+            </div>
+          </div>
+          <div class="phase-tag-group">
+            <div class="phase-tag-label">// AI Accelerant</div>
+            <div class="cap-tags">
+              <span class="cap-tag featured">NotebookLM Knowledge Base</span>
+              <span class="cap-tag featured">Gong Call Synthesis</span>
+              <span class="cap-tag featured">Signal Scraping</span>
+            </div>
+          </div>
+          <div class="phase-output">
+            <div class="phase-output-label">What lands on your desk by day 30</div>
+            <p>A one-page diagnostic memo. The product's value prop matrix. The actual ICP drilldowns. Hypotheses on what's broken.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-left">
+          <div class="phase-num">Phase 02 / Days 31&ndash;60</div>
+          <h3 class="phase-title">Rebuild the Broken Piece</h3>
+          <p class="phase-tagline">Pick the highest-leverage fix and implement it.</p>
+          <p class="phase-body">
+            Pricing, positioning, sales motion, ICP, packaging. One of these is usually the real bottleneck. I pick it based on the diagnostic, rebuild it from buyer reality, and get it into market by week 8. The goal isn't a polished launch. It's a tested artifact that 5 sales reps can pressure-test on live calls.
+          </p>
+        </div>
+        <div class="phase-right">
+          <div class="phase-tag-group">
+            <div class="phase-tag-label">// PMM Work</div>
+            <div class="cap-tags">
+              <span class="cap-tag">Positioning Rewrite</span>
+              <span class="cap-tag">Pricing Model Redesign</span>
+              <span class="cap-tag">New Sales Narrative</span>
+              <span class="cap-tag">Battlecard Refresh</span>
+              <span class="cap-tag">ICP Segmentation</span>
+            </div>
+          </div>
+          <div class="phase-tag-group">
+            <div class="phase-tag-label">// AI Accelerant</div>
+            <div class="cap-tags">
+              <span class="cap-tag featured">Custom Claude Assistants</span>
+              <span class="cap-tag featured">Automated Competitive Intel</span>
+              <span class="cap-tag featured">Custom Skills & Workflows</span>
+            </div>
+          </div>
+          <div class="phase-output">
+            <div class="phase-output-label">What lands on your desk by day 60</div>
+            <p>A new GTM artifact, in market, tested on real calls. Plus a feedback loop that says whether the new motion is converting better than the old one.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <div class="phase-left">
+          <div class="phase-num">Phase 03 / Days 61&ndash;90</div>
+          <h3 class="phase-title">Systemize So It Holds</h3>
+          <p class="phase-tagline">Make the new motion run on rails.</p>
+          <p class="phase-body">
+            The last 30 days are about wiring the operating layer underneath. Enablement assets reps will use without being asked. Triggered human-in-the-loop workflows that keep the assets updated.
+          </p>
+        </div>
+        <div class="phase-right">
+          <div class="phase-tag-group">
+            <div class="phase-tag-label">// PMM Work</div>
+            <div class="cap-tags">
+              <span class="cap-tag">GTM Architecture</span>
+              <span class="cap-tag">Pressure Test Positioning</span>
+              <span class="cap-tag">Enablement Asset Library</span>
+              <span class="cap-tag">SDR and AE Asset Adoption</span>
+            </div>
+          </div>
+          <div class="phase-tag-group">
+            <div class="phase-tag-label">// AI Accelerant</div>
+            <div class="cap-tags">
+              <span class="cap-tag featured">n8n Workflows</span>
+              <span class="cap-tag featured">Automated Reporting</span>
+              <span class="cap-tag featured">AI Enablement of SDRs/AEs</span>
+            </div>
+          </div>
+          <div class="phase-output">
+            <div class="phase-output-label">What lands on your desk by day 90</div>
+            <p>A GTM machine that compounds. 80%+ rep adoption on the new playbook. A dashboard that tells you weekly whether the new motion is winning.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    <section class="section" id="ai-agents" style="background: var(--paper-2)">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 05 / AI Agents &amp; Workflows</div>
+          <h2 class="section-title">
+            Custom tools built using <em>LLMs</em> and <em>Agentic Frameworks.</em>
+          </h2>
+        </div>
+        <p style="font-size: 18px; margin-bottom: 40px; max-width: 800px">
+          A showcase of some specific workflows I have built to automate
+          competitive intel, synthesize product documentation, and operate as
+          marketing co-pilots for the revenue organization.
+        </p>
+        
+        <div class="ai-hero">
+          <div class="ai-hero-left">
+            <div class="ai-hero-label mono">// THE SYSTEMS THINKER AT WORK</div>
+            <p class="ai-hero-desc">
+              A strategic PMM sits at the center of revenue, product, and customer. I use AI to protect that thinking time. By building n8n workflows, Claude skill systems, and AI pipelines
+              that absorb the repetitive infrastructure work, the hours that are freed up go to
+              positioning decisions, strategic arguments, and PMM work that actually compounds.
+            </p>
+            <div class="ai-metric mono">
+              Hundreds of hours of PMM infrastructure work, <strong>automated and running in production.</strong>
+            </div>
+            <a href="ai-showcase.html" class="ai-cta-btn">
+              See the full AI toolkit <span class="ai-cta-arrow">→</span>
+            </a>
+          </div>
+
+          <div class="ai-hero-right">
+            <div class="ai-console">
+              <div class="ai-console-bar">
+                <span class="ai-console-dot pulse"></span>
+                <span class="ai-console-status mono" id="aiToolName">Competitive snapshot</span>
+              </div>
+              <div class="ai-console-inner">
+                <div class="ai-console-steps">
+                  <span class="ai-step-dot active" id="aiDot0"></span>
+                  <span class="ai-step-dot" id="aiDot1"></span>
+                  <span class="ai-step-dot" id="aiDot2"></span>
+                  <span class="ai-step-dot" id="aiDot3"></span>
+                  <span class="ai-step-text mono" id="aiStepText">Monitoring competitor data...</span>
+                </div>
+                <div class="ai-flow">
+                  <div class="ai-flow-inputs" id="aiFlowInputs">
+                    <div class="ai-flow-node input pulsing" data-idx="0">🌐 <span>Websites</span></div>
+                    <div class="ai-flow-node input pulsing" data-idx="1">💰 <span>Pricing</span></div>
+                    <div class="ai-flow-node input pulsing" data-idx="2">⭐ <span>Reviews</span></div>
+                  </div>
+                  <div class="ai-flow-connector" id="aiConnL">
+                    <div class="ai-flow-dot" id="aiDotL"></div>
+                  </div>
+                  <div class="ai-flow-proc">
+                    <div class="ai-flow-node proc" id="aiProc">🤖</div>
+                  </div>
+                  <div class="ai-flow-connector" id="aiConnR">
+                    <div class="ai-flow-dot" id="aiDotR"></div>
+                  </div>
+                  <div class="ai-flow-output">
+                    <div class="ai-output-card" id="aiOutputCard">
+                      <div class="ai-output-title mono" id="aiOutputTitle">Monday Digest</div>
+                      <div class="ai-output-lines">
+                        <div class="ai-output-line"></div>
+                        <div class="ai-output-line short"></div>
+                        <div class="ai-output-line medium"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section
+      class="section"
+      id="ai-stack"
+      style="
+        padding-top: 64px;
+        padding-bottom: 64px;
+        border-bottom: 1px solid var(--rule);
+      "
+    >
+      <div class="container">
+        <h4
+          style="
+            font-family: &quot;JetBrains Mono&quot;, monospace;
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 16px;
+          "
+        >
+          The Toolbelt
+        </h4>
+        <div class="ai-tools-grid">
+          <div class="ai-tool-box">
+            <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=128" alt="Claude">
+            <span>Claude <span style="font-weight: 400; color: var(--muted)">// Skills, Cowork, Plugins, Design</span></span>
+          </div>
+
+          <div class="ai-tool-box">
+            <img src="https://www.google.com/s2/favicons?domain=notebooklm.google.com&sz=128" alt="NotebookLM">
+            <span>NotebookLM <span style="font-weight: 400; color: var(--muted)">// Source Synthesis, Audio Overviews</span></span>
+          </div>
+
+          <div class="ai-tool-box">
+            <img src="https://www.google.com/s2/favicons?domain=klingai.com&sz=128" alt="Kling">
+            <span>Kling <span style="font-weight: 400; color: var(--muted)">// Video Generation</span></span>
+          </div>
+
+          <div class="ai-tool-box">
+            <img src="https://www.google.com/s2/favicons?domain=scheduler.ai&sz=128" alt="Synapsa">
+            <span>Synapsa <span style="font-weight: 400; color: var(--muted)">// Sales Automation</span></span>
+          </div>
+
+          <div class="ai-tool-box">
+            <img src="https://www.google.com/s2/favicons?domain=storylane.io&sz=128" alt="Storylane">
+            <span>Storylane <span style="font-weight: 400; color: var(--muted)">// Interactive Demos</span></span>
+          </div>
+
+          <div class="ai-tool-box">
+            <img src="https://www.google.com/s2/favicons?domain=synthesia.io&sz=128" alt="Synthesia">
+            <span>Synthesia <span style="font-weight: 400; color: var(--muted)">// AI Video Avatars</span></span>
+          </div>
+
+          <div class="ai-tool-box">
+            <img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=128" alt="Gemini">
+            <span>Gemini <span style="font-weight: 400; color: var(--muted)">// First drafts, wireframes & landing page prototypes</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="building">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 06 / Building</div>
+          <h2 class="section-title">
+            Two side bets I'm <em>shipping</em> for fun.
+          </h2>
+        </div>
+
+        <div class="project">
+          <div class="project-status">Pre-launch</div>
+          
+          <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; height: 100%; margin-top: 36px;">
+            <div style="flex: 1; min-width: 280px; display: flex; flex-direction: column;">
+              <div class="project-tag">// Travel · Consumer</div>
+              <h3>Detour <em>Club.</em></h3>
+              <p style="margin-bottom: 24px;">
+                A travel discovery app for people who plan trips by collecting links from blogs, Reddit threads, and YouTube videos and never look at them again. Currently building the curation engine, the database, and the backend.
+              </p>
+              <a href="https://trydetourclub.com" target="_blank" class="project-link">trydetourclub.com →</a>
+            </div>
+
+            <div style="flex: 1; min-width: 260px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 360px; margin: 0 auto;">
+              <div style="width: 100%; border-radius: 8px; overflow: hidden; display: flex;">
+                <img src="assets/screen1.png" alt="Detour Club Screen 1" style="width: 100%; height: auto; object-fit: contain; display: block;">
+              </div>
+
+              <div style="width: 100%; border-radius: 8px; overflow: hidden; display: flex;">
+                <img src="assets/screen2.png" alt="Detour Club Screen 2" style="width: 100%; height: auto; object-fit: contain; display: block;">
+              </div>
+
+              <div style="width: 100%; border-radius: 8px; overflow: hidden; display: flex;">
+                <img src="assets/screen3.png" alt="Detour Club Screen 3" style="width: 100%; height: auto; object-fit: contain; display: block;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="project">
+            <div class="project-status live">Live · Weekly</div>
+            <div class="project-tag">// Comic · LinkedIn</div>
+            <h3>Circling <em>Back.</em></h3>
+            <p>
+              A slice-of-life comic series about the absurd parts of product
+              marketing like stakeholder politics, founder requests at 11pm, and
+              the eternal "can you make this pop?" Author and lead storyteller.
+            </p>
+
+            <div class="comic-grid">
+              <div class="comic-placeholder">
+                <img src="assets/the-three-wishes.png" alt="Comic Strip 1"> 
+              </div>
+              <div class="comic-placeholder">
+               <img src="assets/the-toddler-pivot.png" alt="Comic Strip 2">
+              </div>
+            </div>
+
+            <a
+              href="https://www.linkedin.com/in/souravghosh1512/"
+              target="_blank"
+              class="project-link"
+              >Read on LinkedIn →</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" style="border-bottom: none">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 07 / Contact</div>
+          <h2 class="section-title">Open to <em>discussing roles and projects.</em></h2>
+        </div>
+
+        <div class="contact-grid">
+          <p class="contact-prose">
+            If you're a SaaS company looking for an AI-forward senior PMM,
+            especially in
+            <em>AI infrastructure, dev tools, or vertical SaaS</em>, let's talk.
+          </p>
+          <div class="contact-list">
+            <a
+              href="assets/Sourav_Ghosh_2026.pdf"
+              download="Sourav_Ghosh_2026.pdf"
+              class="contact-item"
+            >
+              <span class="label">// CV</span>
+              <span class="value">Download PDF <span class="arrow">↓</span></span>
+            </a>
+            <a href="mailto:souravghosh10001@gmail.com" class="contact-item">
+              <span class="label">// Email</span>
+              <span class="value">Let's chat <span class="arrow">→</span></span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/souravghosh1512/"
+              target="_blank"
+              class="contact-item"
+            >
+              <span class="label">// LinkedIn</span>
+              <span class="value"
+                >/in/sourav-ghosh <span class="arrow">→</span></span
+              >
+            </a>
+            <a
+              href="https://trydetourclub.com"
+              target="_blank"
+              class="contact-item"
+            >
+              <span class="label">// Detour Club</span>
+              <span class="value"
+                >trydetourclub.com <span class="arrow">→</span></span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>© Sourav Ghosh · Product Marketing</span>
+        <span>● BUILT WITH HTML, FRAUNCES &amp; ATTITUDE</span>
+        <span>Index / Portfolio · v3</span>
+      </div>
+    </footer>
+
+    <script>
+      const AI_PREVIEW_TOOLS = [
+        { name: "Competitive snapshot", proc: "🤖", output: "Monday Digest",
+          inputs: [["🌐", "Websites"], ["💰", "Pricing"], ["⭐", "Reviews"]],
+          steps: ["Monitoring competitor data...", "Agent extracting signals...", "Synthesising themes...", "Delivering Slack digest..."] },
+        { name: "Sales one-pager generator", proc: "⚙️", output: "Sales_One_Pager.pdf",
+          inputs: [["📝", "Intake Form"], ["📊", "CRM Data"]],
+          steps: ["Reading product brief...", "Extracting key value props...", "Formatting to brand guidelines...", "Sales-ready PDF generated..."] },
+        { name: "ICP interview synthesiser", proc: "🧠", output: "ICP Themes",
+          inputs: [["🎙", "Transcripts"], ["💬", "Notes"]],
+          steps: ["Ingesting 50 transcripts...", "Clustering insight themes...", "Identifying core objections...", "Surfacing verbatims..."] },
+        { name: "Objection handler", proc: "🛡", output: "Recommended Responses",
+          inputs: [["💬", "Slack Ping"], ["🎙", "Gong Data"]],
+          steps: ["Receiving AE query...", "Searching Gong history...", "Ranking best responses...", "Replying in thread..."] },
+        { name: "Win-loss analyser", proc: "🔍", output: "Win/Loss Dashboard",
+          inputs: [["📊", "CRM Data"], ["📋", "Surveys"]],
+          steps: ["Ingesting 12mo deal data...", "Cross-referencing exit surveys...", "Mapping win/loss patterns...", "Updating insights dashboard..."] },
+      ];
+
+      let aiToolIdx = 0, aiStep = 0;
+
+      function setAiTool(tool) {
+        const nameEl = document.getElementById("aiToolName");
+        const inputsEl = document.getElementById("aiFlowInputs");
+        const procEl = document.getElementById("aiProc");
+        const outputTitleEl = document.getElementById("aiOutputTitle");
+        if (!nameEl) return;
+        nameEl.textContent = tool.name;
+        procEl.textContent = tool.proc;
+        outputTitleEl.textContent = tool.output;
+        inputsEl.innerHTML = tool.inputs.map(([icon, label]) =>
+          `<div class="ai-flow-node input" data-pulsing="false">${icon} <span>${label}</span></div>`
+        ).join("");
+      }
+
+      function updateAiStep() {
+        const tool = AI_PREVIEW_TOOLS[aiToolIdx];
+        const textEl = document.getElementById("aiStepText");
+        const outputCard = document.getElementById("aiOutputCard");
+        const dotL = document.getElementById("aiDotL");
+        const dotR = document.getElementById("aiDotR");
+        const connL = document.getElementById("aiConnL");
+        const connR = document.getElementById("aiConnR");
+        const procEl = document.getElementById("aiProc");
+        const inputNodes = document.querySelectorAll("#aiFlowInputs .ai-flow-node");
+        if (!textEl) return;
+
+        // Update step dots
+        for (let i = 0; i < 4; i++) {
+          const dot = document.getElementById("aiDot" + i);
+          if (dot) dot.classList.toggle("active", i === aiStep);
+        }
+
+        // Update step text
+        textEl.style.opacity = 0;
+        setTimeout(() => {
+          textEl.textContent = tool.steps[aiStep];
+          textEl.style.opacity = 1;
+        }, 200);
+
+        // Input nodes pulse on step 0
+        inputNodes.forEach(n => n.classList.toggle("pulsing", aiStep === 0));
+
+        // Left connector animation
+        if (aiStep === 1) {
+          connL.classList.add("active");
+          dotL.classList.remove("active");
+          void dotL.offsetWidth; // reset animation
+          dotL.classList.add("active");
+        } else {
+          connL.classList.remove("active");
+          dotL.classList.remove("active");
+        }
+
+        // Processor pulse
+        procEl.classList.toggle("active", aiStep === 2);
+
+        // Right connector animation
+        if (aiStep === 2) {
+          connR.classList.add("active");
+          dotR.classList.remove("active");
+          void dotR.offsetWidth;
+          dotR.classList.add("active");
+        } else {
+          connR.classList.remove("active");
+          dotR.classList.remove("active");
+        }
+
+        // Output reveal
+        if (outputCard) outputCard.classList.toggle("revealed", aiStep === 3);
+
+        // Advance step
+        aiStep = (aiStep + 1) % 4;
+        if (aiStep === 0) {
+          aiToolIdx = (aiToolIdx + 1) % AI_PREVIEW_TOOLS.length;
+          setAiTool(AI_PREVIEW_TOOLS[aiToolIdx]);
+        }
+      }
+
+      // Start the animation after page loads
+      setAiTool(AI_PREVIEW_TOOLS[0]);
+      setInterval(updateAiStep, 2600);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SalesIntel Repositioning Case Study · Sourav Ghosh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0f0e0c;
+        --paper: #f4efe6;
+        --paper-2: #ece4d5;
+        --accent: #e94f1d;
+        --accent-2: #1b4332;
+        --muted: #6b6357;
+        --rule: #1f1b16;
+        --highlight: #ffe066;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Inter Tight", sans-serif;
+        font-size: 17px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        background-image: radial-gradient(
+          circle at 1px 1px,
+          rgba(15, 14, 12, 0.06) 1px,
+          transparent 0
+        );
+        background-size: 22px 22px;
+      }
+
+      .serif {
+        font-family: "Fraunces", serif;
+      }
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ====== TOP RIBBON ====== */
+      .ribbon {
+        border-bottom: 1px solid var(--rule);
+        background: var(--ink);
+        color: var(--paper);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .ribbon-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 32px;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .ribbon-inner span:nth-child(2) {
+        color: var(--highlight);
+      }
+
+      /* ====== HERO ====== */
+      .hero {
+        padding: 80px 0 60px;
+        border-bottom: 2px solid var(--rule);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-meta {
+        display: flex;
+        gap: 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+      }
+      .hero-meta .dot {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background: var(--accent);
+        border-radius: 50%;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+
+      .hero h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: clamp(48px, 7vw, 84px);
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+      }
+      .hero h1 .accent {
+        color: var(--accent);
+        font-style: italic;
+        font-weight: 400;
+      }
+      .hero h1 .strike {
+        position: relative;
+        display: inline-block;
+      }
+      .hero h1 .strike::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 52%;
+        height: 6px;
+        background: var(--accent);
+        transform: rotate(-1deg);
+      }
+
+      .hero-sub {
+        font-size: 19px;
+        max-width: 720px;
+        color: var(--muted);
+        margin-bottom: 48px;
+        line-height: 1.5;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        border-top: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+      }
+      .hero-stat {
+        padding: 28px 24px;
+        border-right: 1px solid var(--rule);
+        position: relative;
+      }
+      .hero-stat:last-child {
+        border-right: none;
+      }
+      .hero-stat .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+      .hero-stat .num {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+      }
+      .hero-stat .num.green {
+        color: var(--accent-2);
+      }
+      .hero-stat .num.red {
+        color: var(--accent);
+      }
+      .hero-stat .sub {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+
+      /* ====== SECTION HEADER ====== */
+      .section {
+        padding: 80px 0;
+        border-bottom: 1px solid var(--rule);
+      }
+      .section-head {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 32px;
+        margin-bottom: 48px;
+        align-items: start;
+      }
+      .section-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        border-top: 2px solid var(--accent);
+        padding-top: 10px;
+      }
+      .section-title {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: clamp(32px, 4.5vw, 56px);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        max-width: 900px;
+      }
+      .section-title em {
+        font-style: italic;
+        color: var(--accent);
+        font-weight: 400;
+      }
+
+      /* ====== TLDR CARD ====== */
+      .tldr {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 48px;
+        border-radius: 4px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        margin-bottom: 48px;
+        position: relative;
+        overflow: hidden;
+      }
+      .tldr::before {
+        content: "TL;DR";
+        position: absolute;
+        top: 16px;
+        right: 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--highlight);
+      }
+      .tldr-text {
+        font-family: "Fraunces", serif;
+        font-size: 22px;
+        line-height: 1.4;
+        font-weight: 400;
+      }
+      .tldr-text strong {
+        color: var(--highlight);
+        font-weight: 600;
+      }
+      .tldr-pivots {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-self: end;
+      }
+      .pivot-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        border: 1px solid var(--paper);
+        padding: 10px 14px;
+        text-transform: uppercase;
+      }
+      .pivot-tag span {
+        color: var(--highlight);
+      }
+
+      /* ====== PROBLEM SECTION ====== */
+      .problem-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+      .callout {
+        background: var(--paper-2);
+        border-left: 4px solid var(--accent);
+        padding: 32px;
+        font-family: "Fraunces", serif;
+        font-size: 24px;
+        line-height: 1.4;
+        font-style: italic;
+        color: var(--ink);
+      }
+      .callout .small {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-style: normal;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 16px;
+      }
+
+      /* ====== PIVOT BLOCK ====== */
+      .pivot-block {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 48px;
+        margin-bottom: 48px;
+        padding-bottom: 48px;
+        border-bottom: 1px dashed var(--rule);
+      }
+      .pivot-block:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+      .pivot-marker {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 120px;
+        line-height: 0.85;
+        color: var(--accent);
+        letter-spacing: -0.05em;
+      }
+      .pivot-marker span {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--muted);
+        letter-spacing: 0.15em;
+        margin-top: 8px;
+      }
+      .pivot-content h3 {
+        font-family: "Fraunces", serif;
+        font-size: 36px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+        line-height: 1.1;
+      }
+      .pivot-content .pivot-tag-inline {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+        display: inline-block;
+      }
+      .pivot-content > p {
+        font-size: 17px;
+        margin-bottom: 24px;
+        max-width: 720px;
+        color: var(--ink);
+      }
+
+      .mechanics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .mech-card {
+        background: var(--paper-2);
+        padding: 24px;
+        border-top: 3px solid var(--accent);
+      }
+      .mech-card .num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--accent);
+        letter-spacing: 0.15em;
+        margin-bottom: 12px;
+      }
+      .mech-card .title {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 8px;
+        line-height: 1.2;
+      }
+      .mech-card .desc {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      /* ====== PRICING ====== */
+      .pricing-compare {
+        display: grid;
+        grid-template-columns: 1fr 80px 2fr;
+        gap: 24px;
+        align-items: stretch;
+        margin-top: 24px;
+      }
+      .pricing-old {
+        background: var(--paper-2);
+        border: 1px solid var(--rule);
+        padding: 32px;
+        position: relative;
+      }
+      .pricing-old::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 8%;
+        right: 8%;
+        height: 3px;
+        background: var(--accent);
+        transform: rotate(-8deg);
+      }
+      .pricing-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fraunces", serif;
+        font-size: 48px;
+        color: var(--accent);
+        font-weight: 300;
+      }
+      .pricing-new {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .tier {
+        background: white;
+        border: 1px solid var(--rule);
+        padding: 24px 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      .tier.featured {
+        background: var(--ink);
+        color: var(--paper);
+        border-color: var(--ink);
+      }
+      .tier .tier-name {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .tier.featured .tier-name {
+        color: var(--highlight);
+      }
+      .tier .tier-price {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 48px;
+        letter-spacing: -0.04em;
+        line-height: 1;
+      }
+      .tier .tier-price small {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--muted);
+        display: block;
+        margin-top: 4px;
+      }
+      .tier.featured .tier-price small {
+        color: var(--paper-2);
+      }
+      .pricing-old .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+      .pricing-old .price {
+        font-family: "Fraunces", serif;
+        font-size: 36px;
+        font-weight: 700;
+      }
+      .pricing-old .price small {
+        display: block;
+        font-size: 13px;
+        color: var(--muted);
+        font-weight: 400;
+      }
+
+      /* ====== TAKEAWAY ====== */
+      .takeaway {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 80px 48px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+      }
+      .takeaway::before {
+        content: '"';
+        position: absolute;
+        top: -40px;
+        left: 24px;
+        font-family: "Fraunces", serif;
+        font-size: 280px;
+        color: var(--accent);
+        line-height: 1;
+      }
+      .takeaway-content {
+        position: relative;
+        z-index: 1;
+        max-width: 880px;
+        margin: 0 auto;
+      }
+      .takeaway-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--highlight);
+        margin-bottom: 24px;
+        text-transform: uppercase;
+      }
+      .takeaway p {
+        font-family: "Fraunces", serif;
+        font-size: 24px;
+        line-height: 1.4;
+        margin-bottom: 24px;
+        font-weight: 400;
+      }
+      .takeaway p strong {
+        color: var(--highlight);
+        font-weight: 600;
+      }
+      .takeaway p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ====== FOOTER ====== */
+      .footer {
+        padding: 48px 0;
+        border-top: 2px solid var(--rule);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      /* ====== RESPONSIVE ====== */
+      @media (max-width: 900px) {
+        .container {
+          padding: 0 20px;
+        }
+        .ribbon-inner {
+          padding: 10px 20px;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+        .hero {
+          padding: 48px 0 40px;
+        }
+        .hero-stats {
+          grid-template-columns: 1fr 1fr;
+        }
+        .hero-stat {
+          border-right: none;
+          border-bottom: 1px solid var(--rule);
+        }
+        .hero-stat:nth-child(even) {
+          border-right: none;
+        }
+        .hero-stat:nth-child(2n + 1) {
+          border-right: 1px solid var(--rule);
+        }
+        .hero-stat:nth-last-child(-n + 2) {
+          border-bottom: none;
+        }
+        .section {
+          padding: 56px 0;
+        }
+        .section-head {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .tldr {
+          grid-template-columns: 1fr;
+          padding: 32px;
+          gap: 32px;
+        }
+        .tldr-text {
+          font-size: 18px;
+        }
+        .problem-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .pivot-block {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .pivot-marker {
+          font-size: 80px;
+        }
+        .mechanics {
+          grid-template-columns: 1fr;
+        }
+        .pricing-compare {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        .pricing-arrow {
+          transform: rotate(90deg);
+          font-size: 36px;
+        }
+        .pricing-new {
+          grid-template-columns: 1fr;
+        }
+        .takeaway {
+          padding: 56px 24px;
+        }
+        .takeaway p {
+          font-size: 18px;
+        }
+        .takeaway::before {
+          font-size: 180px;
+          top: -24px;
+        }
+      }
+
+      /* ====== SUBTLE ENTRY ANIMATIONS ====== */
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero h1,
+      .hero-sub,
+      .hero-stats,
+      .hero-meta {
+        animation: rise 0.8s ease-out backwards;
+      }
+      .hero-meta {
+        animation-delay: 0.05s;
+      }
+      .hero h1 {
+        animation-delay: 0.1s;
+      }
+      .hero-sub {
+        animation-delay: 0.25s;
+      }
+      .hero-stats {
+        animation-delay: 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ribbon">
+      <div class="ribbon-inner">
+        <span>Case Study № 01 / 04</span>
+        <span>SalesIntel × Remote (USA)</span>
+        <span>Repositioning & Narrative</span>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="container">
+        <div class="hero-meta">
+          <span><a href="index.html">← Back to Index</a></span>
+          <span><span class="dot"></span>Product Marketing Manager</span>
+          <span>SalesIntel · GTM Data Platform</span>
+          <span>B2B SaaS · USA (Remote)</span>
+        </div>
+        <h1>
+          From <span class="strike">better ZoomInfo</span> to
+          <span class="accent">better pipeline.</span>
+        </h1>
+        <p class="hero-sub">
+          SalesIntel was selling itself as a cheaper, more accurate ZoomInfo.
+          That framing is a price war you cannot win. I helped re-anchor the
+          buying conversation from whose data is accurate to who generates
+          pipeline, rebuilt the landing-page narrative around AI agents, and
+          carried the new story through the enablement stack. The rebuilt
+          narrative lifted SQLs by 28%.
+        </p>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="label">SQL Lift</div>
+            <div class="num green">+28%</div>
+            <div class="sub">From the rebuilt landing narrative</div>
+          </div>
+          <div class="hero-stat">
+            <div class="label">Buying Axis</div>
+            <div class="num green">Shifted</div>
+            <div class="sub">Data accuracy to pipeline outcomes</div>
+          </div>
+          <div class="hero-stat">
+            <div class="label">Category</div>
+            <div class="num">Signal-First</div>
+            <div class="sub">Agentic pipeline generation</div>
+          </div>
+          <div class="hero-stat">
+            <div class="label">Proof</div>
+            <div class="num">Live</div>
+            <div class="sub">Visible on the homepage today</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 01 / Summary</div>
+          <h2 class="section-title">
+            A category that <em>commoditized</em> faster than the pitch.
+          </h2>
+        </div>
+
+        <div class="tldr">
+          <div class="tldr-text">
+            SalesIntel sells B2B GTM data. The category is commoditizing fast,
+            and competing as a <strong>better ZoomInfo</strong> means fighting
+            on accuracy, volume, and price, the exact axes a well-funded
+            incumbent will always undercut you on. The reposition moves the
+            buying conversation from <strong>whose data is accurate</strong> to
+            <strong>who generates pipeline</strong>, with AI agents as the
+            mechanism. I owned the landing-page narrative and the conversion
+            proof inside that shift, and it lifted SQLs by 28%.
+          </div>
+          <div class="tldr-pivots">
+            <div class="pivot-tag">
+              <span>The Barrier</span> &nbsp;·&nbsp; The "ZoomInfo Alternative"
+              price war
+            </div>
+            <div class="pivot-tag">
+              <span>The Pivot</span> &nbsp;·&nbsp; Signal-First Agentic Pipeline
+              Generation
+            </div>
+            <div class="pivot-tag">
+              <span>The Result</span> &nbsp;·&nbsp; +28% SQLs, the new story
+              live on the homepage
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 02 / The Problem</div>
+          <h2 class="section-title">The <em>"ZoomInfo Alternative"</em> Trap.</h2>
+        </div>
+
+        <div class="problem-grid">
+          <div>
+            <p style="font-size: 18px; margin-bottom: 24px; max-width: 560px">
+              SalesIntel had a genuinely strong data product, and the marketing
+              said so. The deep pages still do: a 95% accuracy guarantee,
+              human-verified contacts, a mobile set reverified every 90 days, a
+              2,000-person research team. All of it true. All of it leading with
+              data accuracy.
+            </p>
+            <p style="font-size: 15px; color: var(--muted); max-width: 560px">
+              The problem is that accuracy, volume, and price are exactly the
+              axes a bigger, better-funded incumbent will always win. When your
+              headline is a comparison to the category leader, you have already
+              told the buyer who the standard is, and that you are the cheaper
+              substitute for it.
+            </p>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--muted);
+                margin-top: 16px;
+                max-width: 560px;
+              "
+            >
+              Meanwhile the category had moved. Buyers had stopped rewarding
+              record counts. They were drowning in contacts and starved for
+              answers to one question: which of these accounts are actually
+              in-market right now, and what do I do about it?
+            </p>
+          </div>
+
+          <div class="callout">
+            When your homepage headline is a comparison to the category leader,
+            you have already conceded the category to them. They are the
+            standard. You are the alternative.
+            <span class="small">// The framing problem</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 03 / The Investigation</div>
+          <h2 class="section-title">
+            Listening for what buyers <em>actually reward.</em>
+          </h2>
+        </div>
+
+        <p style="font-size: 18px; max-width: 780px; margin-bottom: 32px">
+          This was not a guess. I synthesized win/loss across Gong, Outreach,
+          and Salesforce, and I ran a weekly competitive digest on five
+          competitors, an AI workflow that scraped, structured, and surfaced how
+          ZoomInfo, Lusha, Apollo, Clay, and others were moving on pricing and
+          positioning. Two patterns showed up again and again:
+        </p>
+
+        <div
+          class="callout"
+          style="
+            border-left-color: var(--accent-2);
+            background: var(--ink);
+            color: var(--paper);
+          "
+        >
+          "We don't have a data problem. We have a 'which accounts are actually
+          worth working this quarter' problem. Records are cheap. Pipeline that
+          converts is not."
+          <span class="small" style="color: var(--highlight)"
+            >// The pattern across win/loss</span
+          >
+        </div>
+
+        <p style="font-size: 18px; max-width: 780px; margin-top: 32px">
+          Deals were not won or lost on record counts. They were won or lost on
+          whether the platform pointed reps at the right accounts and got them
+          into a conversation. The thing buyers paid for was the outcome.
+          <strong>Data is the input. Pipeline is the outcome.</strong> The
+          positioning was selling the input.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 04 / The Pivot</div>
+          <h2 class="section-title">
+            Re-anchoring the <em>buying criteria.</em>
+          </h2>
+        </div>
+
+        <div class="pivot-block">
+          <div class="pivot-marker">
+            01
+            <span>Narrative rebuild</span>
+          </div>
+          <div class="pivot-content">
+            <span class="pivot-tag-inline"
+              >▼ From data accuracy to pipeline outcomes</span
+            >
+            <h3>Stop selling the input. Sell the outcome.</h3>
+            <p>
+              I rebuilt the landing-page narrative off the new positioning. The
+              hero stopped leading with accurate B2B contact data and started
+              leading with the outcome the buyer is actually buying: turn buying
+              signals into pipeline that converts. AI agents, GTM Canvas and
+              Signal360, became the mechanism that gets you there, not a feature
+              list bolted onto a database.
+            </p>
+
+            <div
+              class="pricing-compare"
+              style="grid-template-columns: 1fr 80px 1fr"
+            >
+              <div
+                style="
+                  background: var(--paper-2);
+                  border: 1px solid var(--rule);
+                  padding: 32px;
+                "
+              >
+                <div
+                  class="mono"
+                  style="
+                    font-size: 11px;
+                    letter-spacing: 0.15em;
+                    text-transform: uppercase;
+                    color: var(--muted);
+                    margin-bottom: 14px;
+                  "
+                >
+                  Before · Input-led
+                </div>
+                <div
+                  class="serif"
+                  style="font-size: 26px; font-weight: 700; line-height: 1.15"
+                >
+                  "ZoomInfo Alternative"
+                </div>
+                <div
+                  style="font-size: 14px; color: var(--muted); margin-top: 10px"
+                >
+                  Compete on accuracy, volume, and price.
+                </div>
+              </div>
+              <div class="pricing-arrow">→</div>
+              <div
+                style="
+                  background: var(--ink);
+                  border: 1px solid var(--ink);
+                  padding: 32px;
+                "
+              >
+                <div
+                  class="mono"
+                  style="
+                    font-size: 11px;
+                    letter-spacing: 0.15em;
+                    text-transform: uppercase;
+                    color: var(--highlight);
+                    margin-bottom: 14px;
+                  "
+                >
+                  After · Outcome-led
+                </div>
+                <div
+                  class="serif"
+                  style="
+                    font-size: 26px;
+                    font-weight: 700;
+                    line-height: 1.15;
+                    color: var(--paper);
+                  "
+                >
+                  Signal-First Pipeline
+                </div>
+                <div
+                  style="
+                    font-size: 14px;
+                    color: var(--paper-2);
+                    margin-top: 10px;
+                  "
+                >
+                  AI agents that find, engage, and convert your best accounts.
+                </div>
+              </div>
+            </div>
+
+            <p
+              style="
+                font-size: 15px;
+                color: var(--muted);
+                margin-top: 24px;
+                max-width: 720px;
+              "
+            >
+              The "before" framing is not invented. It still survives on the
+              product and data subpages today, which makes the shift a real
+              go-look artifact: the homepage has moved to the new category claim
+              while the deep pages carry the old accuracy-led pitch.
+            </p>
+          </div>
+        </div>
+
+        <div class="pivot-block">
+          <div class="pivot-marker">
+            02
+            <span>Enablement propagation</span>
+          </div>
+          <div class="pivot-content">
+            <span class="pivot-tag-inline"
+              >▼ Ship the story everywhere reps tell it</span
+            >
+            <h3>A new homepage nobody repeats is just a homepage.</h3>
+            <p>
+              A repositioning dies if it lives only on the website. So I carried
+              the new narrative into the stack reps actually use on calls, so the
+              story the buyer reads is the same story the rep tells.
+            </p>
+
+            <div class="mechanics">
+              <div class="mech-card">
+                <div class="num">CHANNEL 01</div>
+                <div class="title">Onboarding & Academy</div>
+                <div class="desc">
+                  New-hire onboarding docs and SalesIntel Academy video modules
+                  rebuilt around the signal-first story, so reps ramp on the new
+                  positioning from day one.
+                </div>
+              </div>
+              <div class="mech-card">
+                <div class="num">CHANNEL 02</div>
+                <div class="title">One-pagers & Decks</div>
+                <div class="desc">
+                  Sales one-pagers and launch decks re-led with pipeline
+                  outcomes instead of feature and data-volume comparisons.
+                </div>
+              </div>
+              <div class="mech-card">
+                <div class="num">CHANNEL 03</div>
+                <div class="title">Battlecard Refresh</div>
+                <div class="desc">
+                  Battlecards rebuilt from the win/loss patterns, arming reps to
+                  move off the "whose data is bigger" fight and onto pipeline.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 05 / The Impact</div>
+          <h2 class="section-title">
+            The homepage became the <em>proof.</em>
+          </h2>
+        </div>
+
+        <p style="font-size: 18px; max-width: 780px; margin-bottom: 32px">
+          Repositioning is risky because it asks a company to walk away from
+          language it is comfortable with. The way you de-risk it is to prove
+          the new criteria convert. The landing page is where that proof lives.
+        </p>
+
+        <div class="mechanics">
+          <div class="mech-card">
+            <div class="num">OUTCOME 01</div>
+            <div class="title">+28% SQLs</div>
+            <div class="desc">
+              The landing narrative rebuilt on the new positioning lifted
+              sales-qualified leads by 28%. The rebuilt criteria converted
+              measurably better than the old ones.
+            </div>
+          </div>
+          <div class="mech-card">
+            <div class="num">OUTCOME 02</div>
+            <div class="title">Message to Meeting</div>
+            <div class="desc">
+              Leading with pipeline outcomes instead of record counts lifted
+              demo requests and message-to-meeting conversion off the page.
+            </div>
+          </div>
+          <div class="mech-card">
+            <div class="num">OUTCOME 03</div>
+            <div class="title">One Story, Everywhere</div>
+            <div class="desc">
+              The new narrative shipped live on the homepage and propagated
+              through onboarding, one-pagers, and battlecards, so the funnel
+              told a single coherent story.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="border-bottom: none">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 06 / Strategic Overview</div>
+          <h2 class="section-title">The PMM Takeaway.</h2>
+        </div>
+
+        <div class="takeaway">
+          <div class="takeaway-content">
+            <div class="takeaway-tag">// Re-anchoring the criteria</div>
+            <p>
+              Repositioning is not writing new copy. It is changing the criteria
+              buyers use to judge an entire category, and
+              <strong>then proving the new criteria convert.</strong>
+            </p>
+            <p>
+              The fastest way to lose a category is to define yourself as the
+              cheaper version of the leader. The moment your headline is "the
+              alternative to X," you have handed X the standard and asked the
+              buyer to grade you against it.
+            </p>
+            <p>
+              The landing page is where a reposition earns its keep. If the new
+              story converts there, it earns the right to spread into enablement,
+              sales, and the rest of the funnel.
+              <strong
+                >Pick the axis you can win on, prove it on the page, then
+                propagate it everywhere reps speak.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 16px;
+        "
+      >
+        <span>Sourav Ghosh · Product Marketing</span>
+        <span>Companion case study: GTM Canvas Launch</span>
+        <span>Case 01 / 04</span>
+      </div>
+    </footer>
+  </body>
+</html>

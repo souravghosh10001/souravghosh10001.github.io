@@ -1,0 +1,1117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GTM Canvas Launch Case Study · Sourav Ghosh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0f0e0c;
+        --paper: #f4efe6;
+        --paper-2: #ece4d5;
+        --accent: #e94f1d;
+        --accent-2: #1b4332;
+        --muted: #6b6357;
+        --rule: #1f1b16;
+        --highlight: #ffe066;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Inter Tight", sans-serif;
+        font-size: 17px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        background-image: radial-gradient(
+          circle at 1px 1px,
+          rgba(15, 14, 12, 0.06) 1px,
+          transparent 0
+        );
+        background-size: 22px 22px;
+      }
+
+      .serif {
+        font-family: "Fraunces", serif;
+      }
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ====== TOP RIBBON ====== */
+      .ribbon {
+        border-bottom: 1px solid var(--rule);
+        background: var(--ink);
+        color: var(--paper);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .ribbon-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 32px;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .ribbon-inner span:nth-child(2) {
+        color: var(--highlight);
+      }
+
+      /* ====== HERO ====== */
+      .hero {
+        padding: 80px 0 60px;
+        border-bottom: 2px solid var(--rule);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-meta {
+        display: flex;
+        gap: 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+      }
+      .hero-meta .dot {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background: var(--accent);
+        border-radius: 50%;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+
+      .hero h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: clamp(48px, 7vw, 84px);
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+      }
+      .hero h1 .accent {
+        color: var(--accent);
+        font-style: italic;
+        font-weight: 400;
+      }
+      .hero h1 .strike {
+        position: relative;
+        display: inline-block;
+      }
+      .hero h1 .strike::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 52%;
+        height: 6px;
+        background: var(--accent);
+        transform: rotate(-1deg);
+      }
+
+      .hero-sub {
+        font-size: 19px;
+        max-width: 720px;
+        color: var(--muted);
+        margin-bottom: 48px;
+        line-height: 1.5;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        border-top: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+      }
+      .hero-stat {
+        padding: 28px 24px;
+        border-right: 1px solid var(--rule);
+        position: relative;
+      }
+      .hero-stat:last-child {
+        border-right: none;
+      }
+      .hero-stat .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+      .hero-stat .num {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+      }
+      .hero-stat .num.green {
+        color: var(--accent-2);
+      }
+      .hero-stat .num.red {
+        color: var(--accent);
+      }
+      .hero-stat .sub {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+
+      /* ====== SECTION HEADER ====== */
+      .section {
+        padding: 80px 0;
+        border-bottom: 1px solid var(--rule);
+      }
+      .section-head {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 32px;
+        margin-bottom: 48px;
+        align-items: start;
+      }
+      .section-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        border-top: 2px solid var(--accent);
+        padding-top: 10px;
+      }
+      .section-title {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: clamp(32px, 4.5vw, 56px);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        max-width: 900px;
+      }
+      .section-title em {
+        font-style: italic;
+        color: var(--accent);
+        font-weight: 400;
+      }
+
+      /* ====== TLDR CARD ====== */
+      .tldr {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 48px;
+        border-radius: 4px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        margin-bottom: 48px;
+        position: relative;
+        overflow: hidden;
+      }
+      .tldr::before {
+        content: "TL;DR";
+        position: absolute;
+        top: 16px;
+        right: 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--highlight);
+      }
+      .tldr-text {
+        font-family: "Fraunces", serif;
+        font-size: 22px;
+        line-height: 1.4;
+        font-weight: 400;
+      }
+      .tldr-text strong {
+        color: var(--highlight);
+        font-weight: 600;
+      }
+      .tldr-pivots {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-self: end;
+      }
+      .pivot-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        border: 1px solid var(--paper);
+        padding: 10px 14px;
+        text-transform: uppercase;
+      }
+      .pivot-tag span {
+        color: var(--highlight);
+      }
+
+      /* ====== PROBLEM SECTION ====== */
+      .problem-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+      .callout {
+        background: var(--paper-2);
+        border-left: 4px solid var(--accent);
+        padding: 32px;
+        font-family: "Fraunces", serif;
+        font-size: 24px;
+        line-height: 1.4;
+        font-style: italic;
+        color: var(--ink);
+      }
+      .callout .small {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-style: normal;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 16px;
+      }
+
+      /* ====== PIVOT BLOCK ====== */
+      .pivot-block {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 48px;
+        margin-bottom: 48px;
+        padding-bottom: 48px;
+        border-bottom: 1px dashed var(--rule);
+      }
+      .pivot-block:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+      .pivot-marker {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 120px;
+        line-height: 0.85;
+        color: var(--accent);
+        letter-spacing: -0.05em;
+      }
+      .pivot-marker span {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--muted);
+        letter-spacing: 0.15em;
+        margin-top: 8px;
+      }
+      .pivot-content h3 {
+        font-family: "Fraunces", serif;
+        font-size: 36px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+        line-height: 1.1;
+      }
+      .pivot-content .pivot-tag-inline {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+        display: inline-block;
+      }
+      .pivot-content > p {
+        font-size: 17px;
+        margin-bottom: 24px;
+        max-width: 720px;
+        color: var(--ink);
+      }
+
+      .mechanics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .mech-card {
+        background: var(--paper-2);
+        padding: 24px;
+        border-top: 3px solid var(--accent);
+      }
+      .mech-card .num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--accent);
+        letter-spacing: 0.15em;
+        margin-bottom: 12px;
+      }
+      .mech-card .title {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 8px;
+        line-height: 1.2;
+      }
+      .mech-card .desc {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      /* ====== PRICING ====== */
+      .pricing-compare {
+        display: grid;
+        grid-template-columns: 1fr 80px 2fr;
+        gap: 24px;
+        align-items: stretch;
+        margin-top: 24px;
+      }
+      .pricing-old {
+        background: var(--paper-2);
+        border: 1px solid var(--rule);
+        padding: 32px;
+        position: relative;
+      }
+      .pricing-old::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 8%;
+        right: 8%;
+        height: 3px;
+        background: var(--accent);
+        transform: rotate(-8deg);
+      }
+      .pricing-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fraunces", serif;
+        font-size: 48px;
+        color: var(--accent);
+        font-weight: 300;
+      }
+      .pricing-new {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .tier {
+        background: white;
+        border: 1px solid var(--rule);
+        padding: 24px 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      .tier.featured {
+        background: var(--ink);
+        color: var(--paper);
+        border-color: var(--ink);
+      }
+      .tier .tier-name {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .tier.featured .tier-name {
+        color: var(--highlight);
+      }
+      .tier .tier-price {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 48px;
+        letter-spacing: -0.04em;
+        line-height: 1;
+      }
+      .tier .tier-price small {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--muted);
+        display: block;
+        margin-top: 4px;
+      }
+      .tier.featured .tier-price small {
+        color: var(--paper-2);
+      }
+      .pricing-old .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+      .pricing-old .price {
+        font-family: "Fraunces", serif;
+        font-size: 36px;
+        font-weight: 700;
+      }
+      .pricing-old .price small {
+        display: block;
+        font-size: 13px;
+        color: var(--muted);
+        font-weight: 400;
+      }
+
+      /* ====== TAKEAWAY ====== */
+      .takeaway {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 80px 48px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+      }
+      .takeaway::before {
+        content: '"';
+        position: absolute;
+        top: -40px;
+        left: 24px;
+        font-family: "Fraunces", serif;
+        font-size: 280px;
+        color: var(--accent);
+        line-height: 1;
+      }
+      .takeaway-content {
+        position: relative;
+        z-index: 1;
+        max-width: 880px;
+        margin: 0 auto;
+      }
+      .takeaway-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--highlight);
+        margin-bottom: 24px;
+        text-transform: uppercase;
+      }
+      .takeaway p {
+        font-family: "Fraunces", serif;
+        font-size: 24px;
+        line-height: 1.4;
+        margin-bottom: 24px;
+        font-weight: 400;
+      }
+      .takeaway p strong {
+        color: var(--highlight);
+        font-weight: 600;
+      }
+      .takeaway p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ====== FOOTER ====== */
+      .footer {
+        padding: 48px 0;
+        border-top: 2px solid var(--rule);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      /* ====== RESPONSIVE ====== */
+      @media (max-width: 900px) {
+        .container {
+          padding: 0 20px;
+        }
+        .ribbon-inner {
+          padding: 10px 20px;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+        .hero {
+          padding: 48px 0 40px;
+        }
+        .hero-stats {
+          grid-template-columns: 1fr 1fr;
+        }
+        .hero-stat {
+          border-right: none;
+          border-bottom: 1px solid var(--rule);
+        }
+        .hero-stat:nth-child(even) {
+          border-right: none;
+        }
+        .hero-stat:nth-child(2n + 1) {
+          border-right: 1px solid var(--rule);
+        }
+        .hero-stat:nth-last-child(-n + 2) {
+          border-bottom: none;
+        }
+        .section {
+          padding: 56px 0;
+        }
+        .section-head {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .tldr {
+          grid-template-columns: 1fr;
+          padding: 32px;
+          gap: 32px;
+        }
+        .tldr-text {
+          font-size: 18px;
+        }
+        .problem-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .pivot-block {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .pivot-marker {
+          font-size: 80px;
+        }
+        .mechanics {
+          grid-template-columns: 1fr;
+        }
+        .pricing-compare {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        .pricing-arrow {
+          transform: rotate(90deg);
+          font-size: 36px;
+        }
+        .pricing-new {
+          grid-template-columns: 1fr;
+        }
+        .takeaway {
+          padding: 56px 24px;
+        }
+        .takeaway p {
+          font-size: 18px;
+        }
+        .takeaway::before {
+          font-size: 180px;
+          top: -24px;
+        }
+      }
+
+      /* ====== SUBTLE ENTRY ANIMATIONS ====== */
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero h1,
+      .hero-sub,
+      .hero-stats,
+      .hero-meta {
+        animation: rise 0.8s ease-out backwards;
+      }
+      .hero-meta {
+        animation-delay: 0.05s;
+      }
+      .hero h1 {
+        animation-delay: 0.1s;
+      }
+      .hero-sub {
+        animation-delay: 0.25s;
+      }
+      .hero-stats {
+        animation-delay: 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ribbon">
+      <div class="ribbon-inner">
+        <span>Case Study № 02 / 04</span>
+        <span>SalesIntel × Remote (USA)</span>
+        <span>Product Launch · GTM Canvas</span>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="container">
+        <div class="hero-meta">
+          <span><a href="index.html">← Back to Index</a></span>
+          <span><span class="dot"></span>Product Marketing Manager</span>
+          <span>SalesIntel · GTM Canvas (Agentic Automation)</span>
+          <span>B2B SaaS · USA (Remote)</span>
+        </div>
+        <h1>
+          Launching an AI agent without leading with
+          <span class="accent">"AI agent."</span>
+        </h1>
+        <p class="hero-sub">
+          GTM Canvas was SalesIntel's agentic-automation flagship and the proof
+          that the company had really moved from selling data to generating
+          pipeline. The launch problem: the audience buys contact records and
+          was tired of "AI agent" claims. So I built the launch around the job
+          the agent does, not the technology behind it, and shipped one story
+          across the page, the deck, sales, and a video that let buyers watch it
+          work.
+        </p>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="label">Launch Kit</div>
+            <div class="num">5 assets</div>
+            <div class="sub">Positioning, deck, one-pager, page, video</div>
+          </div>
+          <div class="hero-stat">
+            <div class="label">Framing</div>
+            <div class="num green">Job-first</div>
+            <div class="sub">The work done, not the tech</div>
+          </div>
+          <div class="hero-stat">
+            <div class="label">Enablement</div>
+            <div class="num green">Day 1</div>
+            <div class="sub">Reps could sell it from launch</div>
+          </div>
+          <div class="hero-stat">
+            <div class="label">Proof</div>
+            <div class="num">Watch it</div>
+            <div class="sub">Launch video shows the agent run</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 01 / Summary</div>
+          <h2 class="section-title">
+            Launching the product that had to <em>prove the reposition.</em>
+          </h2>
+        </div>
+
+        <div class="tldr">
+          <div class="tldr-text">
+            GTM Canvas was SalesIntel's agentic-automation flagship, the product
+            that had to make the new positioning real: not a better database, a
+            system that runs the GTM motion for you. The hard part was the
+            audience. They buy <strong>contact records</strong> and they were
+            fatigued by "AI agent" claims. So the launch led with
+            <strong>the job the agent does</strong>, building and prioritizing
+            target lists and sequencing outreach, and treated "agentic" as the
+            how, not the headline. I owned the full launch kit and shipped one
+            coherent story across every surface a buyer and a rep would touch.
+          </div>
+          <div class="tldr-pivots">
+            <div class="pivot-tag">
+              <span>The Barrier</span> &nbsp;·&nbsp; "AI agent" fatigue + a
+              data-buying audience
+            </div>
+            <div class="pivot-tag">
+              <span>The Move</span> &nbsp;·&nbsp; Lead with the job done, not the
+              technology
+            </div>
+            <div class="pivot-tag">
+              <span>The Result</span> &nbsp;·&nbsp; One launch story across page,
+              deck, sales, and video
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 02 / The Problem</div>
+          <h2 class="section-title">
+            Launching an agent into a <em>data buyer's</em> world.
+          </h2>
+        </div>
+
+        <div class="problem-grid">
+          <div>
+            <p style="font-size: 18px; margin-bottom: 24px; max-width: 560px">
+              GTM Canvas is genuinely agentic. It does not hand you a list of
+              contacts and wish you luck. It builds the target list, prioritizes
+              the accounts worth working, and tees up the outreach, automating
+              the GTM motion instead of just feeding it.
+            </p>
+            <p style="font-size: 15px; color: var(--muted); max-width: 560px">
+              But the audience had a fixed mental model of what SalesIntel
+              sells: records. Accurate ones, lots of them, at a fair price. An
+              autonomous workflow does not slot neatly into "how many contacts
+              do I get." Launched as a feature, it reads as a nice-to-have
+              bolted onto a database.
+            </p>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--muted);
+                margin-top: 16px;
+                max-width: 560px;
+              "
+            >
+              And "AI agent" was the most over-claimed phrase in B2B software
+              that year. Lead a launch with "our new agentic AI" and you invite
+              a tire-kicking demo audience, not urgency. The product was
+              impressive. The framing was a trap.
+            </p>
+          </div>
+
+          <div class="callout">
+            Nobody wakes up wanting an "agent." They wake up wanting the list
+            built, the right accounts surfaced, and the busywork gone. Lead with
+            that.
+            <span class="small">// The launch framing problem</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 03 / The Investigation</div>
+          <h2 class="section-title">
+            What job is this <em>actually hired</em> for?
+          </h2>
+        </div>
+
+        <p style="font-size: 18px; max-width: 780px; margin-bottom: 32px">
+          I mapped GTM Canvas to the unglamorous work it removes. Not the model
+          architecture, the Tuesday-afternoon reality: hours of manual
+          list-building, segmenting accounts by hand, stitching together
+          sequences, and the hand-offs that drop between tools. I pulled the
+          recurring "this took my team a week" pains out of win/loss and sales
+          calls.
+        </p>
+
+        <div
+          class="callout"
+          style="
+            border-left-color: var(--accent-2);
+            background: var(--ink);
+            color: var(--paper);
+          "
+        >
+          "Show me it builds the list and tees up the plays. I don't care what
+          you call the engine under it."
+          <span class="small" style="color: var(--highlight)"
+            >// What buyers actually said</span
+          >
+        </div>
+
+        <p style="font-size: 18px; max-width: 780px; margin-top: 32px">
+          That settled the launch frame. We would sell the outcome and the hours
+          returned, and let buyers watch the agent do the work.
+          <strong>Agentic is how it works, not why anyone buys it.</strong> The
+          word earns its place only after the job is believed.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 04 / The Launch</div>
+          <h2 class="section-title">
+            Build the launch around the <em>job.</em>
+          </h2>
+        </div>
+
+        <div class="pivot-block">
+          <div class="pivot-marker">
+            01
+            <span>The message</span>
+          </div>
+          <div class="pivot-content">
+            <span class="pivot-tag-inline"
+              >▼ From technology pitch to the job done</span
+            >
+            <h3>Don't launch the engine. Launch the result.</h3>
+            <p>
+              The positioning, hero, and landing page led with the outcome: your
+              GTM motion runs itself, your team works the accounts that matter.
+              The "how it works" was a simple three-step, find, prioritize,
+              sequence, not an architecture diagram. "Agentic automation" shows
+              up once, after the value has already landed.
+            </p>
+
+            <div
+              class="pricing-compare"
+              style="grid-template-columns: 1fr 80px 1fr"
+            >
+              <div
+                style="
+                  background: var(--paper-2);
+                  border: 1px solid var(--rule);
+                  padding: 32px;
+                "
+              >
+                <div
+                  class="mono"
+                  style="
+                    font-size: 11px;
+                    letter-spacing: 0.15em;
+                    text-transform: uppercase;
+                    color: var(--muted);
+                    margin-bottom: 14px;
+                  "
+                >
+                  Before · Tech-led
+                </div>
+                <div
+                  class="serif"
+                  style="font-size: 26px; font-weight: 700; line-height: 1.15"
+                >
+                  "Meet our agentic AI"
+                </div>
+                <div
+                  style="font-size: 14px; color: var(--muted); margin-top: 10px"
+                >
+                  Lead with the engine. Invite the skepticism.
+                </div>
+              </div>
+              <div class="pricing-arrow">→</div>
+              <div
+                style="
+                  background: var(--ink);
+                  border: 1px solid var(--ink);
+                  padding: 32px;
+                "
+              >
+                <div
+                  class="mono"
+                  style="
+                    font-size: 11px;
+                    letter-spacing: 0.15em;
+                    text-transform: uppercase;
+                    color: var(--highlight);
+                    margin-bottom: 14px;
+                  "
+                >
+                  After · Job-led
+                </div>
+                <div
+                  class="serif"
+                  style="
+                    font-size: 26px;
+                    font-weight: 700;
+                    line-height: 1.15;
+                    color: var(--paper);
+                  "
+                >
+                  The busywork runs itself.
+                </div>
+                <div
+                  style="
+                    font-size: 14px;
+                    color: var(--paper-2);
+                    margin-top: 10px;
+                  "
+                >
+                  Lists built, accounts prioritized, outreach sequenced for you.
+                </div>
+              </div>
+            </div>
+
+            <p
+              style="
+                font-size: 15px;
+                color: var(--muted);
+                margin-top: 24px;
+                max-width: 720px;
+              "
+            >
+              Same product, same capability. The only thing that changed is what
+              the buyer hears first: the hours they get back, not the technology
+              that gives them back.
+            </p>
+          </div>
+        </div>
+
+        <div class="pivot-block">
+          <div class="pivot-marker">
+            02
+            <span>The launch kit</span>
+          </div>
+          <div class="pivot-content">
+            <span class="pivot-tag-inline"
+              >▼ One story across every surface</span
+            >
+            <h3>A launch is only as strong as its weakest asset.</h3>
+            <p>
+              An agent product fails in the gap between marketing's promise and
+              the rep's demo. So I built the full kit off one job-first
+              narrative and shipped it together, so the page, the pitch, and the
+              proof all said the same thing.
+            </p>
+
+            <div class="mechanics">
+              <div class="mech-card">
+                <div class="num">DELIVERABLE 01</div>
+                <div class="title">Narrative & Landing Page</div>
+                <div class="desc">
+                  Positioning and a landing page that lead with the outcome and
+                  the hours returned, with a clean three-step of what the agent
+                  actually does.
+                </div>
+              </div>
+              <div class="mech-card">
+                <div class="num">DELIVERABLE 02</div>
+                <div class="title">Deck & One-pager</div>
+                <div class="desc">
+                  A launch deck and sales one-pager so AEs could walk a skeptical
+                  buyer from "another AI tool" to "this builds my list" without
+                  improvising.
+                </div>
+              </div>
+              <div class="mech-card">
+                <div class="num">DELIVERABLE 03</div>
+                <div class="title">Launch Video</div>
+                <div class="desc">
+                  A short launch video that shows the agent build and prioritize
+                  a list live, turning "agentic" from a claim into something you
+                  can watch.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 05 / The Impact</div>
+          <h2 class="section-title">
+            A launch buyers could <em>actually picture.</em>
+          </h2>
+        </div>
+
+        <p style="font-size: 18px; max-width: 780px; margin-bottom: 32px">
+          An agent product lives or dies on whether people can see it working
+          and locate it in their own workflow. The launch was built to make both
+          effortless.
+        </p>
+
+        <div class="mechanics">
+          <div class="mech-card">
+            <div class="num">OUTCOME 01</div>
+            <div class="title">Legible on First Contact</div>
+            <div class="desc">
+              Reframing an "AI agent" as a GTM motion that runs itself let
+              buyers place GTM Canvas in their workflow immediately, instead of
+              filing it under "AI we will look at later."
+            </div>
+          </div>
+          <div class="mech-card">
+            <div class="num">OUTCOME 02</div>
+            <div class="title">Sellable From Day One</div>
+            <div class="desc">
+              Positioning, deck, one-pager, and demo script shipped together, so
+              reps were never left to explain an abstract agent on their own.
+              The pitch matched the page.
+            </div>
+          </div>
+          <div class="mech-card">
+            <div class="num">OUTCOME 03</div>
+            <div class="title">Proof You Can Watch</div>
+            <div class="desc">
+              The launch video let prospects see the agent build and prioritize
+              a list, turning the hardest part of an agentic launch, belief,
+              into a short watch.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="border-bottom: none">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 06 / Strategic Overview</div>
+          <h2 class="section-title">The PMM Takeaway.</h2>
+        </div>
+
+        <div class="takeaway">
+          <div class="takeaway-content">
+            <div class="takeaway-tag">// Launching into skepticism</div>
+            <p>
+              When you launch an "AI" product to an audience that has heard every
+              AI claim, the technology is the worst thing to lead with.
+              <strong>Lead with the job it does and the hours it gives back.</strong>
+            </p>
+            <p>
+              Make it watchable. The fastest way to defeat "agent" skepticism is
+              to let a buyer see the agent do the unglamorous work they were
+              dreading.
+            </p>
+            <p>
+              And launch one story, not five.
+              <strong
+                >When the landing page, the deck, the one-pager, and the rep's
+                demo all say the same thing, a hard product becomes easy to
+                buy.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 16px;
+        "
+      >
+        <span>Sourav Ghosh · Product Marketing</span>
+        <span>Companion case study: SalesIntel Repositioning</span>
+        <span>Case 02 / 04</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1057 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planet SIM Enterprise Trials Case Study · Sourav Ghosh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0f0e0c;
+        --paper: #f4efe6;
+        --paper-2: #ece4d5;
+        --accent: #e94f1d;
+        --accent-2: #1b4332;
+        --muted: #6b6357;
+        --rule: #1f1b16;
+        --highlight: #ffe066;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Inter Tight", sans-serif;
+        font-size: 17px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        background-image: radial-gradient(
+          circle at 1px 1px,
+          rgba(15, 14, 12, 0.06) 1px,
+          transparent 0
+        );
+        background-size: 22px 22px;
+      }
+
+      .serif {
+        font-family: "Fraunces", serif;
+      }
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ====== TOP RIBBON ====== */
+      .ribbon {
+        border-bottom: 1px solid var(--rule);
+        background: var(--ink);
+        color: var(--paper);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .ribbon-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 32px;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .ribbon-inner span:nth-child(2) {
+        color: var(--highlight);
+      }
+
+      /* ====== HERO ====== */
+      .hero {
+        padding: 80px 0 60px;
+        border-bottom: 2px solid var(--rule);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-meta {
+        display: flex;
+        gap: 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+      }
+      .hero-meta .dot {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background: var(--accent);
+        border-radius: 50%;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+
+      .hero h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: clamp(48px, 7vw, 96px);
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+      }
+      .hero h1 .accent {
+        color: var(--accent);
+        font-style: italic;
+        font-weight: 400;
+      }
+      .hero h1 .strike {
+        position: relative;
+        display: inline-block;
+      }
+      .hero h1 .strike::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 52%;
+        height: 6px;
+        background: var(--accent);
+        transform: rotate(-1deg);
+      }
+
+      .hero-sub {
+        font-size: 19px;
+        max-width: 720px;
+        color: var(--muted);
+        margin-bottom: 48px;
+        line-height: 1.5;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        border-top: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+      }
+      .hero-stat {
+        padding: 28px 24px;
+        border-right: 1px solid var(--rule);
+        position: relative;
+      }
+      .hero-stat:last-child {
+        border-right: none;
+      }
+      .hero-stat .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+      .hero-stat .num {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 56px;
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+      .hero-stat .num.green {
+        color: var(--accent-2);
+      }
+      .hero-stat .num.red {
+        color: var(--accent);
+      }
+      .hero-stat .sub {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+
+      /* ====== SECTION HEADER ====== */
+      .section {
+        padding: 80px 0;
+        border-bottom: 1px solid var(--rule);
+      }
+      .section-head {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 32px;
+        margin-bottom: 48px;
+        align-items: start;
+      }
+      .section-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        border-top: 2px solid var(--accent);
+        padding-top: 10px;
+      }
+      .section-title {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: clamp(32px, 4.5vw, 56px);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        max-width: 900px;
+      }
+      .section-title em {
+        font-style: italic;
+        color: var(--accent);
+        font-weight: 400;
+      }
+
+      /* ====== TLDR CARD ====== */
+      .tldr {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 48px;
+        border-radius: 4px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        margin-bottom: 48px;
+        position: relative;
+        overflow: hidden;
+      }
+      .tldr::before {
+        content: "TL;DR";
+        position: absolute;
+        top: 16px;
+        right: 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--highlight);
+      }
+      .tldr-text {
+        font-family: "Fraunces", serif;
+        font-size: 22px;
+        line-height: 1.4;
+        font-weight: 400;
+      }
+      .tldr-text strong {
+        color: var(--highlight);
+        font-weight: 600;
+      }
+      .tldr-pivots {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-self: end;
+      }
+      .pivot-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        border: 1px solid var(--paper);
+        padding: 10px 14px;
+        text-transform: uppercase;
+      }
+      .pivot-tag span {
+        color: var(--highlight);
+      }
+
+      /* ====== METRICS TABLE ====== */
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .metric-card {
+        background: var(--paper-2);
+        border: 1px solid var(--rule);
+        padding: 28px;
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+      .metric-card:hover {
+        transform: translateY(-4px);
+      }
+      .metric-card .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+      .metric-flow {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr auto;
+        align-items: center;
+        gap: 16px;
+      }
+      .metric-before,
+      .metric-after {
+        font-family: "Fraunces", serif;
+        font-size: 36px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .metric-before {
+        color: var(--muted);
+        text-decoration: line-through;
+        text-decoration-thickness: 2px;
+      }
+      .metric-after {
+        color: var(--ink);
+      }
+      .metric-arrow {
+        font-family: "JetBrains Mono", monospace;
+        color: var(--accent);
+        font-size: 18px;
+      }
+      .metric-change {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 4px 10px;
+        background: var(--ink);
+        color: var(--highlight);
+        display: inline-block;
+      }
+      .metric-change.green {
+        background: var(--accent-2);
+        color: white;
+      }
+
+      /* ====== PROBLEM SECTION ====== */
+      .problem-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+      .callout {
+        background: var(--paper-2);
+        border-left: 4px solid var(--accent);
+        padding: 32px;
+        font-family: "Fraunces", serif;
+        font-size: 24px;
+        line-height: 1.4;
+        font-style: italic;
+        color: var(--ink);
+      }
+      .callout .small {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-style: normal;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 16px;
+      }
+
+      /* ====== FUNNEL VIZ ====== */
+      .funnels {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        margin-top: 32px;
+      }
+      .funnel-box {
+        border: 1px solid var(--rule);
+        padding: 32px;
+        background: var(--paper-2);
+      }
+      .funnel-box.after {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .funnel-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .funnel-box.before .funnel-label {
+        color: var(--muted);
+      }
+      .funnel-box.after .funnel-label {
+        color: var(--highlight);
+      }
+      .funnel-headline {
+        font-family: "Fraunces", serif;
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        letter-spacing: -0.02em;
+      }
+      .funnel-step {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 14px 0;
+        border-bottom: 1px dashed currentColor;
+        opacity: 0.9;
+      }
+      .funnel-step:last-child {
+        border-bottom: none;
+      }
+      .funnel-step .step-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        width: 24px;
+      }
+      .funnel-step .step-name {
+        flex: 1;
+        font-family: "Fraunces", serif;
+        font-size: 16px;
+      }
+      .funnel-step .step-rate {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .funnel-box.before .step-rate {
+        color: var(--accent);
+      }
+      .funnel-box.after .step-rate {
+        color: var(--highlight);
+      }
+      .funnel-result {
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 2px solid currentColor;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+      .funnel-result .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .funnel-result .value {
+        font-family: "Fraunces", serif;
+        font-size: 48px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+      .funnel-box.after .funnel-result .value {
+        color: var(--highlight);
+      }
+
+      /* ====== PIVOT BLOCK ====== */
+      .pivot-block {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 48px;
+        margin-bottom: 48px;
+        padding-bottom: 48px;
+        border-bottom: 1px dashed var(--rule);
+      }
+      .pivot-block:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+      .pivot-marker {
+        font-family: "Fraunces", serif;
+        font-weight: 800;
+        font-size: 120px;
+        line-height: 0.85;
+        color: var(--accent);
+        letter-spacing: -0.05em;
+      }
+      .pivot-marker span {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--muted);
+        letter-spacing: 0.15em;
+        margin-top: 8px;
+      }
+      .pivot-content h3 {
+        font-family: "Fraunces", serif;
+        font-size: 36px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+        line-height: 1.1;
+      }
+      .pivot-content .pivot-tag-inline {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+        display: inline-block;
+      }
+      .pivot-content > p {
+        font-size: 17px;
+        margin-bottom: 24px;
+        max-width: 720px;
+        color: var(--ink);
+      }
+
+      .mechanics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .mech-card {
+        background: var(--paper-2);
+        padding: 24px;
+        border-top: 3px solid var(--accent);
+      }
+      .mech-card .num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--accent);
+        letter-spacing: 0.15em;
+        margin-bottom: 12px;
+      }
+      .mech-card .title {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 8px;
+        line-height: 1.2;
+      }
+      .mech-card .desc {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      /* ====== TAKEAWAY ====== */
+      .takeaway {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 80px 48px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+      }
+      .takeaway::before {
+        content: '"';
+        position: absolute;
+        top: -40px;
+        left: 24px;
+        font-family: "Fraunces", serif;
+        font-size: 280px;
+        color: var(--accent);
+        line-height: 1;
+      }
+      .takeaway-content {
+        position: relative;
+        z-index: 1;
+        max-width: 880px;
+        margin: 0 auto;
+      }
+      .takeaway-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--highlight);
+        margin-bottom: 24px;
+        text-transform: uppercase;
+      }
+      .takeaway p {
+        font-family: "Fraunces", serif;
+        font-size: 24px;
+        line-height: 1.4;
+        margin-bottom: 24px;
+        font-weight: 400;
+      }
+      .takeaway p strong {
+        color: var(--highlight);
+        font-weight: 600;
+      }
+      .takeaway p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ====== FOOTER ====== */
+      .footer {
+        padding: 48px 0;
+        border-top: 2px solid var(--rule);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      /* ====== RESPONSIVE ====== */
+      @media (max-width: 900px) {
+        .container {
+          padding: 0 20px;
+        }
+        .ribbon-inner {
+          padding: 10px 20px;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+        .hero {
+          padding: 48px 0 40px;
+        }
+        .hero-stats {
+          grid-template-columns: 1fr 1fr;
+        }
+        .hero-stat {
+          border-right: none;
+          border-bottom: 1px solid var(--rule);
+        }
+        .hero-stat:nth-child(even) {
+          border-right: none;
+        }
+        .hero-stat:nth-child(2n + 1) {
+          border-right: 1px solid var(--rule);
+        }
+        .hero-stat:nth-last-child(-n + 2) {
+          border-bottom: none;
+        }
+        .section {
+          padding: 56px 0;
+        }
+        .section-head {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .tldr {
+          grid-template-columns: 1fr;
+          padding: 32px;
+          gap: 32px;
+        }
+        .tldr-text {
+          font-size: 18px;
+        }
+        .metrics-grid {
+          grid-template-columns: 1fr;
+        }
+        .problem-grid,
+        .funnels {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .pivot-block {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .pivot-marker {
+          font-size: 80px;
+        }
+        .mechanics {
+          grid-template-columns: 1fr;
+        }
+        .takeaway {
+          padding: 56px 24px;
+        }
+        .takeaway p {
+          font-size: 18px;
+        }
+        .takeaway::before {
+          font-size: 180px;
+          top: -24px;
+        }
+        .metric-flow {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          text-align: center;
+        }
+        .metric-arrow {
+          transform: rotate(90deg);
+        }
+      }
+
+      /* ====== SUBTLE ENTRY ANIMATIONS ====== */
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero h1,
+      .hero-sub,
+      .hero-stats,
+      .hero-meta {
+        animation: rise 0.8s ease-out backwards;
+      }
+      .hero-meta {
+        animation-delay: 0.05s;
+      }
+      .hero h1 {
+        animation-delay: 0.1s;
+      }
+      .hero-sub {
+        animation-delay: 0.25s;
+      }
+      .hero-stats {
+        animation-delay: 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ribbon">
+      <div class="ribbon-inner">
+        <span>Case Study № 04 / 04</span>
+        <span>Planet Smart City × Pune</span>
+        <span>GTM Pivot: Live Trials</span>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="container">
+        <div class="hero-meta">
+          <span
+            ><a href="index.html" style="color: inherit; text-decoration: none"
+              >← Back to Index</a
+            ></span
+          >
+          <span><span class="dot"></span>Product Marketing Manager</span>
+          <span>Planet SIM · IoT Water Mgmt</span>
+          <span>B2B SaaS · India</span>
+        </div>
+        <h1>
+          We <span class="strike">demoed</span>
+          <span class="accent">installed</span> the product for free
+          <span class="serif" style="font-style: italic; font-weight: 400"
+            >and 4×'d conversion.</span
+          >
+        </h1>
+        <p class="hero-sub">
+          We were selling an unprecedented physical solution using a standard
+          digital SaaS playbook, and it was tanking. Here is how replacing
+          screen-shares with 15-day live, on-site trials broke the adoption
+          barrier and completely transformed our sales pipeline.
+        </p>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="label">Demo → Customer</div>
+            <div class="num green">40%</div>
+            <div class="sub">Up from 10% initially</div>
+          </div>
+          <div class="hero-stat">
+            <div class="label">Sales Cycle</div>
+            <div class="num green">45d</div>
+            <div class="sub">Down from 80d average</div>
+          </div>
+          <div class="hero-stat">
+            <div class="label">Sales Motion</div>
+            <div class="num">Shift</div>
+            <div class="sub">Push → Consultative</div>
+          </div>
+          <div class="hero-stat">
+            <div class="label">Product Feedback</div>
+            <div class="num">Rapid</div>
+            <div class="sub">Real-world usage data</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 01 / Summary</div>
+          <h2 class="section-title">
+            The product was brilliant. The <em>imagination barrier</em> was too
+            high.
+          </h2>
+        </div>
+
+        <div class="tldr">
+          <div class="tldr-text">
+            We launched an IoT water platform into a market that had
+            <strong>managed water manually for decades</strong>. By relying on a
+            digital B2B playbook (Zoom demos and feature pitches), our SDRs were
+            forced into "push selling" abstract concepts. We took a bold bet:
+            <strong>killing the online demo</strong> and offering a 15-day live,
+            on-site installation for free. Using their own operational data, the
+            product sold itself.
+          </div>
+          <div class="tldr-pivots">
+            <div class="pivot-tag">
+              <span>Insight</span> &nbsp;·&nbsp; You can't demo a physical
+              paradigm shift via screen-share.
+            </div>
+            <div class="pivot-tag">
+              <span>Pivot</span> &nbsp;·&nbsp; High upfront cost of free
+              installations to unblock the funnel.
+            </div>
+            <div class="pivot-tag">
+              <span>Result</span> &nbsp;·&nbsp; 40% conversion rate & 45-day
+              sales cycles.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 02 / The Status Quo</div>
+          <h2 class="section-title">
+            The failure of the <em>textbook SaaS playbook.</em>
+          </h2>
+        </div>
+
+        <div class="problem-grid">
+          <div>
+            <p style="font-size: 18px; margin-bottom: 24px; max-width: 560px">
+              Initially, we ran the standard B2B motion: an SDR qualifies the
+              lead, books an online demo, walks the prospect through the app
+              interface, and tries to close a contract.
+            </p>
+            <p style="font-size: 18px; margin-bottom: 24px; max-width: 560px">
+              After listening to dozens of SDR call recordings, a glaring
+              pattern emerged. Our SDRs were wasting hours explaining predictive
+              usage and pump efficiency to a highly skeptical audience.
+            </p>
+            <p style="font-size: 15px; color: var(--muted); max-width: 560px">
+              The buyers (housing society committees and facility managers) saw
+              the slick dashboard as a "nice to have" digital novelty, not a fix
+              for real, current pain. The translation from our app features to
+              their daily operational reality was getting lost over Zoom.
+            </p>
+          </div>
+
+          <div class="callout">
+            "They didn't need a better pitch deck. They needed to touch the
+            solution, feel it, and look at their own data to imagine the
+            possibilities."
+            <span class="small">Ground-level insight from call reviews</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 03 / The Pivot</div>
+          <h2 class="section-title">
+            Flipping the funnel to <em>Show, Don't Tell.</em>
+          </h2>
+        </div>
+
+        <p style="font-size: 18px; max-width: 780px; margin-bottom: 32px">
+          <strong>I proposed a high-stakes shift</strong>: assume the upfront
+          cost of hardware, staff, and installation to get the product
+          physically into the buyer's environment. We replaced the friction of
+          selling a concept with the undeniable proof of their own data.
+        </p>
+
+        <div class="funnels">
+          <div class="funnel-box before">
+            <div class="funnel-label">▼ Before · Abstract Selling</div>
+            <div class="funnel-headline">
+              Screen-shares and theoretical ROI.
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">01</span
+              ><span class="step-name">SDR Qualifies Lead</span>
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">02</span
+              ><span class="step-name">Online Zoom Demo</span>
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">03</span
+              ><span class="step-name">Push Features & Concept</span>
+            </div>
+            <div class="funnel-result">
+              <span class="label">Demo → Customer</span>
+              <span class="value">10%</span>
+            </div>
+            <div
+              class="funnel-result"
+              style="border-top: none; padding-top: 0; margin-top: 8px"
+            >
+              <span class="label">Avg Sales Cycle</span>
+              <span class="value" style="font-size: 24px">80 Days</span>
+            </div>
+          </div>
+
+          <div class="funnel-box after">
+            <div class="funnel-label">▲ After · Experiential GTM</div>
+            <div class="funnel-headline">
+              Live data and consultative review.
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">01</span
+              ><span class="step-name">SDR Qualifies Lead</span>
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">02</span
+              ><span class="step-name">Free Hardware Install</span>
+            </div>
+            <div class="funnel-step">
+              <span class="step-num">03</span
+              ><span class="step-name">15-Day Trial on Real Data</span>
+            </div>
+            <div class="funnel-result">
+              <span class="label">Trial → Customer</span>
+              <span class="value">40%</span>
+            </div>
+            <div
+              class="funnel-result"
+              style="border-top: none; padding-top: 0; margin-top: 8px"
+            >
+              <span class="label">Avg Sales Cycle</span>
+              <span
+                class="value"
+                style="font-size: 24px; color: var(--highlight)"
+                >45 Days</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 04 / Business Impact</div>
+          <h2 class="section-title">
+            The ripple effects of a <em>tangible product motion.</em>
+          </h2>
+        </div>
+
+        <div class="pivot-block" style="border: none; padding: 0">
+          <div class="pivot-content" style="grid-column: 1 / -1">
+            <p>
+              The upfront cost of acquiring sensors and dispatching installation
+              staff was significant. But by eliminating the guesswork for the
+              customer, the ROI was immediate. Beyond quadrupling our conversion
+              rate and nearly halving the sales cycle, the operational dynamic
+              of the company shifted.
+            </p>
+
+            <div class="mechanics">
+              <div class="mech-card">
+                <div class="num">WIN 01</div>
+                <div class="title">SDR Morale Skyrocketed</div>
+                <div class="desc">
+                  Sales reps were no longer begging for attention or
+                  hard-selling abstract ideas. They became consultants reviewing
+                  a prospect's actual water leaks and inefficiencies.
+                </div>
+              </div>
+              <div class="mech-card">
+                <div class="num">WIN 02</div>
+                <div class="title">Rapid Product Iteration</div>
+                <div class="desc">
+                  With hardware deployed in multiple live, unpredictable
+                  residential environments, the product team received a firehose
+                  of early-stage feedback that accelerated platform evolution.
+                </div>
+              </div>
+              <div class="mech-card">
+                <div class="num">WIN 03</div>
+                <div class="title">Viral Internal Expansion</div>
+                <div class="desc">
+                  When a facility manager saw real savings on a trial tower,
+                  they became our internal champion, automatically pitching the
+                  expansion to the rest of the housing society committee.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="border-bottom: none">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-num">§ 05 / The Takeaway</div>
+          <h2 class="section-title">For product marketers reading this.</h2>
+        </div>
+
+        <div class="takeaway">
+          <div class="takeaway-content">
+            <div class="takeaway-tag">// PMM principle</div>
+            <p>
+              The mistake we made initially was assuming the funnel was broken
+              because <em>the funnel</em> was broken. The truth was, we were
+              running the
+              <strong>wrong motion for a legacy market.</strong>
+            </p>
+            <p>
+              When a buyer has never seen a solution like yours before, online
+              demos and feature lists don't break through the noise. To unblock
+              adoption for unprecedented tech, you have to absorb the friction.
+              <strong
+                >Demonstrate the product in the buyer's environment, on the
+                buyer's data,</strong
+              >
+              and watch the conversation shift from resistance to relief.
+            </p>
+            <p
+              style="
+                font-size: 18px;
+                padding-top: 16px;
+                border-top: 1px solid rgba(244, 239, 230, 0.2);
+              "
+            >
+              Spotting the friction point between the product and the sales
+              motion is a <strong>PMM problem</strong>. Fixing it changes the
+              trajectory of the company.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 16px;
+        "
+      >
+        <span>Sourav Ghosh · Product Marketing</span>
+        <span>Companion case study: Demo Pivot and PLG</span>
+        <span>Case 04 / 04</span>
+      </div>
+    </footer>
+  </body>
+</html>
